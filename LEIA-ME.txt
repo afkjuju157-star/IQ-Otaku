@@ -1,0 +1,19 @@
+IQ-OTAKU — versão de demonstração visual
+
+COMO ABRIR
+1. Extraia o ZIP para uma pasta.
+2. Abra a pasta no VS Code.
+3. Instale a extensão Live Server (se ainda não tiver).
+4. Clique com o botão direito em index.html e escolha “Open with Live Server”.
+
+TELAS
+- Entrada com logo e botão COMEÇAR.
+- Lista vertical de animes com avatar circular, nome e indicação de 15 perguntas.
+- Tela de perguntas com alternativas A/B/C/D, progresso e correção.
+- Resultado com pontuação.
+
+INSTALAÇÃO NO CELULAR
+O projeto contém manifest e service worker para instalação como PWA. Para instalar, publique em HTTPS (por exemplo GitHub Pages) e use “Adicionar à tela inicial” no navegador. Isto ainda não é um APK compilado.
+
+OBSERVAÇÃO IMPORTANTE SOBRE AS PERGUNTAS
+Cada anime recebe uma rodada de 15 itens e a seleção de respostas é embaralhada. Algumas perguntas de preenchimento são geradas a partir de termos/fatos da obra para completar a demonstração; elas precisam de revisão editorial antes de publicar como banco final pesquisado.

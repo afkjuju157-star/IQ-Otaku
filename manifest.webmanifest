@@ -1,0 +1,14 @@
+{
+  "name": "IQ-Otaku",
+  "short_name": "IQ-Otaku",
+  "description": "Quiz de animes com 15 perguntas por obra.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090607",
+  "theme_color": "#090607",
+  "icons": [
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
