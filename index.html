@@ -1,36 +1,36 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#090607"><meta name="description" content="IQ-Otaku — teste seus conhecimentos de anime.">
+  <meta name="theme-color" content="#090607"><meta name="description" content="IQ-Otaku — pon a prueba tus conocimientos de anime.">
   <link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="style.css"><title>IQ-Otaku</title><script src="main.js" defer></script>
 </head>
 <body>
   <main class="app-shell">
     <section id="welcomeScreen" class="screen welcome-screen">
-      <div class="welcome-brand"><img class="main-logo" src="logo-iq-otaku.png" alt="Logo IQ-Otaku"><div class="brand-word">IQ<span>-</span>OTAKU</div><div class="brand-line"></div></div>
-      <div class="start-card"><div class="card-mark">IQ</div><h1>IQ-OTAKU</h1><p>DESAFIE SEU CONHECIMENTO ANIME</p><button id="startButton" class="start-button" type="button">COMEÇAR <span>➜</span></button></div>
-      <p class="welcome-foot">UM UNIVERSO • MUITOS ANIMES • 15 PERGUNTAS</p>
+      <div class="welcome-brand"><img class="main-logo" src="logo-iq-otaku.png" alt="Logotipo de IQ-Otaku"><div class="brand-word">IQ<span>-</span>OTAKU</div><div class="brand-line"></div></div>
+      <div class="start-card"><div class="card-mark">IQ</div><h1>IQ-OTAKU</h1><p>PON A PRUEBA TUS CONOCIMIENTOS DE ANIME</p><button id="startButton" class="start-button" type="button">COMENZAR <span>➜</span></button></div>
+      <p class="welcome-foot">UN UNIVERSO • MUCHOS ANIMES • 15 PREGUNTAS</p>
     </section>
 
     <section id="animeScreen" class="screen hidden">
-      <header class="page-header"><button id="backHome" class="back-button" aria-label="Voltar">←</button><div><p class="eyebrow">ESCOLHA SEU DESAFIO</p><h1>ANIMES</h1></div><div class="header-symbol">✦</div></header>
+      <header class="page-header"><button id="backHome" class="back-button" aria-label="Volver">←</button><div><p class="eyebrow">ELIGE TU DESAFÍO</p><h1>ANIMES</h1></div><div class="header-symbol">✦</div></header>
       <div class="search-wrap"><span>⌕</span><input id="animeSearch" type="search" placeholder="Buscar anime..." autocomplete="off" aria-label="Buscar anime"></div>
-      <div class="list-intro"><strong>ESCOLHA UM ANIME</strong><span id="animeTotal">Animes • 15 perguntas cada</span></div>
+      <div class="list-intro"><strong>ELIGE UN ANIME</strong><span id="animeTotal">Animes • 15 preguntas cada</span></div>
       <div id="animeList" class="anime-list"></div>
-      <p class="footer-note">IQ-OTAKU <span>•</span> ESCOLHE, RESPONDE, DOMINA.</p>
+      <p class="footer-note">IQ-OTAKU <span>•</span> ELIGE, RESPONDE, DOMINA.</p>
     </section>
 
     <section id="questionScreen" class="screen hidden">
-      <header class="page-header question-header"><button id="backToList" class="back-button" aria-label="Voltar à lista">←</button><div><p class="eyebrow">DESAFIO EM ANDAMENTO</p><h1 id="quizTitle">ANIME</h1></div><div id="questionNumber" class="question-number">1 / 15</div></header>
+      <header class="page-header question-header"><button id="backToList" class="back-button" aria-label="Volver a la lista">←</button><div><p class="eyebrow">DESAFÍO EN CURSO</p><h1 id="quizTitle">ANIME</h1></div><div id="questionNumber" class="question-number">1 / 15</div></header>
       <div class="progress-shell"><div id="questionProgress" class="progress-fill"></div></div>
-      <article class="question-card"><div class="question-kicker"><span>PERGUNTA</span><span>+1 PONTO</span></div><h2 id="questionText">Pergunta aparece aqui</h2><div id="answerOptions" class="answer-options"></div><div id="answerFeedback" class="answer-feedback" aria-live="polite"></div><button id="nextQuestion" class="next-button hidden" type="button">PRÓXIMA PERGUNTA →</button></article>
-      <p class="footer-note">PENSA BEM ANTES DE ESCOLHER.</p>
+      <article class="question-card"><div class="question-kicker"><span>PREGUNTA</span><span>+1 PUNTO</span></div><h2 id="questionText">La pregunta aparecerá aquí</h2><div id="answerOptions" class="answer-options"></div><div id="answerFeedback" class="answer-feedback" aria-live="polite"></div><button id="nextQuestion" class="next-button hidden" type="button">SIGUIENTE PREGUNTA →</button></article>
+      <p class="footer-note">PIENSA BIEN ANTES DE ELEGIR.</p>
     </section>
 
     <section id="resultScreen" class="screen hidden result-screen">
-      <div class="result-logo">IQ<span>-</span>OTAKU</div><div class="result-emblem">★</div><p class="eyebrow">DESAFIO CONCLUÍDO</p><h1 id="resultAnimeName">ANIME</h1><div class="score-panel"><strong id="resultScore">0 / 15</strong><span id="resultPercent">0% DE ACERTOS</span></div><h2 id="resultMessage">Bom trabalho!</h2><p class="result-small">Cada tentativa te deixa mais perto do nível lendário.</p><button id="restartButton" class="next-button" type="button">ESCOLHER OUTRO ANIME</button><button id="homeButton" class="outline-button" type="button">VOLTAR AO INÍCIO</button>
+      <div class="result-logo">IQ<span>-</span>OTAKU</div><div class="result-emblem">★</div><p class="eyebrow">DESAFÍO COMPLETADO</p><h1 id="resultAnimeName">ANIME</h1><div class="score-panel"><strong id="resultScore">0 / 15</strong><span id="resultPercent">0% DE ACIERTOS</span></div><h2 id="resultMessage">Bom trabalho!</h2><p class="result-small">Cada intento te acerca al nivel legendario.</p><button id="restartButton" class="next-button" type="button">ELEGIR OTRO ANIME</button><button id="homeButton" class="outline-button" type="button">VOLVER AL INICIO</button>
     </section>
   </main>
   <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }</script>

@@ -9,32 +9,28 @@ const animeSeed = [
   ["Shangri-La Frontier", "🎮", "Aventura"],
   ["Edens Zero", "🚀", "Ciencia ficción"],
   ["Jujutsu Kaisen", "👊", "Acción"],
-  ["Pokémon", "⚡", "Aventura"],
-  ["Dragon Ball Z", "🐉", "Acción"],
-  ["Food Wars! (Shokugeki no Soma)", "🍳", "Comedia"],
-  ["KonoSuba", "💥", "Comedia"],
-  ["Naruto", "🍥", "Ninja"],
-  ["Black Clover", "🍀", "Fantasía"],
-  ["Plunderer", "🔢", "Fantasía"],
-  ["Tokyo Revengers", "🕰️", "Drama"],
   ["Fullmetal Alchemist: Brotherhood", "⚗️", "Fantasía"],
+  ["Naruto", "🍥", "Ninja"],
   ["One Piece", "🏴‍☠️", "Aventura"],
+  ["Dragon Ball Z", "🐉", "Acción"],
   ["Demon Slayer: Kimetsu no Yaiba", "🌊", "Acción"],
   ["Death Note", "📓", "Suspenso"],
   ["My Hero Academia", "🦸", "Superhéroes"],
   ["Hunter x Hunter", "🎯", "Aventura"],
   ["Bleach", "🗡️", "Acción"],
+  ["Tokyo Ghoul", "👁️", "Terror"],
+  ["Sword Art Online", "🗡️", "Aventura"],
   ["Spy x Family", "🕵️", "Comedia"],
   ["Haikyuu!!", "🏐", "Deportes"],
-  ["Sword Art Online", "🗡️", "Aventura"],
+  ["Blue Lock", "⚽", "Deportes"],
   ["Frieren", "🪄", "Fantasía"],
   ["Sailor Moon", "🌙", "Magia"],
   ["Cardcaptor Sakura", "🌸", "Magia"],
+  ["Pokémon", "⚡", "Aventura"],
   ["Chainsaw Man", "🪚", "Acción"],
-  ["Tokyo Ghoul", "👁️", "Terror"],
-  ["Steins;Gate", "⏳", "Ciencia ficción"],
-  ["Your Name", "🌠", "Romance"],
+  ["Dandadan", "👽", "Sobrenatural"],
   ["Dr. Stone", "🧪", "Ciencia"],
+  ["Black Clover", "🍀", "Fantasía"],
   ["JoJo's Bizarre Adventure", "💪", "Acción"],
   ["Mob Psycho 100", "👻", "Sobrenatural"],
   ["Re:Zero", "🔁", "Fantasía"],
@@ -47,7 +43,9 @@ const animeSeed = [
   ["Neon Genesis Evangelion", "🤖", "Mecha"],
   ["Assassination Classroom", "🐙", "Comedia"],
   ["The Promised Neverland", "🏡", "Suspenso"],
-  ["Code Geass", "♟️", "Mecha"],
+  ["Kaguya-sama: Love Is War", "💘", "Comedia romántica"],
+  ["Your Name", "🌠", "Romance"],
+  ["Steins;Gate", "⏳", "Ciencia ficción"],
   ["Fruits Basket", "🍙", "Romance"],
   ["Toradora!", "🐯", "Romance"],
   ["Vinland Saga", "🛡️", "Histórico"],
@@ -55,252 +53,933 @@ const animeSeed = [
   ["Hellsing Ultimate", "🦇", "Terror"],
   ["Inuyasha", "🐕", "Fantasía"],
   ["Detective Conan", "🔎", "Misterio"],
-  ["Blue Lock", "⚽", "Deportes"],
-  ["Dandadan", "👽", "Sobrenatural"]
+  ["Code Geass", "♟️", "Mecha"],
+  ["Fire Force", "🔥", "Acción sobrenatural"],
+  ["Fairy Tail", "🧚", "Fantasía"],
+  ["Bungo Stray Dogs", "📚", "Sobrenatural"]
 ];
 
 // Cada pregunta está asociada al anime correspondiente. El juego solo usa preguntas de los animes seleccionados.
+// Banco IQ-Otaku: 54 animes, 15 preguntas por anime.
 const questionBank = {
-
   "Noragami": [
-    q("¿Cómo se llama el dios protagonista de Noragami?", ["Yato", "Yukine", "Kazuma", "Bishamon"], 0),
-    q("¿Cómo se llama la chica que puede separarse de su cuerpo?", ["Hiyori Iki", "Kofuku", "Nora", "Kiun"], 0),
-    q("¿Qué nombre recibe el espíritu que se convierte en arma de Yato?", ["Yukine", "Daikoku", "Ebisu", "Takemikazuchi"], 0),
-    q("¿Cómo se llama la forma de arma de Yukine?", ["Sekki", "Regalia", "Shinki", "Ayakashi"], 0),
-    q("¿Qué tipo de deus es Yato?", ["Dios menor que busca ser famoso", "Dios del mar", "Dios de la guerra olímpico", "Dios de la agricultura"], 0),
-    q("¿Cuánto cobra Yato normalmente por sus pequeños trabajos?", ["Cinco yenes", "Cien yenes", "Mil yenes", "No acepta monedas"], 0),
-    q("¿Qué seres sobrenaturales amenazan a los humanos en Noragami?", ["Ayakashi", "Titãs", "Homúnculos", "Pokémon"], 0),
-    q("¿Cómo se llama la diosa ligada a la fortuna que aparece como amiga de Yato?", ["Kofuku", "Hiyori", "Nora", "Mayu"], 0),
-    q("¿Qué dios es conocido como Bishamon?", ["Uma poderosa deusa da guerra", "Deus da cozinha", "Deus dos sonhos", "Deus das colheitas"], 0),
-    q("¿Qué vínculo desarrolla Hiyori con el mundo espiritual?", ["Su alma puede salir de su cuerpo", "Puede controlar titanes", "Es una shinki desde niña", "Puede escribir nombres en un cuaderno mortal"], 0),
-    q("¿Qué desea conseguir Yato al inicio de la historia?", ["Ser reconocido y tener un santuario", "Convertirse en Hokage", "Encontrar el One Piece", "Ser el mejor chef"], 0),
-    q("¿Qué es un shinki en Noragami?", ["Un espíritu que sirve a un dios", "Un monstruo marino", "Un tipo de santuario escolar", "Un arma alquímica"], 0),
-    q("¿Cuál de estos personajes es compañero espiritual de Yato?", ["Yukine", "Armin", "Zenitsu", "Killua"], 0),
-    q("¿Qué puede ocurrir cuando un shinki comete faltas o tiene pensamientos dañinos?", ["Su dios puede sufrir dolor o contaminación", "Se convierte automáticamente en rey", "Pierde todos sus recuerdos humanos al instante", "Destruye todos los santuarios"], 0),
-    q("¿A qué género pertenece principalmente Noragami?", ["Acción y sobrenatural", "Deportes realistas", "Cocina competitiva", "Carreras espaciales"], 0)
+    q("¿Cómo se llama el dios menor que acepta trabajos por cinco yenes?", ["Shinki", "Bishamon", "Yato", "Ebisu"], 2),
+    q("¿Cómo se llama la estudiante que puede separar su alma de su cuerpo?", ["Ayakashi", "Sekki", "Yukine", "Hiyori Iki"], 3),
+    q("¿Qué nombre recibe el espíritu que Yato convierte en su arma?", ["Kofuku", "Daikoku", "Bishamon", "Yukine"], 3),
+    q("¿Qué forma adopta Yukine cuando Yato lo usa como arma?", ["Yato", "Shinki", "Sekki", "Hiyori Iki"], 2),
+    q("¿Qué diosa es conocida por su personalidad alegre y su relación con Daikoku?", ["Kofuku", "Ayakashi", "Yukine", "Nora"], 0),
+    q("¿Qué diosa de la guerra tiene varios shinki a su servicio?", ["Yato", "Bishamon", "Hiyori Iki", "Sekki"], 1),
+    q("¿Cómo se llama el shinki de confianza de Bishamon?", ["Ayakashi", "Kazuma", "Daikoku", "Nora"], 1),
+    q("¿Cómo se llaman los espíritus que amenazan a los humanos?", ["Mundo espiritual", "Shinki", "Hiyori Iki", "Ayakashi"], 3),
+    q("¿Qué pago simbólico suele pedir Yato por sus servicios?", ["Shinki", "Nora", "Daikoku", "Cinco yenes"], 3),
+    q("¿Cómo se llama la joven diosa de la pobreza que acompaña a Daikoku?", ["Kofuku", "Yato", "Bishamon", "Ebisu"], 0),
+    q("¿Qué nombre recibe un espíritu que sirve a un dios?", ["Sekki", "Ayakashi", "Hiyori Iki", "Shinki"], 3),
+    q("¿Cómo se llama la misteriosa shinki vinculada al pasado de Yato?", ["Nora", "Yukine", "Bishamon", "Ayakashi"], 0),
+    q("¿Qué dios aparece relacionado con la fortuna y la medicina?", ["Mundo espiritual", "Ebisu", "Shinki", "Sekki"], 1),
+    q("¿Quién es el shinki que cuida de Kofuku?", ["Ebisu", "Hiyori Iki", "Yukine", "Daikoku"], 3),
+    q("¿En qué tipo de mundo se mueven los ayakashi y los dioses?", ["Mundo espiritual", "Yato", "Nora", "Kazuma"], 0),
   ],
   "Nanatsu no Taizai": [
-    q("¿Cómo se llama el capitán de los Siete Pecados Capitales?", ["Meliodas", "Ban", "King", "Gowther"], 0),
-    q("¿Qué pecado representa Meliodas?", ["Ira", "Envidia", "Pereza", "Orgullo"], 0),
-    q("¿Cómo se llama la taberna de Meliodas?", ["Boar Hat", "Black Bull", "Fairy Tail", "Cat's Eye"], 0)
+    q("¿Quién es el capitán de los Siete Pecados Capitales?", ["Meliodas", "Ban", "King", "Escanor"], 0),
+    q("¿Qué pecado representa Ban?", ["Avaricia", "Ira", "Envidia", "Pereza"], 0),
+    q("¿Cómo se llama el cerdito compañero del grupo?", ["Hawk", "Gilthunder", "Zaratras", "Griamore"], 0),
+    q("¿Qué pecado representa Diane?", ["Envidia", "Orgullo", "Gula", "Lujuria"], 0),
+    q("¿Cuál es el tesoro sagrado de Meliodas?", ["Lostvayne", "Courechouse", "Gideon", "Rita"], 0),
+    q("¿Qué pecado representa Escanor?", ["Orgullo", "Ira", "Avaricia", "Pereza"], 0),
+    q("¿Quién es la princesa de Liones vinculada a Meliodas?", ["Elizabeth", "Veronica", "Margaret", "Guila"], 0),
+    q("¿Qué raza es King?", ["Hada", "Gigante", "Demonio", "Diosa"], 0),
+    q("¿Cómo se llama el tesoro sagrado de Diane?", ["Gideon", "Lostvayne", "Rita", "Herritt"], 0),
+    q("¿Qué pecado representa King?", ["Pereza", "Gula", "Lujuria", "Ira"], 0),
+    q("¿Qué habilidad caracteriza a Meliodas en combate?", ["Full Counter", "Black Meteorite", "Thunderbolt", "Jajanken"], 0),
+    q("¿Quién es el hermano de Meliodas que aparece como mandamiento?", ["Zeldris", "Mael", "Ludociel", "Drole"], 0),
+    q("¿Qué pecado representa Merlin?", ["Gula", "Envidia", "Avaricia", "Orgullo"], 0),
+    q("¿Qué pecado representa Gowther?", ["Lujuria", "Pereza", "Ira", "Gula"], 0),
+    q("¿Qué arma usa Ban como tesoro sagrado?", ["Courechouse", "Gideon", "Lostvayne", "Rita"], 0),
   ],
   "Attack on Titan": [
-    q("¿Quién es el protagonista que busca eliminar a los titanes?", ["Eren Yeager", "Armin Arlert", "Jean Kirstein", "Reiner Braun"], 0),
-    q("¿Cómo se llama la hermana adoptiva de Eren?", ["Mikasa Ackerman", "Historia Reiss", "Sasha Blouse", "Annie Leonhart"], 0),
-    q("¿Qué cuerpo militar explora el territorio fuera de las murallas?", ["Cuerpo de Exploración", "Policía Militar", "Guarnición", "Brigada Médica"], 0)
+    q("¿En qué distrito comienza la historia con la caída del muro?", ["Shiganshina", "Trost", "Stohess", "Karanes"], 0),
+    q("¿Cómo se llama el protagonista?", ["Eren Yeager", "Armin Arlert", "Jean Kirstein", "Connie Springer"], 0),
+    q("¿Quién es la hermana adoptiva de Eren?", ["Mikasa Ackerman", "Historia Reiss", "Sasha Blouse", "Annie Leonhart"], 0),
+    q("¿Cuál es el nombre del muro exterior?", ["María", "Rose", "Sina", "Wall Alpha"], 0),
+    q("¿Qué cuerpo militar explora fuera de los muros?", ["Cuerpo de Exploración", "Policía Militar", "Guarnición", "Brigada Central"], 0),
+    q("¿Quién es conocido como el titán acorazado?", ["Reiner Braun", "Bertholdt Hoover", "Zeke Yeager", "Porco Galliard"], 0),
+    q("¿Cuál es el nombre del mejor amigo estratega de Eren?", ["Armin Arlert", "Marco Bott", "Floch Forster", "Levi Ackerman"], 0),
+    q("¿Qué capitán es famoso por su habilidad contra titanes?", ["Levi Ackerman", "Erwin Smith", "Hange Zoë", "Keith Shadis"], 0),
+    q("¿Qué alimento disfruta especialmente Sasha?", ["Patatas", "Manzanas", "Pasteles", "Pescado crudo"], 0),
+    q("¿Quién dirige el Cuerpo de Exploración antes de Hange?", ["Erwin Smith", "Dot Pixis", "Darius Zackly", "Theo Magath"], 0),
+    q("¿Qué titán posee la habilidad de endurecimiento y una coraza?", ["Titán Acorazado", "Titán Carreta", "Titán Mandíbula", "Titán Bestia"], 0),
+    q("¿Qué apellido tiene Historia antes de revelar su identidad real?", ["Reiss", "Ackerman", "Braun", "Leonhart"], 0),
+    q("¿Qué objeto permite a los soldados desplazarse por el aire?", ["Equipo de maniobras tridimensionales", "Paracaídas de gas", "Planeador de vapor", "Botas gravitatorias"], 0),
+    q("¿Quién es la científica obsesionada con estudiar titanes?", ["Hange Zoë", "Petra Ral", "Ymir", "Kiyomi Azumabito"], 0),
+    q("¿Qué poder heredó Eren al inicio de la historia?", ["Titán de Ataque", "Titán Bestia", "Titán Martillo de Guerra", "Titán Carreta"], 0),
   ],
   "Shangri-La Frontier": [
-    q("¿Qué tipo de juegos suele preferir Rakuro Hizutome?", ["Juegos malos y defectuosos", "Juegos de cocina", "Solo juegos de cartas", "Juegos de ritmo"], 0),
-    q("¿Cuál es el nombre de jugador de Rakuro?", ["Sunraku", "Pencilgon", "Oikatzo", "Emul"], 0)
+    q("¿Cuál es el nombre del jugador protagonista?", ["Rakuro Hizutome", "Towa Amane", "Kei Uomi", "Ritsu Amachi"], 0),
+    q("¿Qué apodo usa Rakuro dentro del juego?", ["Sunraku", "Pencilgon", "Oikatzo", "Emul"], 0),
+    q("¿Qué tipo de juegos suele preferir Rakuro antes de Shangri-La Frontier?", ["Juegos malos o defectuosos", "Simuladores de cocina", "Juegos de ritmo", "Juegos de cartas"], 0),
+    q("¿Cómo se llama la pequeña criatura conejo que acompaña a Sunraku?", ["Emul", "Psyger-0", "Aramiys", "Bilac"], 0),
+    q("¿Qué género es Shangri-La Frontier?", ["Videojuego de realidad virtual", "Juego de mesa medieval", "Simulador espacial sin combate", "Juego de carreras arcade"], 0),
+    q("¿Cuál es el nombre de la jugadora conocida como Arthur Pencilgon?", ["Towa Amane", "Rei Saiga", "Ritsu Amachi", "Mio Kuno"], 0),
+    q("¿Qué apodo tiene Kei Uomi en el juego?", ["Oikatzo", "Sunraku", "Animalia", "Wezaemon"], 0),
+    q("¿Qué destaca del estilo de juego de Sunraku?", ["Su habilidad y adaptación", "Solo usa magia curativa", "Evita todas las batallas", "Juega únicamente con armas de fuego"], 0),
+    q("¿Qué clase de juego es Shangri-La Frontier dentro de la historia?", ["VRMMO", "Juego de cartas físico", "Juego de lucha 2D", "Aplicación de puzles"], 0),
+    q("¿Qué parte del avatar de Sunraku llama mucho la atención?", ["Su cabeza de pájaro", "Una máscara de zorro", "Un casco de calavera", "Un sombrero de copa"], 0),
+    q("¿Qué busca Sunraku al afrontar desafíos difíciles?", ["Superar retos y disfrutar el juego", "Vender el servidor", "Borrar todos los personajes", "Convertirse en administrador"], 0),
+    q("¿Quién es Psyger-0 en la vida real?", ["Rei Saiga", "Towa Amane", "Emul", "Bilac"], 0),
+    q("¿Qué estilo de juegos ha curtido a Sunraku?", ["Juegos conocidos por ser malos", "Solo juegos educativos", "Solo novelas visuales", "Solo juegos deportivos"], 0),
+    q("¿Cómo se comunica la aventura principalmente?", ["Mediante un mundo virtual inmersivo", "Por sueños proféticos", "En una escuela de magia", "En un torneo de cocina"], 0),
+    q("¿Cuál es una habilidad clave para progresar en el juego?", ["Aprender patrones de enemigos", "Ignorar las misiones", "Usar siempre el mismo ataque", "Evitar mejorar el equipo"], 0),
   ],
   "Edens Zero": [
-    q("¿Cómo se llama el protagonista de Edens Zero?", ["Shiki Granbell", "Natsu Dragneel", "Haruto", "Soma Yukihira"], 0),
-    q("¿Qué poder utiliza Shiki?", ["Gravedad", "Hielo", "Arena", "Sonido"], 0)
+    q("¿Quién es el protagonista de Edens Zero?", ["Shiki Granbell", "Weisz Steiner", "Jinn", "Drakken Joe"], 0),
+    q("¿Qué poder usa Shiki?", ["Control de la gravedad", "Control del tiempo", "Control del hielo", "Telepatía absoluta"], 0),
+    q("¿Qué trabajo realiza Rebecca en línea?", ["B-Cuber", "Cazadora de tesoros", "Médica espacial", "Capitana de la marina"], 0),
+    q("¿Cómo se llama el compañero azul de Rebecca?", ["Happy", "Pino", "Mosco", "Jinn"], 0),
+    q("¿Qué busca la tripulación al viajar por el cosmos?", ["Encontrar a Mother", "Destruir Blue Garden", "Crear un nuevo gremio", "Encontrar siete esferas"], 0),
+    q("¿Qué Ether Gear usa Weisz?", ["Machina Maker", "Satan Gravity", "Cat Leaper", "Overdrive Blade"], 0),
+    q("¿Quién es Homura Kōgetsu?", ["Una espadachina", "Una B-Cuber rival", "Una androide médica", "La gobernadora de Norma"], 0),
+    q("¿Qué es Pino?", ["Una androide", "Un dragón", "Una maga elfa", "Una nave viviente"], 0),
+    q("¿Quién fue el mentor robótico de Shiki?", ["Ziggy", "Drakken Joe", "Justice", "Weisz"], 0),
+    q("¿Cómo se llama la nave de la tripulación principal?", ["Edens Zero", "Edens One", "Blue Garden", "Granbell Star"], 0),
+    q("¿En qué planeta creció Shiki?", ["Granbell", "Norma", "Blue Garden", "Sakura"], 0),
+    q("¿Qué le cuesta especialmente a Shiki?", ["Tratar con insectos", "Hablar con amigos", "Comer dulces", "Usar su gravedad"], 0),
+    q("¿Qué personaje está asociado con el Ether Gear Cat Leaper?", ["Rebecca Bluegarden", "Homura Kōgetsu", "Sister Ivry", "Hermit Mio"], 0),
+    q("¿Quién es una de las Cuatro Estrellas Brillantes del Rey Demonio?", ["Witch Regret", "Elsie Crimson", "Labilia Christy", "Madame Kurenai"], 0),
+    q("¿Qué tipo de escenario predomina en Edens Zero?", ["Aventura espacial de ciencia ficción", "Fútbol escolar", "Competición culinaria", "Misterio en una isla real"], 0),
   ],
   "Jujutsu Kaisen": [
-    q("¿Cómo se llama el protagonista de Jujutsu Kaisen?", ["Yuji Itadori", "Megumi Fushiguro", "Satoru Gojo", "Yuta Okkotsu"], 0),
-    q("¿Qué espíritu maldito vive dentro de Yuji?", ["Ryomen Sukuna", "Mahito", "Jogo", "Hanami"], 0),
-    q("¿Qué técnica destaca en Satoru Gojo?", ["Ilimitado", "Respiración del Agua", "Alquimia", "Rasengan"], 0)
-  ],
-  "Pokémon": [
-    q("¿Cuál es el Pokémon compañero más conocido de Ash?", ["Pikachu", "Charmander", "Eevee", "Psyduck"], 0),
-    q("¿De qué tipo es Pikachu?", ["Eléctrico", "Agua", "Planta", "Roca"], 0),
-    q("¿Qué objeto se usa habitualmente para capturar Pokémon?", ["Poké Ball", "Digivice", "Cápsula Hoi-Poi", "Esfera del Dragón"], 0)
-  ],
-  "Dragon Ball Z": [
-    q("¿Cómo se llama el protagonista saiyajin de Dragon Ball Z?", ["Son Goku", "Vegeta", "Piccolo", "Gohan"], 0),
-    q("¿Qué transformación legendaria logra Goku por primera vez contra Freezer?", ["Super Saiyajin", "Kaioken azul", "Ultra Instinto", "Ozaru dorado"], 0),
-    q("¿Cuántas Esferas del Dragón terrestres se reúnen normalmente?", ["7", "5", "9", "12"], 0)
-  ],
-  "Food Wars! (Shokugeki no Soma)": [
-    q("¿Cuál es el nombre del protagonista de Food Wars!?", ["Soma Yukihira", "Shiki Granbell", "Asta", "Tanjiro Kamado"], 0),
-    q("¿Qué habilidad define principalmente a Soma?", ["Cocinar y competir en duelos culinarios", "Cazar titanes", "Dominar el chakra", "Capturar Pokémon"], 0)
-  ],
-  "KonoSuba": [
-    q("¿Cómo se llama el protagonista de KonoSuba?", ["Kazuma Satou", "Subaru Natsuki", "Kirito", "Bell Cranel"], 0),
-    q("¿Qué diosa acompaña a Kazuma al inicio de la historia?", ["Aqua", "Megumin", "Darkness", "Eris"], 0),
-    q("¿Qué hechizo explosivo es famoso por Megumin?", ["Explosion", "Fireball infinito", "Meteor Rain", "Thunder Break"], 0)
-  ],
-  "Naruto": [
-    q("¿Cuál es el sueño de Naruto Uzumaki?", ["Convertirse en Hokage", "Ser el Kazekage", "Encontrar el One Piece", "Ser capitán shinigami"], 0),
-    q("¿Qué bestia está sellada dentro de Naruto al comienzo?", ["Kurama", "Shukaku", "Gyuki", "Matatabi"], 0),
-    q("¿Cómo se llama la técnica de esfera giratoria creada por Minato y enseñada a Naruto?", ["Rasengan", "Chidori", "Amaterasu", "Susanoo"], 0)
-  ],
-  "Black Clover": [
-    q("¿Qué característica tiene Asta al comienzo de Black Clover?", ["No tiene magia", "Es el mago más poderoso", "No puede usar espadas", "Es un elfo"], 0),
-    q("¿Cuál es el objetivo de Asta?", ["Convertirse en Rey Mago", "Ser Hokage", "Encontrar las Esferas del Dragón", "Ser el mejor chef"], 0)
-  ],
-  "Plunderer": [
-    q("¿Qué número determina la vida de una persona en Plunderer?", ["Su conteo", "Su rango ninja", "Su nivel de magia", "Su recompensa pirata"], 0),
-    q("¿Cómo se llama la protagonista que busca a un legendario as?", ["Hina", "Aqua", "Sakura", "Mikasa"], 0)
-  ],
-  "Tokyo Revengers": [
-    q("¿Quién es el protagonista de Tokyo Revengers?", ["Takemichi Hanagaki", "Manjiro Sano", "Ken Ryuguji", "Keisuke Baji"], 0),
-    q("¿Qué capacidad cambia el curso de la historia de Takemichi?", ["Viajar al pasado", "Controlar el fuego", "Leer pensamientos", "Detener el tiempo a voluntad"], 0)
+    q("¿Quién se convierte en recipiente de Sukuna?", ["Yuji Itadori", "Megumi Fushiguro", "Yuta Okkotsu", "Kento Nanami"], 0),
+    q("¿Cómo se llama el maestro de cabello blanco que usa una venda?", ["Satoru Gojo", "Suguru Geto", "Masamichi Yaga", "Atsuya Kusakabe"], 0),
+    q("¿Qué técnica está asociada a Megumi?", ["Técnica de las Diez Sombras", "Boogie Woogie", "Cursed Speech", "Ratio Technique"], 0),
+    q("¿Quién utiliza la técnica de habla maldita?", ["Toge Inumaki", "Panda", "Maki Zenin", "Kokichi Muta"], 0),
+    q("¿Qué objeto ingiere Yuji al comienzo?", ["Un dedo de Sukuna", "Un ojo maldito", "Un talismán de Gojo", "Una semilla de maldición"], 0),
+    q("¿Qué escuela frecuenta Yuji?", ["Colegio Técnico de Magia Metropolitana de Tokio", "Academia U.A.", "Instituto Karasuno", "Escuela de Konoha"], 0),
+    q("¿Quién es la compañera que lucha con martillo y clavos?", ["Nobara Kugisaki", "Mai Zenin", "Kasumi Miwa", "Shoko Ieiri"], 0),
+    q("¿Qué es Panda en realidad?", ["Un cadáver maldito mutante", "Un animal común", "Un espíritu de grado especial", "Un robot de combate"], 0),
+    q("¿Qué técnica usa Aoi Todo para intercambiar posiciones?", ["Boogie Woogie", "Limitless", "Idle Transfiguration", "Ten Shadows"], 0),
+    q("¿Qué profesión tiene Kento Nanami antes de volver al mundo de hechiceros?", ["Empleado de oficina", "Policía militar", "Chef", "Profesor de primaria"], 0),
+    q("¿Qué tipo de seres combate la escuela?", ["Maldiciones", "Titanes", "Hollows", "Demonios de las Doce Lunas"], 0),
+    q("¿Quién es el mejor amigo de Gojo en su juventud?", ["Suguru Geto", "Toji Fushiguro", "Kento Nanami", "Yoshinobu Gakuganji"], 0),
+    q("¿Qué arma suele usar Maki Zenin?", ["Herramientas malditas", "Libro de hechizos", "Pistola de agua", "Lira encantada"], 0),
+    q("¿Qué categoría describe a Sukuna?", ["Rey de las Maldiciones", "Rey de los Piratas", "Rey Mago", "Cazador de Rangos"], 0),
+    q("¿Qué expansión de dominio se asocia con Gojo?", ["Vacío Infinito", "Santuario Malevolente", "Jardín de Sombras Quiméricas", "Cámara del Tiempo"], 0),
   ],
   "Fullmetal Alchemist: Brotherhood": [
-    q("¿Cómo se llaman los hermanos protagonistas?", ["Edward y Alphonse Elric", "Roy y Riza Mustang", "Ling y Lan Fan", "Scar y Marcoh"], 0),
-    q("¿Qué ley fundamental rige la alquimia en la serie?", ["Intercambio equivalente", "Energía infinita", "Destino inmutable", "Poder de la amistad"], 0),
-    q("¿Qué busca Edward para recuperar sus cuerpos?", ["La Piedra Filosofal", "Las Esferas del Dragón", "El Santo Grial", "La espada Excalibur"], 0)
+    q("¿Cómo se llaman los dos hermanos protagonistas?", ["Edward y Alphonse Elric", "Roy y Riza Mustang", "Ling y Lan Fan", "Scar y Yoki"], 0),
+    q("¿Qué intentan hacer los hermanos al romper el tabú de la alquimia?", ["Resucitar a su madre", "Crear una Piedra Filosofal para venderla", "Derrotar a Father desde el inicio", "Convertirse en homúnculos"], 0),
+    q("¿Qué parte del cuerpo pierde Edward durante la transmutación humana?", ["Una pierna", "Ambos ojos", "La cabeza", "El corazón"], 0),
+    q("¿Qué pierde Alphonse en el intento de transmutación?", ["Todo su cuerpo físico", "Solo un brazo", "La memoria completa", "Su capacidad de hablar"], 0),
+    q("¿Qué rango militar tiene Roy Mustang?", ["Coronel", "Generalísimo desde el comienzo", "Teniente segundo", "Sargento"], 0),
+    q("¿Qué apodo recibe Edward por su estatura y condición?", ["Alquimista de Acero", "Alquimista Carmesí", "Alquimista de Cristal", "Alquimista de Hielo"], 0),
+    q("¿Qué ley fundamental rige la alquimia?", ["Intercambio equivalente", "La ley del más fuerte", "La ley de los siete pecados", "La regla de las tres lunas"], 0),
+    q("¿Qué objeto buscan los hermanos para recuperar sus cuerpos?", ["La Piedra Filosofal", "La Death Note", "El One Piece", "El grimorio de cinco hojas"], 0),
+    q("¿Qué homúnculo se identifica con el orgullo?", ["Pride", "Envy", "Gluttony", "Greed"], 0),
+    q("¿Quién es la experta en armas de fuego y subordinada de Mustang?", ["Riza Hawkeye", "Winry Rockbell", "Olivier Armstrong", "Izumi Curtis"], 0),
+    q("¿Qué profesión tiene Winry Rockbell?", ["Mecánica de automail", "Alquimista estatal", "Militar de inteligencia", "Médica de Ishval"], 0),
+    q("¿Cómo se llama el padre de Edward y Alphonse?", ["Van Hohenheim", "King Bradley", "Tim Marcoh", "Shou Tucker"], 0),
+    q("¿Qué país ficticio sirve como escenario principal?", ["Amestris", "Alcia", "Fiore", "Liones"], 0),
+    q("¿Quién es el homúnculo que gobierna Amestris como Führer?", ["King Bradley", "Roy Mustang", "Maes Hughes", "Alex Armstrong"], 0),
+    q("¿Qué puede hacer un alquimista estatal?", ["Trabajar para el ejército con licencia estatal", "Gobernar todos los países", "Usar alquimia sin reglas", "Resucitar muertos sin consecuencias"], 0),
+  ],
+  "Naruto": [
+    q("¿Cuál es el sueño de Naruto Uzumaki?", ["Ser Hokage", "Ser Kazekage", "Ser samurái", "Ser el líder de Akatsuki"], 0),
+    q("¿Qué bestia está sellada dentro de Naruto al comienzo?", ["Kurama, el Zorro de Nueve Colas", "Shukaku", "Gyūki", "Matatabi"], 0),
+    q("¿Quién es el maestro del Equipo 7?", ["Kakashi Hatake", "Asuma Sarutobi", "Might Guy", "Iruka Umino"], 0),
+    q("¿Cómo se llama el compañero de equipo de Naruto que pertenece al clan Uchiha?", ["Sasuke Uchiha", "Shikamaru Nara", "Neji Hyuga", "Kiba Inuzuka"], 0),
+    q("¿Qué técnica crea múltiples copias físicas del usuario?", ["Kage Bunshin no Jutsu", "Chidori", "Amaterasu", "Byakugan"], 0),
+    q("¿Quién es la compañera médica del Equipo 7?", ["Sakura Haruno", "Hinata Hyuga", "Ino Yamanaka", "Temari"], 0),
+    q("¿Qué clan es famoso por el Sharingan?", ["Uchiha", "Nara", "Akimichi", "Aburame"], 0),
+    q("¿Qué aldea es el hogar de Naruto?", ["Konohagakure", "Sunagakure", "Kirigakure", "Iwagakure"], 0),
+    q("¿Quién es el maestro ermitaño que entrena a Naruto durante el viaje?", ["Jiraiya", "Orochimaru", "Hiruzen", "Danzo"], 0),
+    q("¿Qué técnica giratoria aprende Naruto de Jiraiya?", ["Rasengan", "Chidori", "Rasenshuriken primero", "Reaper Death Seal"], 0),
+    q("¿Quién es el hermano mayor de Sasuke?", ["Itachi Uchiha", "Shisui Uchiha", "Madara Uchiha", "Obito Uchiha"], 0),
+    q("¿Qué organización lleva capas negras con nubes rojas?", ["Akatsuki", "Anbu", "Los Siete Espadachines", "Raíz"], 0),
+    q("¿Quién es el quinto Hokage?", ["Tsunade", "Kakashi", "Minato", "Tobirama"], 0),
+    q("¿Qué invocación suele acompañar a Naruto?", ["Sapos", "Serpientes", "Babosas", "Cuervos"], 0),
+    q("¿Quién es el padre de Naruto?", ["Minato Namikaze", "Hiruzen Sarutobi", "Jiraiya", "Fugaku Uchiha"], 0),
   ],
   "One Piece": [
-    q("¿Cuál es el sueño de Monkey D. Luffy?", ["Convertirse en Rey de los Piratas", "Ser Hokage", "Ser almirante de la Marina", "Encontrar la Piedra Filosofal"], 0),
-    q("¿Cómo se llama el espadachín de los Sombrero de Paja?", ["Roronoa Zoro", "Sanji", "Usopp", "Franky"], 0),
-    q("¿Qué fruta comió Luffy al inicio de la historia?", ["Fruta Gum-Gum", "Fruta Mera-Mera", "Fruta Hielo-Hielo", "Fruta Oscuridad"], 0)
+    q("¿Cuál es el sueño de Monkey D. Luffy?", ["Convertirse en Rey de los Piratas", "Ser Hokage", "Ser Rey Mago", "Encontrar la Piedra Filosofal"], 0),
+    q("¿Qué sombrero identifica a Luffy?", ["Un sombrero de paja", "Un sombrero de copa", "Un casco de hierro", "Una bandana azul"], 0),
+    q("¿Quién es el espadachín de los Sombrero de Paja?", ["Roronoa Zoro", "Sanji", "Usopp", "Franky"], 0),
+    q("¿Qué oficio tiene Nami en la tripulación?", ["Navegante", "Médica", "Carpintera", "Arqueóloga"], 0),
+    q("¿Quién es el cocinero de la tripulación?", ["Sanji", "Brook", "Jinbe", "Chopper"], 0),
+    q("¿Qué fruta se asocia con los poderes elásticos de Luffy?", ["Gomu Gomu no Mi (nombre conocido inicialmente)", "Mera Mera no Mi", "Hito Hito no Mi modelo Daibutsu", "Yami Yami no Mi"], 0),
+    q("¿Cómo se llama el barco que sucede al Going Merry?", ["Thousand Sunny", "Red Force", "Polar Tang", "Moby Dick"], 0),
+    q("¿Quién es el médico reno de la tripulación?", ["Tony Tony Chopper", "Brook", "Usopp", "Franky"], 0),
+    q("¿Qué quiere encontrar Luffy al final de la Grand Line?", ["El One Piece", "Las siete esferas", "El Santo Grial", "El grimorio definitivo"], 0),
+    q("¿Qué instrumento toca Brook?", ["Violín", "Trompeta", "Piano exclusivamente", "Flauta de pan"], 0),
+    q("¿Quién es la arqueóloga de los Sombrero de Paja?", ["Nico Robin", "Nami", "Vivi", "Rebecca"], 0),
+    q("¿Qué miembro es un cyborg carpintero?", ["Franky", "Usopp", "Jinbe", "Zoro"], 0),
+    q("¿Cómo se llama el poder de voluntad que pueden usar luchadores avanzados?", ["Haki", "Nen", "Chakra", "Ether Gear"], 0),
+    q("¿Quién es el francotirador de la tripulación?", ["Usopp", "Sanji", "Brook", "Jinbe"], 0),
+    q("¿Qué organización naval persigue piratas?", ["La Marina", "Akatsuki", "Cuerpo de Exploración", "Gremio de Aventureros"], 0),
+  ],
+  "Dragon Ball Z": [
+    q("¿Cuál es el nombre saiyajin de Goku?", ["Kakarotto", "Vegeta", "Bardock", "Raditz"], 0),
+    q("¿Quién es el príncipe de los saiyajin?", ["Vegeta", "Nappa", "Broly", "Gohan"], 0),
+    q("¿Qué técnica es característica de Goku?", ["Kamehameha", "Final Flash", "Makankōsappō", "Destructo Disc"], 0),
+    q("¿Cómo se llama el dragón que aparece al reunir las esferas de la Tierra?", ["Shenlong", "Porunga", "Beerus", "Zeno"], 0),
+    q("¿Quién es el hijo mayor de Goku?", ["Gohan", "Goten", "Trunks", "Pan"], 0),
+    q("¿Quién entrena a Goku cuando es niño?", ["Maestro Roshi", "Mr. Satan", "Kaiō del Norte", "Karin solamente"], 0),
+    q("¿Qué raza es Piccolo?", ["Namekiano", "Saiyajin", "Androide", "Kaioshin"], 0),
+    q("¿Quién es el hermano de Goku?", ["Raditz", "Nappa", "Turles", "Bardock"], 0),
+    q("¿Qué transformación tiene el cabello dorado y aura brillante?", ["Super Saiyajin", "Kaiō-ken", "Ultra Instinto", "Forma base Namekiana"], 0),
+    q("¿Quién es el dios de la destrucción del Universo 7?", ["Beerus", "Whis", "Shenlong", "Jiren"], 0),
+    q("¿Qué fusión resulta de Goku y Vegeta mediante la danza metamoru?", ["Gogeta", "Gotenks", "Kibito Kai", "Vegito"], 0),
+    q("¿Cómo se llama el hijo menor de Goku?", ["Goten", "Gohan", "Trunks", "Bulla"], 0),
+    q("¿Quién acompaña a Bulma al comienzo de Dragon Ball?", ["Goku", "Krillin", "Yamcha", "Tien"], 0),
+    q("¿Qué objeto busca Bulma al inicio de la historia?", ["Esferas del Dragón", "Las siete llaves sagradas", "Un cuaderno de muerte", "Las piedras filosofales"], 0),
+    q("¿Qué técnica permite a Goku desplazarse instantáneamente?", ["Teletransportación", "Final Explosion", "Solar Flare", "Body Change"], 0),
   ],
   "Demon Slayer: Kimetsu no Yaiba": [
     q("¿Cómo se llama el protagonista de Demon Slayer?", ["Tanjiro Kamado", "Zenitsu Agatsuma", "Inosuke Hashibira", "Giyu Tomioka"], 0),
-    q("¿En qué se convierte Nezuko al inicio de la historia?", ["Demonio", "Cazadora de demonios", "Hashira", "Cuervo mensajero"], 0),
-    q("¿Qué estilo de respiración aprende Tanjiro al principio?", ["Respiración del Agua", "Respiración de la Serpiente", "Respiración de la Bestia", "Respiración de la Niebla"], 0)
+    q("¿En qué se convierte Nezuko al comienzo?", ["Demonio", "Hashira", "Cuervo mensajero", "Cazadora de rango Kinoe"], 0),
+    q("¿Qué estilo de respiración usa Tanjiro al principio?", ["Respiración del Agua", "Respiración de la Bestia", "Respiración del Amor", "Respiración de la Serpiente"], 0),
+    q("¿Qué personaje lleva una cabeza de jabalí?", ["Inosuke Hashibira", "Zenitsu", "Genya", "Muichiro"], 0),
+    q("¿Qué teme mucho Zenitsu?", ["Los demonios y el peligro", "El agua", "Los gatos", "La comida dulce"], 0),
+    q("¿Quién es el Hashira del Agua?", ["Giyu Tomioka", "Kyojuro Rengoku", "Tengen Uzui", "Mitsuri Kanroji"], 0),
+    q("¿Qué organización combate a los demonios?", ["Cuerpo de Exterminio de Demonios", "Cuerpo de Exploración", "Marina", "Toros Negros"], 0),
+    q("¿Quién es el principal antagonista demoníaco?", ["Muzan Kibutsuji", "Akaza", "Kokushibo", "Doma"], 0),
+    q("¿Qué arma usan principalmente los cazadores?", ["Espadas Nichirin", "Espadas de luz Jedi", "Arcos de chakra", "Hachas de piedra filosofal"], 0),
+    q("¿Qué Hashira destaca por la respiración de la llama?", ["Kyojuro Rengoku", "Shinobu Kocho", "Obanai Iguro", "Gyomei Himejima"], 0),
+    q("¿Qué lleva Nezuko en la boca durante buena parte de la historia?", ["Un bozal de bambú", "Una máscara de zorro", "Una bufanda roja", "Un amuleto de plata"], 0),
+    q("¿Qué familia es la de Tanjiro?", ["Kamado", "Rengoku", "Kocho", "Uzui"], 0),
+    q("¿Quién es la Hashira de los Insectos?", ["Shinobu Kocho", "Mitsuri Kanroji", "Kanae Tsuyuri", "Kanao Tsuyuri"], 0),
+    q("¿Qué marca puede aparecer en algunos cazadores poderosos?", ["Marca del cazador de demonios", "Marca del Rey Mago", "Sello de los titanes", "Estrella de alquimista"], 0),
+    q("¿Qué habilidad ayuda a Tanjiro a seguir rastros?", ["Su olfato excepcional", "Visión de rayos X", "Control del tiempo", "Telepatía"], 0),
   ],
   "Death Note": [
-    q("¿Quién encuentra el cuaderno Death Note al comienzo?", ["Light Yagami", "L Lawliet", "Near", "Mello"], 0),
-    q("¿Cómo se llama el shinigami asociado a Light?", ["Ryuk", "Rem", "Sidoh", "Gelus"], 0)
+    q("¿Quién encuentra el cuaderno sobrenatural?", ["Light Yagami", "L Lawliet", "Misa Amane", "Near"], 0),
+    q("¿Qué ocurre si se escribe un nombre en la Death Note siguiendo sus reglas?", ["La persona puede morir", "La persona se vuelve invisible", "La persona pierde sus recuerdos", "La persona obtiene poderes"], 0),
+    q("¿Cómo se conoce al detective que investiga a Kira?", ["L", "Mello", "Matsuda", "Soichiro"], 0),
+    q("¿Qué es Ryuk?", ["Un shinigami", "Un detective humano", "Un agente del FBI", "Un dios dragón"], 0),
+    q("¿Qué apodo reciben los asesinatos investigados?", ["Caso Kira", "Caso Akatsuki", "Caso del Titán", "Caso de Amestris"], 0),
+    q("¿Qué necesita saber el usuario para que la Death Note funcione con una persona?", ["Su nombre y rostro", "Solo su dirección", "Su grupo sanguíneo", "Su número de teléfono únicamente"], 0),
+    q("¿Quién es Misa Amane?", ["Una idol que posee una Death Note", "La hermana de Light", "La jefa de policía", "Una shinigami original"], 0),
+    q("¿Qué ojos ofrece el trato de los shinigami?", ["Ojos de shinigami", "Ojos Sharingan", "Ojos de titán", "Ojos de alquimista"], 0),
+    q("¿Qué organización dirige Soichiro Yagami?", ["El equipo de investigación policial", "La Marina", "Los Toros Negros", "El Cuerpo de Exploración"], 0),
+    q("¿Qué sucesor de L tiene una afición por los juguetes y los dulces?", ["Near", "Mello", "Matsuda", "Rem"], 0),
+    q("¿Qué objeto usa Rem para proteger a Misa?", ["Una Death Note", "Una espada Nichirin", "Un grimorio", "Una esfera del dragón"], 0),
+    q("¿Qué nombre real corresponde a L?", ["L Lawliet", "Light Yagami", "Teru Mikami", "Touta Matsuda"], 0),
+    q("¿Quién se convierte en un seguidor fanático de Kira?", ["Teru Mikami", "Aizawa", "Watari", "Raye Penber"], 0),
+    q("¿Qué regla permite al dueño extender la vida al matar a alguien?", ["No existe una regla que garantice inmortalidad", "Escribir el nombre propio", "Quemar el cuaderno", "Cambiar la portada"], 0),
+    q("¿Qué género define mejor Death Note?", ["Thriller psicológico y sobrenatural", "Deportes escolares", "Comedia culinaria", "Aventura pirata"], 0),
   ],
   "My Hero Academia": [
-    q("¿Cómo se llama el héroe que hereda One For All de All Might?", ["Izuku Midoriya", "Katsuki Bakugo", "Shoto Todoroki", "Tenya Iida"], 0),
-    q("¿Cuál es el nombre de héroe de All Might?", ["All Might", "Endeavor", "Eraser Head", "Hawks"], 0)
+    q("¿Cuál es el nombre real de Deku?", ["Izuku Midoriya", "Katsuki Bakugo", "Shoto Todoroki", "Tenya Iida"], 0),
+    q("¿Qué héroe le transmite One For All a Izuku?", ["All Might", "Endeavor", "Hawks", "Best Jeanist"], 0),
+    q("¿Cómo se llama la academia de héroes?", ["U.A.", "Totsuki", "Eden", "Técnica de Tokio"], 0),
+    q("¿Qué don usa Katsuki Bakugo?", ["Explosión", "Hielo y fuego", "Cinta adhesiva", "Gravedad cero"], 0),
+    q("¿Qué don tiene Ochaco Uraraka?", ["Gravedad Cero", "Copia", "Endurecimiento", "Motor"], 0),
+    q("¿Quién es el padre de Shoto Todoroki en el mundo de héroes?", ["Endeavor", "All Might", "Present Mic", "Hawks"], 0),
+    q("¿Qué hace el don de Shoto?", ["Usa hielo y fuego", "Se vuelve invisible", "Controla plantas", "Crea portales"], 0),
+    q("¿Quién es el profesor de la clase 1-A que usa una bufanda?", ["Shota Aizawa", "Hizashi Yamada", "Nezu", "Sir Nighteye"], 0),
+    q("¿Qué significa ser héroe profesional en la serie?", ["Usar dones para proteger a la sociedad", "Ser el líder de una pandilla", "Cazar piratas", "Investigar maldiciones"], 0),
+    q("¿Qué organización reúne a villanos bajo Shigaraki?", ["Liga de Villanos", "Akatsuki", "Brigada Fantasma", "Homúnculos"], 0),
+    q("¿Cuál es el nombre de héroe de Mirio Togata?", ["Lemillion", "Deku", "Dynamight", "Red Riot"], 0),
+    q("¿Qué don tiene Tsuyu Asui?", ["Rana", "Fuego infernal", "Cinta", "Duplicación"], 0),
+    q("¿Qué personaje puede endurecer su cuerpo?", ["Eijiro Kirishima", "Denki Kaminari", "Minoru Mineta", "Fumikage Tokoyami"], 0),
+    q("¿Qué don tiene Denki Kaminari?", ["Electricidad", "Agua", "Gravedad", "Control de arena"], 0),
+    q("¿Qué idea central explora My Hero Academia?", ["Ser héroe en una sociedad de dones", "La búsqueda de un tesoro pirata", "El precio de la alquimia", "La vida de cazadores en mazmorras"], 0),
   ],
   "Hunter x Hunter": [
-    q("¿Qué busca Gon Freecss durante su aventura?", ["Encontrar a su padre, Ging", "Ser Hokage", "Derrotar a todos los titanes", "Encontrar el Death Note"], 0),
-    q("¿Cómo se llama el amigo de Gon de cabello blanco?", ["Killua Zoldyck", "Kurapika", "Leorio", "Hisoka"], 0)
+    q("¿Qué busca Gon Freecss al salir de casa?", ["Encontrar a su padre, Ging", "Ser Hokage", "Encontrar a su hermano mayor", "Convertirse en Rey Pirata"], 0),
+    q("¿Cómo se llama el amigo de cabello blanco de Gon?", ["Killua Zoldyck", "Kurapika", "Leorio", "Hisoka"], 0),
+    q("¿Qué arma usa Kurapika para luchar contra la Brigada Fantasma?", ["Cadenas", "Una katana de fuego", "Un arco eléctrico", "Un martillo"], 0),
+    q("¿Cuál es la profesión que da nombre a la serie?", ["Cazador", "Alquimista estatal", "Caballero mágico", "Exterminador de titanes"], 0),
+    q("¿De qué familia proviene Killua?", ["Zoldyck", "Freecss", "Nostrade", "Lucilfer"], 0),
+    q("¿Qué examen deben superar los protagonistas al comienzo?", ["Examen de Cazador", "Examen chunin", "Examen de alquimista", "Examen de caballero mágico"], 0),
+    q("¿Quién sueña con ser médico?", ["Leorio Paradinight", "Hisoka", "Illumi", "Feitan"], 0),
+    q("¿Qué energía permite desarrollar habilidades especiales?", ["Nen", "Chakra", "Haki", "Ether Gear"], 0),
+    q("¿Quién es el líder de la Brigada Fantasma?", ["Chrollo Lucilfer", "Hisoka", "Feitan", "Uvogin"], 0),
+    q("¿Qué tipo de arma utiliza Hisoka como parte de su Nen?", ["Bungee Gum", "Death Note", "Rasengan", "Antimagia"], 0),
+    q("¿Qué especie gobierna la amenaza de las hormigas quimera?", ["Hormigas quimera", "Titanes cambiantes", "Hollows", "Demonios carmesí"], 0),
+    q("¿Qué juego peligroso es importante en un arco de la historia?", ["Greed Island", "Shangri-La Frontier", "World Trigger", "Grand Line"], 0),
+    q("¿Qué color de cabello tiene Killua habitualmente?", ["Blanco plateado", "Verde", "Rojo", "Negro azulado"], 0),
+    q("¿Cuál es el objetivo de Kurapika?", ["Vengar a su clan y recuperar sus ojos escarlata", "Encontrar a Mother", "Ser el mejor chef", "Resucitar a su madre"], 0),
+    q("¿Qué rasgo caracteriza a Gon en combate?", ["Su determinación y talento natural", "Su capacidad para usar alquimia", "Su control de titanes", "Su poder de leer mentes"], 0),
   ],
   "Bleach": [
-    q("¿Cómo se llama el protagonista de Bleach?", ["Ichigo Kurosaki", "Uryu Ishida", "Renji Abarai", "Byakuya Kuchiki"], 0),
-    q("¿Qué tipo de ser es Rukia Kuchiki?", ["Shinigami", "Titán", "Saiyajin", "Alquimista estatal"], 0)
-  ],
-  "Spy x Family": [
-    q("¿Cuál es el nombre en clave del espía protagonista?", ["Twilight", "Nightfall", "Thorn Princess", "Agent Zero"], 0),
-    q("¿Qué habilidad secreta tiene Anya?", ["Leer pensamientos", "Ver el futuro", "Volverse invisible", "Controlar el fuego"], 0)
-  ],
-  "Haikyuu!!": [
-    q("¿Qué deporte practican los protagonistas de Haikyuu!!?", ["Voleibol", "Baloncesto", "Fútbol", "Béisbol"], 0),
-    q("¿Cómo se llama el pequeño protagonista de cabello naranja?", ["Shoyo Hinata", "Tobio Kageyama", "Kei Tsukishima", "Yu Nishinoya"], 0)
-  ],
-  "Sword Art Online": [
-    q("¿Cuál es el nombre real de Kirito?", ["Kazuto Kirigaya", "Kirito Nakamura", "Akihiko Kayaba", "Klein Kirigaya"], 0),
-    q("¿En qué tipo de mundo quedan atrapados al inicio?", ["Un MMORPG de realidad virtual", "Una isla desierta", "Una escuela de magia", "Una ciudad de titanes"], 0)
-  ],
-  "Frieren": [
-    q("¿Qué tipo de ser es Frieren?", ["Elfa maga", "Humana guerrera", "Demonio rey", "Dragón"], 0),
-    q("¿Qué tema central explora la historia de Frieren?", ["El paso del tiempo y los recuerdos", "Carreras de autos", "Un torneo de cocina", "Viajes espaciales"], 0)
-  ],
-  "Sailor Moon": [
-    q("¿Cuál es la identidad civil de Sailor Moon?", ["Usagi Tsukino", "Rei Hino", "Ami Mizuno", "Makoto Kino"], 0),
-    q("¿Qué tipo de heroína es Sailor Moon?", ["Guerrera mágica", "Pirata", "Ninja", "Alquimista"], 0)
-  ],
-  "Cardcaptor Sakura": [
-    q("¿Cómo se llama la protagonista de Cardcaptor Sakura?", ["Sakura Kinomoto", "Sakura Haruno", "Madoka Kaname", "Usagi Tsukino"], 0),
-    q("¿Qué cartas intenta reunir Sakura?", ["Cartas Clow", "Cartas Pokémon", "Cartas de tarot del Death Note", "Cartas de duelo culinario"], 0)
-  ],
-  "Chainsaw Man": [
-    q("¿Cómo se llama el protagonista de Chainsaw Man?", ["Denji", "Aki Hayakawa", "Kishibe", "Beam"], 0),
-    q("¿Qué demonio se fusiona con Denji?", ["Pochita", "Power", "Makima", "Angel"], 0)
+    q("¿Quién es el protagonista de Bleach?", ["Ichigo Kurosaki", "Uryu Ishida", "Renji Abarai", "Byakuya Kuchiki"], 0),
+    q("¿Qué obtiene Ichigo de Rukia al comienzo?", ["Poderes de shinigami", "Un grimorio", "Una Death Note", "Un Ether Gear"], 0),
+    q("¿Qué son los shinigami en Bleach?", ["Segadores de almas", "Cazadores de demonios", "Piratas", "Caballeros mágicos"], 0),
+    q("¿Cómo se llama la espada de un shinigami?", ["Zanpakutō", "Nichirin", "Excalibur", "Courechouse"], 0),
+    q("¿Quién es la amiga pelirroja de Ichigo que puede curar?", ["Orihime Inoue", "Rukia Kuchiki", "Yoruichi Shihōin", "Soi Fon"], 0),
+    q("¿Qué organización habita la Sociedad de Almas?", ["Gotei 13", "Akatsuki", "Marina", "Toros Negros"], 0),
+    q("¿Quién es el amigo de Ichigo que utiliza arco espiritual?", ["Uryu Ishida", "Yasutora Sado", "Renji Abarai", "Kisuke Urahara"], 0),
+    q("¿Qué son los Hollows?", ["Almas corrompidas", "Demonios de la Luna Superior", "Titanes", "Pokémon legendarios"], 0),
+    q("¿Qué título tiene Byakuya Kuchiki?", ["Capitán de la sexta división", "Capitán de la primera división al inicio", "Rey de los Piratas", "Rey Mago"], 0),
+    q("¿Quién suele ayudar a Ichigo desde una tienda misteriosa?", ["Kisuke Urahara", "Jiraiya", "Joichiro Yukihira", "Ging Freecss"], 0),
+    q("¿Cómo se llama la forma liberada inicial de una Zanpakutō?", ["Shikai", "Bankai", "Nen", "Overdrive"], 0),
+    q("¿Qué forma avanzada de liberación busca dominar un capitán?", ["Bankai", "Shikai", "Haki", "Kage Bunshin"], 0),
+    q("¿Qué grupo de enemigos está ligado a Aizen en un arco importante?", ["Arrancar", "Homúnculos", "Mandamientos", "Hombres de Negro"], 0),
+    q("¿Qué raza es Yoruichi?", ["Shinigami", "Titán", "Namekiana", "Demonio carmesí"], 0),
+    q("¿Qué género mezcla Bleach?", ["Acción sobrenatural y aventura", "Cocina competitiva", "Fútbol", "Comedia escolar sin combate"], 0),
   ],
   "Tokyo Ghoul": [
-    q("¿Cómo se llama el protagonista de Tokyo Ghoul?", ["Ken Kaneki", "Hideyoshi Nagachika", "Koutarou Amon", "Nishiki Nishio"], 0),
-    q("¿Qué criatura se convierte Kaneki tras el trasplante?", ["Ghoul", "Titán", "Shinigami", "Homúnculo"], 0)
+    q("¿Quién es el protagonista de Tokyo Ghoul?", ["Ken Kaneki", "Koutarou Amon", "Renji Yomo", "Nishiki Nishio"], 0),
+    q("¿Qué se convierte Kaneki tras un trasplante?", ["Un medio ghoul", "Un shinigami", "Un titán", "Un alquimista estatal"], 0),
+    q("¿Qué necesitan comer los ghouls para sobrevivir?", ["Carne humana", "Solo frutas", "Piedras mágicas", "Píldoras de energía"], 0),
+    q("¿Cómo se llama la cafetería que funciona como refugio?", ["Anteiku", "Totsuki", "Axel", "Edens Zero"], 0),
+    q("¿Qué órgano o arma biológica usan los ghouls en combate?", ["Kagune", "Zanpakutō", "Grimorio", "Nen"], 0),
+    q("¿Qué organización investiga y combate a los ghouls?", ["CCG", "WISE", "Marina", "Gotei 13"], 0),
+    q("¿Qué color suele tener el cabello de Kaneki después de un cambio importante?", ["Blanco", "Verde", "Azul", "Naranja"], 0),
+    q("¿Quién es una ghoul que trabaja en Anteiku y se acerca a Kaneki?", ["Touka Kirishima", "Rize Kamishiro", "Akame", "Mikasa Ackerman"], 0),
+    q("¿Qué ocurre con el ojo de Kaneki cuando usa su poder ghoul?", ["Se vuelve rojo y negro", "Se vuelve dorado", "Desaparece por completo", "Brilla azul como un Sharingan"], 0),
+    q("¿Qué apodo recibe el investigador Kishou Arima por su reputación?", ["El Segador del CCG", "Rey Pirata", "Rey Mago", "Dios de la Destrucción"], 0),
+    q("¿Qué es Rize Kamishiro para la transformación de Kaneki?", ["La fuente de los órganos trasplantados", "Su hermana", "Su maestra de escuela", "La líder de Anteiku"], 0),
+    q("¿Qué tipo de máscara usa Kaneki en una etapa de la historia?", ["Una máscara que cubre un ojo y la boca", "Una máscara de zorro completa", "Un casco de astronauta", "Una máscara de cerdo"], 0),
+    q("¿Qué dilema vive Kaneki?", ["Su identidad entre humano y ghoul", "Elegir un escuadrón mágico", "Convertirse en pirata", "Entrar en un torneo culinario"], 0),
+    q("¿Qué género tiene Tokyo Ghoul?", ["Horror oscuro y acción sobrenatural", "Comedia de cocina", "Deportes escolares", "Aventura espacial"], 0),
+    q("¿Qué café se vuelve un lugar importante para ghouls pacíficos?", ["Anteiku", "Baratie", "Ichiraku", "Witch's Shop"], 0),
   ],
-  "Steins;Gate": [
-    q("¿Cuál es el apodo del científico Rintaro Okabe?", ["Okarin", "Kyon", "Lelouch", "Spike"], 0),
-    q("¿Qué fenómeno es clave en Steins;Gate?", ["Viajes y mensajes en el tiempo", "Cacería de demonios", "Deportes escolares", "Alquimia de combate"], 0)
+  "Sword Art Online": [
+    q("¿Cuál es el nombre real del jugador conocido como Kirito?", ["Gun Gale Online", "Kazuto Kirigaya", "Espadas", "Muere también en el mundo real"], 1),
+    q("¿Cómo se llama la espadachina que se convierte en pareja de Kirito?", ["Muere también en el mundo real", "Akihiko Kayaba", "Klein", "Asuna Yuuki"], 3),
+    q("¿Cuál es el nombre del castillo flotante donde transcurre el primer arco?", ["Asuna Yuuki", "Aincrad", "Muere también en el mundo real", "Espadas"], 1),
+    q("¿Qué dispositivo conecta la mente de los jugadores al juego?", ["Realidad virtual", "Asuna Yuuki", "NerveGear", "Rath"], 2),
+    q("¿Quién creó Sword Art Online y atrapó a los jugadores?", ["Kazuto Kirigaya", "Akihiko Kayaba", "Gun Gale Online", "NerveGear"], 1),
+    q("¿Qué nombre usa Kirito dentro del juego?", ["Asuna Yuuki", "Rath", "Kirito", "Gun Gale Online"], 2),
+    q("¿Cómo se llama la niña virtual que Kirito y Asuna cuidan?", ["Yui", "Akihiko Kayaba", "Espadas", "NerveGear"], 0),
+    q("¿Qué juego de realidad virtual tiene un mundo de hadas y vuelo?", ["Yui", "Realidad virtual", "Gun Gale Online", "Alfheim Online"], 3),
+    q("¿Cómo se llama el amigo de Kirito que juega con él desde el inicio?", ["Klein", "Akihiko Kayaba", "Alfheim Online", "Kirito"], 0),
+    q("¿Qué arma suele utilizar Kirito en combate?", ["Muere también en el mundo real", "Rath", "Gun Gale Online", "Espadas"], 3),
+    q("¿Cómo se llama la francotiradora que aparece en el arco de Gun Gale Online?", ["Espadas", "Sinon", "Rath", "Kirito"], 1),
+    q("¿Qué organización desarrolla el proyecto de realidad virtual Alicization?", ["Klein", "Asuna Yuuki", "Rath", "Kirito"], 2),
+    q("¿Qué juego está relacionado con los asesinatos investigados en el arco Phantom Bullet?", ["Realidad virtual", "Kirito", "Gun Gale Online", "Alfheim Online"], 2),
+    q("¿Qué ocurre si un jugador muere en el Sword Art Online original?", ["Yui", "Kirito", "Sinon", "Muere también en el mundo real"], 3),
+    q("¿Qué género mezcla la serie con la aventura?", ["Realidad virtual", "Sinon", "Muere también en el mundo real", "Alfheim Online"], 0),
   ],
-  "Your Name": [
-    q("¿Cómo se llaman los dos protagonistas de Your Name?", ["Taki y Mitsuha", "Shoya y Shoko", "Taiga y Ryuuji", "Soma y Erina"], 0),
-    q("¿Qué fenómeno conecta a Taki y Mitsuha?", ["Intercambio de cuerpos", "Una competición de cocina", "Una batalla de mechas", "Una maldición de cuaderno"], 0)
+  "Spy x Family": [
+    q("¿Cuál es el nombre en clave del espía protagonista?", ["Twilight", "Nightfall", "Handler", "Garden"], 0),
+    q("¿Qué identidad falsa adopta Twilight como padre?", ["Loid Forger", "Yor Briar", "Damian Desmond", "Franky Franklin"], 0),
+    q("¿Cuál es la profesión secreta de Yor?", ["Asesina", "Espía", "Ladrona profesional", "Agente de policía encubierta"], 0),
+    q("¿Qué habilidad secreta tiene Anya?", ["Leer pensamientos", "Ver el futuro", "Volverse invisible", "Controlar el fuego"], 0),
+    q("¿Cómo se llama el perro de la familia Forger?", ["Bond", "Max", "Scruffy", "Penguin"], 0),
+    q("¿Qué necesita Loid para su misión principal?", ["Acercarse a Donovan Desmond mediante su hijo", "Robar una espada legendaria", "Derrotar a los titanes", "Encontrar el One Piece"], 0),
+    q("¿Qué escuela asiste Anya?", ["Academia Eden", "Totsuki", "U.A.", "Escuela de Konoha"], 0),
+    q("¿Cómo se llama el hermano menor de Yor?", ["Yuri Briar", "Franky Franklin", "Damian Desmond", "Henry Henderson"], 0),
+    q("¿Qué nombre usa la organización de espías de Loid?", ["WISE", "SWORD", "Akatsuki", "Phantom Troupe"], 0),
+    q("¿Qué animal aparece en el proyecto experimental que conecta con Anya?", ["Un perro con precognición", "Un gato que habla", "Un cuervo inmortal", "Un dragón pequeño"], 0),
+    q("¿Qué es Franky para Loid?", ["Un informante y aliado", "Su hijo biológico", "Su jefe de escuela", "Un asesino rival"], 0),
+    q("¿Qué asignatura enseña Henry Henderson en Eden?", ["Historia", "Química alquímica", "Ninjutsu", "Cocina"], 0),
+    q("¿Qué le gusta mucho a Anya?", ["Los cacahuetes", "Las aceitunas", "El café negro", "El curry muy picante"], 0),
+    q("¿Cuál es el objetivo encubierto de la familia falsa?", ["Mantener la paz entre Ostania y Westalis", "Conquistar el mundo", "Encontrar un tesoro pirata", "Derrotar a un demonio"], 0),
+    q("¿Qué mezcla Spy x Family?", ["Espionaje, comedia y vida familiar", "Terror zombi puro", "Deporte profesional", "Fantasía culinaria"], 0),
   ],
-  "Dr. Stone": [
-    q("¿Quién intenta reconstruir la civilización usando la ciencia?", ["Senku Ishigami", "Taiju Oki", "Tsukasa Shishio", "Gen Asagiri"], 0),
-    q("¿Qué le ocurre a la humanidad al inicio?", ["Queda petrificada", "Desaparece la gravedad", "Se convierte en titanes", "Pierde la memoria cada día"], 0)
-  ],
-  "JoJo's Bizarre Adventure": [
-    q("¿Cómo se llama la habilidad espiritual característica de muchas partes de JoJo?", ["Stand", "Quirk", "Nen", "Chakra"], 0),
-    q("¿Qué familia da nombre a la serie?", ["Joestar", "Elric", "Ackerman", "Zoldyck"], 0)
-  ],
-  "Mob Psycho 100": [
-    q("¿Cuál es el nombre real de Mob?", ["Shigeo Kageyama", "Reigen Arataka", "Ritsu Kageyama", "Teruki Hanazawa"], 0),
-    q("¿Qué habilidad tiene Mob?", ["Poderes psíquicos", "Alquimia", "Respiración del agua", "Control de titanes"], 0)
-  ],
-  "Re:Zero": [
-    q("¿Cómo se llama el protagonista de Re:Zero?", ["Subaru Natsuki", "Kazuma Satou", "Kirito", "Shiki Granbell"], 0),
-    q("¿Qué capacidad traumática tiene Subaru?", ["Regresar tras morir", "Leer todos los pensamientos", "Detener el tiempo sin límite", "Convertirse en dragón"], 0)
-  ],
-  "Violet Evergarden": [
-    q("¿En qué trabaja Violet después de la guerra?", ["Escritora de cartas", "Detective", "Pirata", "Cocinera"], 0),
-    q("¿Qué intenta comprender Violet?", ["El significado de las palabras 'te amo'", "Cómo ser Hokage", "El origen de los titanes", "Las reglas del Nen"], 0)
-  ],
-  "Bocchi the Rock!": [
-    q("¿Qué instrumento toca Hitori 'Bocchi' Gotoh?", ["Guitarra", "Batería", "Bajo", "Violín"], 0),
-    q("¿En qué actividad se centra la historia?", ["Una banda de música", "Un club de fútbol", "Una escuela de alquimia", "Una tripulación pirata"], 0)
-  ],
-  "Kuroko's Basketball": [
-    q("¿Qué deporte aparece en Kuroko's Basketball?", ["Baloncesto", "Voleibol", "Tenis", "Rugby"], 0),
-    q("¿Qué rasgo destaca en el estilo de Kuroko?", ["Su capacidad para pasar desapercibido y asistir", "Su fuerza sobrenatural", "Su lanzamiento de fuego", "Su velocidad para correr maratones"], 0)
-  ],
-  "The Apothecary Diaries": [
-    q("¿Cómo se llama la protagonista de The Apothecary Diaries?", ["Maomao", "Frieren", "Anya", "Violet"], 0),
-    q("¿Qué sabe hacer especialmente bien Maomao?", ["Identificar medicinas y venenos", "Usar alquimia de combate", "Cazar titanes", "Jugar voleibol"], 0)
-  ],
-  "Oshi no Ko": [
-    q("¿Cuál es el mundo del espectáculo central en Oshi no Ko?", ["La industria del entretenimiento y los idols", "Los piratas", "La alquimia estatal", "Los cazadores de titanes"], 0),
-    q("¿Cómo se llama la idol madre de Aqua y Ruby?", ["Ai Hoshino", "Kana Arima", "Akane Kurokawa", "Miyako Saito"], 0)
-  ],
-  "Solo Leveling": [
-    q("¿Cómo se llama el protagonista de Solo Leveling?", ["Sung Jinwoo", "Cha Hae-In", "Yoo Jinho", "Go Gunhee"], 0),
-    q("¿Qué sistema recibe Jinwoo?", ["Un sistema que le permite subir de nivel", "Una libreta de la muerte", "Un poder de alquimia", "Un mapa del One Piece"], 0)
-  ],
-  "Neon Genesis Evangelion": [
-    q("¿Qué pilota Shinji Ikari?", ["Un EVA", "Un Gundam", "Un titán", "Una nave pirata"], 0),
-    q("¿Qué organización opera los Evangelion?", ["NERV", "Survey Corps", "Soul Society", "Jujutsu High"], 0)
-  ],
-  "Assassination Classroom": [
-    q("¿Cómo se llama el peculiar profesor de la clase 3-E?", ["Koro-sensei", "All Might", "Kakashi", "Gojo"], 0),
-    q("¿Qué misión tiene la clase?", ["Asesinar a su profesor antes de la fecha límite", "Encontrar siete esferas", "Ganar la Copa Mundial", "Derrotar al Rey Pirata"], 0)
-  ],
-  "The Promised Neverland": [
-    q("¿Cómo se llama la protagonista de The Promised Neverland?", ["Emma", "Mikasa", "Sakura", "Anya"], 0),
-    q("¿Qué descubren los niños sobre el orfanato?", ["Una verdad peligrosa sobre su destino", "Que todos son ninjas", "Que viven dentro de un videojuego", "Que son alquimistas estatales"], 0)
-  ],
-  "Code Geass": [
-    q("¿Cuál es el nombre del protagonista de Code Geass?", ["Lelouch Lamperouge", "Light Yagami", "Edward Elric", "Eren Yeager"], 0),
-    q("¿Qué poder recibe Lelouch?", ["Geass", "Nen", "Quirk", "Bankai"], 0)
-  ],
-  "Fruits Basket": [
-    q("¿Cómo se llama la protagonista de Fruits Basket?", ["Tohru Honda", "Kagome Higurashi", "Taiga Aisaka", "Violet Evergarden"], 0),
-    q("¿Qué peculiaridad afecta a la familia Sohma?", ["Una maldición ligada al zodiaco chino", "Se convierten en titanes", "Viven dentro de un juego", "Controlan demonios con espadas"], 0)
-  ],
-  "Toradora!": [
-    q("¿Cómo se llama la protagonista conocida como la 'Tigre de bolsillo'?", ["Taiga Aisaka", "Ryuuji Takasu", "Minori Kushieda", "Ami Kawashima"], 0),
-    q("¿Qué género describe mejor Toradora!?", ["Comedia romántica escolar", "Terror cósmico", "Ciencia ficción espacial", "Acción de ninjas"], 0)
-  ],
-  "Vinland Saga": [
-    q("¿Cuál es el nombre del protagonista de Vinland Saga?", ["Thorfinn", "Canute", "Askeladd", "Thorkell"], 0),
-    q("¿En qué contexto histórico se desarrolla la serie?", ["La era de los vikingos", "El Japón futurista", "La antigua Roma exclusivamente", "Un mundo de robots"], 0)
-  ],
-  "Mushoku Tensei": [
-    q("¿Cómo se llama el protagonista reencarnado de Mushoku Tensei?", ["Rudeus Greyrat", "Rimuru Tempest", "Kazuma Satou", "Subaru Natsuki"], 0),
-    q("¿Qué tipo de mundo aparece en la historia?", ["Un mundo de fantasía con magia", "Una ciudad moderna sin magia", "Un torneo de baloncesto", "Un mundo de detectives"], 0)
-  ],
-  "Hellsing Ultimate": [
-    q("¿Qué poderoso vampiro sirve a la organización Hellsing?", ["Alucard", "Dio Brando", "Ryuk", "Sesshomaru"], 0),
-    q("¿Qué clase de organización es Hellsing?", ["Una organización que combate amenazas sobrenaturales", "Un equipo de voleibol", "Una escuela de cocina", "Una tripulación pirata"], 0)
-  ],
-  "Inuyasha": [
-    q("¿Cómo se llama el medio demonio protagonista?", ["Inuyasha", "Sesshomaru", "Miroku", "Koga"], 0),
-    q("¿Qué objeto buscan reunir los personajes?", ["Fragmentos de la Perla de Shikon", "Esferas del Dragón", "Cartas Clow", "Piedras filosofales"], 0)
-  ],
-  "Detective Conan": [
-    q("¿Cuál es el nombre real del joven detective encogido?", ["Shinichi Kudo", "Heiji Hattori", "Kogoro Mouri", "Hiroshi Agasa"], 0),
-    q("¿Qué identidad utiliza Shinichi tras encogerse?", ["Conan Edogawa", "Light Yagami", "L Lawliet", "Jimmy Neutron"], 0)
+  "Haikyuu!!": [
+    q("¿Cómo se llama el protagonista de baja estatura que sueña con jugar voleibol al máximo nivel?", ["Shoyo Hinata", "Karasuno", "Tobio Kageyama", "Saque"], 0),
+    q("¿Quién es el colocador prodigioso de Karasuno?", ["Líbero", "Tobio Kageyama", "Saque", "Shoyo Hinata"], 1),
+    q("¿Cómo se llama el equipo escolar protagonista?", ["Daichi Sawamura", "Karasuno", "Nekoma", "Toru Oikawa"], 1),
+    q("¿Qué deporte practican los personajes?", ["Saque", "Líbero", "Toru Oikawa", "Voleibol"], 3),
+    q("¿Qué equipo es conocido por su rivalidad con Karasuno y por su defensa?", ["Karasuno", "Pequeño Gigante", "Nekoma", "Saque"], 2),
+    q("¿Quién es el capitán de Karasuno al comienzo de la historia?", ["Asahi Azumane", "Yu Nishinoya", "Daichi Sawamura", "Toru Oikawa"], 2),
+    q("¿Qué jugador de Karasuno destaca por sus bloqueos y actitud seria?", ["Saque", "Kei Tsukishima", "Yu Nishinoya", "Shoyo Hinata"], 1),
+    q("¿Quién es el líbero de Karasuno conocido por su energía?", ["Tobio Kageyama", "Bloqueo", "Líbero", "Yu Nishinoya"], 3),
+    q("¿Qué jugador de Karasuno regresa a la cancha como atacante?", ["Asahi Azumane", "Kenma Kozume", "Kei Tsukishima", "Líbero"], 0),
+    q("¿Cómo se llama el colocador de Nekoma que disfruta los videojuegos?", ["Yu Nishinoya", "Kenma Kozume", "Nekoma", "Pequeño Gigante"], 1),
+    q("¿Quién es el talentoso colocador de Aoba Johsai?", ["Pequeño Gigante", "Asahi Azumane", "Toru Oikawa", "Karasuno"], 2),
+    q("¿Qué acción defensiva intenta detener un remate junto a la red?", ["Bloqueo", "Asahi Azumane", "Daichi Sawamura", "Voleibol"], 0),
+    q("¿Cómo se llama el saque que inicia una jugada?", ["Saque", "Asahi Azumane", "Pequeño Gigante", "Yu Nishinoya"], 0),
+    q("¿Qué posición especializada recibe y defiende ataques?", ["Líbero", "Tobio Kageyama", "Voleibol", "Karasuno"], 0),
+    q("¿A qué jugador legendario admira Hinata desde niño?", ["Pequeño Gigante", "Saque", "Nekoma", "Voleibol"], 0),
   ],
   "Blue Lock": [
-    q("¿Qué deporte busca dominar el proyecto Blue Lock?", ["Fútbol", "Baloncesto", "Voleibol", "Béisbol"], 0),
-    q("¿Cómo se llama el protagonista de Blue Lock?", ["Yoichi Isagi", "Meguru Bachira", "Rin Itoshi", "Seishiro Nagi"], 0)
+    q("¿Cómo se llama el delantero protagonista que aprende a analizar el campo?", ["Yoichi Isagi", "Meguru Bachira", "Egoísmo competitivo", "Bastard München"], 0),
+    q("¿Qué personaje juega de forma impredecible y disfruta regatear?", ["Goles", "Meguru Bachira", "Seishiro Nagi", "Rensuke Kunigami"], 1),
+    q("¿Quién es el hermano menor de Sae Itoshi y un delantero de élite?", ["Fútbol", "Meguru Bachira", "Yoichi Isagi", "Rin Itoshi"], 3),
+    q("¿Qué jugador destaca por su talento natural y su control del balón?", ["Hyoma Chigiri", "Seishiro Nagi", "Selección japonesa", "Rensuke Kunigami"], 1),
+    q("¿Qué deporte es el centro del proyecto Blue Lock?", ["Fútbol", "Pruebas eliminatorias", "Goles", "Selección japonesa"], 0),
+    q("¿Quién dirige el programa de entrenamiento Blue Lock?", ["Seishiro Nagi", "Rensuke Kunigami", "Shoei Barou", "Jinpachi Ego"], 3),
+    q("¿Qué posición ofensiva busca formar el proyecto?", ["Delantero", "Yoichi Isagi", "Goles", "Fútbol"], 0),
+    q("¿Qué concepto defiende Ego para crear al delantero ideal?", ["Meguru Bachira", "Seishiro Nagi", "Bastard München", "Egoísmo competitivo"], 3),
+    q("¿En qué club juega Isagi durante la Neo Egoist League?", ["Jinpachi Ego", "Rin Itoshi", "Egoísmo competitivo", "Bastard München"], 3),
+    q("¿Qué delantero se hace llamar el Rey?", ["Seishiro Nagi", "Hyoma Chigiri", "Shoei Barou", "Pruebas eliminatorias"], 2),
+    q("¿Qué jugador destaca por su velocidad y sus zancadas largas?", ["Rin Itoshi", "Selección japonesa", "Hyoma Chigiri", "Meguru Bachira"], 2),
+    q("¿Qué delantero vuelve a Blue Lock tras una etapa de entrenamiento especial?", ["Delantero", "Hyoma Chigiri", "Rensuke Kunigami", "Yoichi Isagi"], 2),
+    q("¿Qué deben marcar los delanteros para ganar un partido?", ["Goles", "Rin Itoshi", "Meguru Bachira", "Jinpachi Ego"], 0),
+    q("¿Qué selección nacional intenta fortalecer el proyecto?", ["Selección japonesa", "Rin Itoshi", "Bastard München", "Shoei Barou"], 0),
+    q("¿Qué deben superar los participantes para avanzar en el programa?", ["Bastard München", "Seishiro Nagi", "Egoísmo competitivo", "Pruebas eliminatorias"], 3),
+  ],
+  "Frieren": [
+    q("¿Cómo se llama la maga elfa protagonista de la historia?", ["Examen de magos de primera clase", "Los sentimientos y recuerdos humanos", "Después de derrotar al Rey Demonio", "Frieren"], 3),
+    q("¿Quién es la joven maga humana que acompaña a Frieren?", ["Después de derrotar al Rey Demonio", "Fern", "Examen de magos de primera clase", "Frieren"], 1),
+    q("¿Qué guerrero acompaña a Fern y Frieren durante su viaje?", ["Stark", "Fern", "Elfa", "La percepción del paso del tiempo"], 0),
+    q("¿Cómo se llama el héroe que lideró el grupo que derrotó al Rey Demonio?", ["Himmel", "Fern", "Frieren", "Los sentimientos y recuerdos humanos"], 0),
+    q("¿Qué sacerdote formó parte del grupo original de héroes?", ["Grimorios", "Elfa", "Frieren", "Heiter"], 3),
+    q("¿Qué guerrero enano fue compañero de Himmel?", ["Eisen", "La percepción del paso del tiempo", "Grimorios", "Elfa"], 0),
+    q("¿Qué raza pertenece Frieren?", ["Elfa", "Examen de magos de primera clase", "La percepción del paso del tiempo", "Frieren"], 0),
+    q("¿En qué momento comienza la historia principal?", ["Los sentimientos y recuerdos humanos", "Frieren", "Himmel", "Después de derrotar al Rey Demonio"], 3),
+    q("¿Qué estudia y practica Frieren durante sus viajes?", ["Grimorios", "Frieren", "Magia", "Eisen"], 2),
+    q("¿Qué diferencia entre elfos y humanos influye en la historia?", ["La percepción del paso del tiempo", "Eisen", "Magia", "Examen de magos de primera clase"], 0),
+    q("¿Qué examen permite obtener el rango de mago de primera clase?", ["Serie", "Elfa", "Examen de magos de primera clase", "Himmel"], 2),
+    q("¿Cómo se llama la maga de primera clase que dirige el examen?", ["Aura", "La percepción del paso del tiempo", "Después de derrotar al Rey Demonio", "Serie"], 3),
+    q("¿Qué demonio aparece en el arco de la ciudad fortificada de Weise?", ["Eisen", "Examen de magos de primera clase", "Aura", "Himmel"], 2),
+    q("¿Qué objeto mágico suele buscar Frieren para aprender nuevos hechizos?", ["Examen de magos de primera clase", "Grimorios", "Heiter", "Himmel"], 1),
+    q("¿Qué intenta comprender Frieren tras la muerte de Himmel?", ["Los sentimientos y recuerdos humanos", "Después de derrotar al Rey Demonio", "Stark", "Elfa"], 0),
+  ],
+  "Sailor Moon": [
+    q("¿Cuál es el nombre civil de Sailor Moon?", ["Usan frases y objetos de transformación", "Chibiusa", "Rei Hino", "Usagi Tsukino"], 3),
+    q("¿Cómo se llama la gata negra que guía a Usagi?", ["Makoto Kino", "Guardianas Sailor", "Luna", "Usan frases y objetos de transformación"], 2),
+    q("¿Quién es la identidad civil de Tuxedo Mask?", ["Rei Hino", "Mamoru Chiba", "Magical girl y romance", "Reina Beryl"], 1),
+    q("¿Qué personaje suele ayudar a Sailor Moon con rosas y consejos?", ["Guardianas Sailor", "Reina Beryl", "Mamoru Chiba", "Tuxedo Mask"], 3),
+    q("¿Qué guardiana es conocida como Sailor Mercury?", ["Usagi Tsukino", "Ami Mizuno", "Reina Beryl", "Luna"], 1),
+    q("¿Qué guardiana está asociada al fuego y al santuario Hikawa?", ["Guardianas Sailor", "Rei Hino", "Mamoru Chiba", "Ami Mizuno"], 1),
+    q("¿Qué guardiana es conocida por su fuerza física y relámpagos?", ["Usagi Tsukino", "Cristal de Plata", "Makoto Kino", "Magical girl y romance"], 2),
+    q("¿Cuál es la identidad civil de Sailor Venus?", ["Tuxedo Mask", "Usagi Tsukino", "Minako Aino", "Mamoru Chiba"], 2),
+    q("¿Qué artefacto mágico es central en varias batallas?", ["Cristal de Plata", "Minako Aino", "Magical girl y romance", "Usan frases y objetos de transformación"], 0),
+    q("¿De qué reino proviene la historia pasada de las guardianas?", ["Reino de la Luna", "Chibiusa", "Usan frases y objetos de transformación", "Mamoru Chiba"], 0),
+    q("¿Quién es la principal antagonista del primer arco?", ["Magical girl y romance", "Reina Beryl", "Guardianas Sailor", "Makoto Kino"], 1),
+    q("¿Qué hacen las protagonistas para transformarse en guardianas?", ["Usan frases y objetos de transformación", "Reina Beryl", "Cristal de Plata", "Ami Mizuno"], 0),
+    q("¿Cómo se llama la hija del futuro de Usagi y Mamoru?", ["Chibiusa", "Makoto Kino", "Rei Hino", "Tuxedo Mask"], 0),
+    q("¿Qué grupo protege a la princesa y al planeta?", ["Mamoru Chiba", "Guardianas Sailor", "Rei Hino", "Chibiusa"], 1),
+    q("¿Qué género combina la serie con la acción?", ["Minako Aino", "Mamoru Chiba", "Magical girl y romance", "Reina Beryl"], 2),
+  ],
+  "Cardcaptor Sakura": [
+    q("¿Cómo se llama la niña que libera accidentalmente las Cartas Clow?", ["Poderes mágicos", "Touya Kinomoto", "Sakura Kinomoto", "Báculo mágico"], 2),
+    q("¿Qué debe capturar Sakura para evitar que causen problemas?", ["Kero", "Guardián de las Cartas Clow", "Eriol Hiiragizawa", "Cartas Clow"], 3),
+    q("¿Cómo se llama el guardián con aspecto de león alado?", ["Tomoyo Daidouji", "Sakura-chan", "Cartas Clow", "Keroberos"], 3),
+    q("¿Quién es la mejor amiga de Sakura y diseña sus trajes?", ["Tomoyo Daidouji", "Capturarla y sellarla", "Báculo mágico", "Syaoran Li"], 0),
+    q("¿Qué chico de Hong Kong compite al principio con Sakura?", ["Poderes mágicos", "Syaoran Li", "Tomoyo Daidouji", "Cartas Clow"], 1),
+    q("¿De quién está enamorado Yukito Tsukishiro en una parte de la historia?", ["Capturarla y sellarla", "Touya Kinomoto", "Sakura Kinomoto", "Eriol Hiiragizawa"], 1),
+    q("¿Quién creó originalmente las Cartas Clow?", ["Clow Reed", "Poderes mágicos", "Keroberos", "Kero"], 0),
+    q("¿Qué objeto utiliza Sakura para activar su magia?", ["Touya Kinomoto", "Sakura-chan", "Fantasía mágica", "Báculo mágico"], 3),
+    q("¿Qué tipo de poderes contienen las cartas que captura Sakura?", ["Báculo mágico", "Sakura Kinomoto", "Capturarla y sellarla", "Poderes mágicos"], 3),
+    q("¿Cómo se llama el misterioso estudiante relacionado con Clow Reed?", ["Eriol Hiiragizawa", "Sakura-chan", "Guardián de las Cartas Clow", "Clow Reed"], 0),
+    q("¿Qué función cumple Keroberos en la colección de cartas?", ["Guardián de las Cartas Clow", "Tomoyo Daidouji", "Cartas Clow", "Kero"], 0),
+    q("¿Qué debe hacer Sakura cuando una carta se escapa?", ["Fantasía mágica", "Sakura Kinomoto", "Sakura-chan", "Capturarla y sellarla"], 3),
+    q("¿Qué apodo cariñoso usa Tomoyo para Sakura?", ["Sakura-chan", "Keroberos", "Poderes mágicos", "Eriol Hiiragizawa"], 0),
+    q("¿Cómo llama Sakura a Keroberos normalmente?", ["Eriol Hiiragizawa", "Kero", "Poderes mágicos", "Báculo mágico"], 1),
+    q("¿Qué género combina la serie con la vida escolar?", ["Tomoyo Daidouji", "Touya Kinomoto", "Fantasía mágica", "Clow Reed"], 2),
+  ],
+  "Pokémon": [
+    q("¿Cuál es el Pokémon más conocido de Ash?", ["Pikachu", "Charizard", "Bulbasaur", "Squirtle"], 0),
+    q("¿Qué tipo es Charmander?", ["Fuego", "Agua", "Planta", "Eléctrico"], 0),
+    q("¿En qué evoluciona Magikarp normalmente?", ["Gyarados", "Lapras", "Vaporeon", "Dragonite"], 0),
+    q("¿Qué objeto se usa habitualmente para capturar Pokémon?", ["Poké Ball", "Digivice", "Capsule Corp", "Esfera del Dragón"], 0),
+    q("¿Qué tipo es eficaz contra Pokémon de tipo Agua?", ["Eléctrico", "Fuego", "Hielo", "Veneno"], 0),
+    q("¿Cómo se llama el profesor de la región de Kanto?", ["Profesor Oak", "Profesor Elm", "Profesor Birch", "Profesor Kukui"], 0),
+    q("¿Qué Pokémon suele decir su propio nombre y acompaña a Ash?", ["Pikachu", "Meowth del Equipo Rocket", "Psyduck", "Snorlax"], 0),
+    q("¿Cuál es la evolución de Eevee de tipo Agua?", ["Vaporeon", "Jolteon", "Flareon", "Espeon"], 0),
+    q("¿Qué equipo intenta robar Pokémon y suele perseguir a Pikachu?", ["Equipo Rocket", "Equipo Plasma", "Equipo Magma", "Equipo Galaxia"], 0),
+    q("¿Qué tipo tiene Bulbasaur como combinación inicial?", ["Planta y Veneno", "Planta y Agua", "Fuego y Volador", "Bicho y Tierra"], 0),
+    q("¿Cuál de estos es un Pokémon legendario de Kanto?", ["Mewtwo", "Pidgey", "Rattata", "Psyduck"], 0),
+    q("¿Qué piedra puede evolucionar a Pikachu en Raichu?", ["Piedra Trueno", "Piedra Agua", "Piedra Hoja", "Piedra Lunar"], 0),
+    q("¿Qué tipo de Pokémon es Squirtle?", ["Agua", "Fuego", "Planta", "Roca"], 0),
+    q("¿Cómo se llama la región de los primeros juegos principales?", ["Kanto", "Paldea", "Galar", "Alola"], 0),
+    q("¿Qué hacen las medallas de gimnasio en la aventura clásica?", ["Demuestran victorias ante líderes", "Evolucionan cualquier Pokémon", "Permiten capturar legendarios automáticamente", "Cambian el tipo de todos los Pokémon"], 0),
+  ],
+  "Chainsaw Man": [
+    q("¿Quién es el protagonista de Chainsaw Man?", ["Denji", "Aki Hayakawa", "Kishibe", "Hirofumi Yoshida"], 0),
+    q("¿Cómo se llama el demonio-perro que acompaña a Denji?", ["Pochita", "Kon", "Beam", "Meowy"], 0),
+    q("¿Qué parte del cuerpo de Denji se transforma en motosierra?", ["La cabeza y los brazos", "Solo las piernas", "La espalda", "Los ojos"], 0),
+    q("¿Quién recluta a Denji para Seguridad Pública?", ["Makima", "Power", "Himeno", "Kobeni"], 0),
+    q("¿Qué es Power?", ["Una demonio de sangre", "Una cazadora humana sin poderes", "Una shinigami", "Una alquimista"], 0),
+    q("¿Qué contrato tiene Aki con el Demonio Zorro?", ["Puede invocarlo diciendo 'Kon'", "Puede controlar el tiempo", "Puede resucitar a cualquiera", "Puede crear comida"], 0),
+    q("¿Cómo se llama el demonio que se vincula con Aki por un contrato?", ["Demonio del Futuro", "Demonio de la Cocina", "Demonio del Agua", "Demonio de las Sombras"], 0),
+    q("¿Qué teme la humanidad, según la lógica de los demonios?", ["Los conceptos que generan miedo", "Solo los animales", "Las recetas de cocina", "Los juegos de cartas"], 0),
+    q("¿Qué división integra Denji al principio?", ["Seguridad Pública", "Cuerpo de Exploración", "Gotei 13", "Toros Negros"], 0),
+    q("¿Qué mascota busca Power recuperar?", ["Meowy", "Pochita", "Bond", "Emul"], 0),
+    q("¿Qué personaje es conocido por usar una espada y trabajar con Denji?", ["Aki Hayakawa", "Kishibe", "Beam", "Katana Man"], 0),
+    q("¿Qué relación especial tiene Pochita con Denji?", ["Se convierte en su corazón", "Es su padre", "Es su profesor", "Es su rival escolar"], 0),
+    q("¿Qué personaje es una cazadora veterana y mentora?", ["Kishibe", "Soma Yukihira", "Ging Freecss", "Yami Sukehiro"], 0),
+    q("¿Qué género combina la serie?", ["Acción, horror y humor negro", "Deportes y cocina", "Solo romance", "Documental de naturaleza"], 0),
+    q("¿Qué suele motivar a Denji al inicio?", ["Deseos sencillos y una vida mejor", "Ser Rey Pirata", "Encontrar al Hokage", "Ser el mejor alquimista"], 0),
   ],
   "Dandadan": [
-    q("¿Qué temas sobrenaturales mezcla Dandadan?", ["Extraterrestres y espíritus", "Piratas y alquimia", "Vikingos y deportes", "Cocina y carreras"], 0),
-    q("¿Cómo se llama la protagonista femenina conocida como Momo?", ["Momo Ayase", "Momo Yaoyorozu", "Momo Hinamori", "Momo Belia Deviluke"], 0)
-  ]
+    q("¿Cómo se llama la estudiante que cree en los fantasmas?", ["Poderes psíquicos", "Momo Ayase", "Seiko Ayase", "Okarun"], 1),
+    q("¿Qué apodo recibe Ken Takakura por parte de Momo?", ["Turbo Granny", "Mal de Ojo", "Okarun", "Fenómenos paranormales"], 2),
+    q("¿Qué espíritu anciano roba la capacidad de Okarun?", ["Serpoianos", "Jiji", "Turbo Granny", "Fenómenos paranormales"], 2),
+    q("¿Qué fenómeno intenta demostrar Momo al principio?", ["La existencia de los extraterrestres", "Momo Ayase", "La existencia de los espíritus", "Comedia sobrenatural"], 2),
+    q("¿Qué fenómeno intenta demostrar Okarun al principio?", ["Una amistad con sentimientos románticos", "Turbo Granny", "Mal de Ojo", "La existencia de los extraterrestres"], 3),
+    q("¿Cómo se llama la abuela de Momo, que es médium?", ["Serpoianos", "Aira Shiratori", "Seiko Ayase", "Okarun"], 2),
+    q("¿Qué habilidad usa Momo para mover objetos con la mente?", ["Poderes psíquicos", "Aira Shiratori", "La existencia de los extraterrestres", "Fenómenos paranormales"], 0),
+    q("¿Qué criaturas del espacio aparecen en la serie?", ["Una amistad con sentimientos románticos", "Extraterrestres", "Fenómenos paranormales", "Mal de Ojo"], 1),
+    q("¿Qué chica se convierte en rival y luego aliada del grupo?", ["Una amistad con sentimientos románticos", "Momo Ayase", "Poderes psíquicos", "Aira Shiratori"], 3),
+    q("¿Qué amigo de la infancia de Momo se une a la historia?", ["La existencia de los extraterrestres", "Jiji", "Comedia sobrenatural", "Serpoianos"], 1),
+    q("¿Qué tipo de sucesos mezcla la serie?", ["Fenómenos paranormales", "La existencia de los espíritus", "Okarun", "Comedia sobrenatural"], 0),
+    q("¿Qué entidad se relaciona con la maldición que afecta a Jiji?", ["Seiko Ayase", "Jiji", "La existencia de los espíritus", "Mal de Ojo"], 3),
+    q("¿Cómo se llama la especie alienígena de aspecto humanoide que secuestra personas?", ["Okarun", "Serpoianos", "Seiko Ayase", "Poderes psíquicos"], 1),
+    q("¿Qué combina Dandadan con sus escenas de acción?", ["Seiko Ayase", "Comedia sobrenatural", "La existencia de los espíritus", "Una amistad con sentimientos románticos"], 1),
+    q("¿Qué relación se desarrolla entre Momo y Okarun?", ["Comedia sobrenatural", "Una amistad con sentimientos románticos", "Extraterrestres", "Fenómenos paranormales"], 1),
+  ],
+  "Dr. Stone": [
+    q("¿Cómo se llama el estudiante prodigio que quiere reconstruir la civilización?", ["Ácido nítrico", "Gen Asagiri", "Senku Ishigami", "Experimentos científicos"], 2),
+    q("¿Qué fenómeno convierte a la humanidad en piedra?", ["Ciencia", "Chrome", "Senku Ishigami", "Petrificación"], 3),
+    q("¿Quién es el amigo de Senku que tiene una fuerza física enorme?", ["Reino de la Ciencia", "La tecnología de la humanidad", "Ryusui Nanami", "Taiju Oki"], 3),
+    q("¿Cómo llama Senku a su grupo de inventores y aliados?", ["Reino de la Ciencia", "Reviver la civilización mediante la ciencia", "Petrificación", "Experimentos científicos"], 0),
+    q("¿Quién es el joven del pueblo que aprende ciencia junto a Senku?", ["Chrome", "Kohaku", "Gen Asagiri", "Reviver la civilización mediante la ciencia"], 0),
+    q("¿Qué guerrera del pueblo ayuda a Senku?", ["La tecnología de la humanidad", "Kohaku", "Ryusui Nanami", "Gen Asagiri"], 1),
+    q("¿Quién se opone inicialmente a revivir a toda la humanidad?", ["Senku Ishigami", "La tecnología de la humanidad", "Ishigami Village", "Tsukasa Shishio"], 3),
+    q("¿Cómo se llama el pueblo donde viven Ruri y Kohaku?", ["Ishigami Village", "Experimentos científicos", "Ciencia", "Chrome"], 0),
+    q("¿Cuál es el objetivo de Senku después de despertar?", ["Petrificación", "Reviver la civilización mediante la ciencia", "Reino de la Ciencia", "Ciencia"], 1),
+    q("¿Qué sustancia es importante para el proceso de despetrificación?", ["Gen Asagiri", "Kohaku", "Ácido nítrico", "Reino de la Ciencia"], 2),
+    q("¿Qué mentalista ayuda al Reino de la Ciencia?", ["Petrificación", "Tsukasa Shishio", "Gen Asagiri", "Kohaku"], 2),
+    q("¿Qué navegante y empresario se convierte en aliado de Senku?", ["La tecnología de la humanidad", "Ryusui Nanami", "Reino de la Ciencia", "Kohaku"], 1),
+    q("¿Qué método utiliza Senku para crear tecnología moderna?", ["Gen Asagiri", "Ishigami Village", "La tecnología de la humanidad", "Experimentos científicos"], 3),
+    q("¿Qué disciplina usa Senku para explicar sus inventos?", ["Ácido nítrico", "Ciencia", "Reino de la Ciencia", "Experimentos científicos"], 1),
+    q("¿Qué quiere reconstruir Senku paso a paso?", ["La tecnología de la humanidad", "Ciencia", "Ryusui Nanami", "Reviver la civilización mediante la ciencia"], 0),
+  ],
+  "Black Clover": [
+    q("¿Qué distingue a Asta al comienzo de la historia?", ["No tiene magia", "No puede usar espadas", "No tiene grimorio", "Es un elfo"], 0),
+    q("¿Qué tipo de grimorio recibe Asta?", ["Un grimorio de cinco hojas", "Uno de dos hojas", "Uno de tres hojas", "Uno de siete hojas"], 0),
+    q("¿Cuál es el gran sueño de Asta?", ["Ser Rey Mago", "Ser Hokage", "Ser Rey Pirata", "Ser capitán de la guardia real"], 0),
+    q("¿Quién es el rival y amigo de infancia de Asta?", ["Yuno", "Noelle", "Magna", "Finral"], 0),
+    q("¿A qué escuadrón de Caballeros Mágicos se une Asta?", ["Toros Negros", "Amanecer Dorado", "Rosas Azules", "Leones Carmesí"], 0),
+    q("¿Qué atributo mágico usa Noelle Silva?", ["Agua", "Fuego", "Viento", "Rayo"], 0),
+    q("¿Quién es el capitán de los Toros Negros?", ["Yami Sukehiro", "Fuegoleon Vermillion", "William Vangeance", "Jack el Destripador"], 0),
+    q("¿Qué poder tiene la espada de Asta?", ["Antimagia", "Control del tiempo", "Magia de luz", "Magia de espejos"], 0),
+    q("¿Qué escuadrón es famoso por su prestigio y Yuno se une a él?", ["Amanecer Dorado", "Toros Negros", "Mantis Verdes", "Orcas Púrpuras"], 0),
+    q("¿Cuál de estos es un hermano mayor de Noelle Silva?", ["Nozel Silva", "Yuno", "Magna Swing", "Finral Roulacase"], 0),
+    q("¿Qué especie está relacionada con la antigua tragedia del Reino del Trébol?", ["Elfos", "Gigantes de hielo", "Titanes", "Hollows"], 0),
+    q("¿Qué reino es el escenario principal?", ["Reino del Trébol", "Reino de Liones", "Reino de Fiore", "Reino de Amestris"], 0),
+    q("¿Qué hace la antimagia de Asta?", ["Anula la magia", "Copia cualquier hechizo sin límite", "Cura toda herida", "Controla el clima"], 0),
+    q("¿Qué magia usa Yuno principalmente?", ["Viento", "Agua", "Acero", "Hilo"], 0),
+    q("¿Cómo se llama el demonio ligado a las espadas antimagia de Asta?", ["Liebe", "Zagred", "Lucifero", "Megicula"], 0),
+  ],
+  "JoJo's Bizarre Adventure": [
+    q("¿Cómo se apellida la familia protagonista que conecta varias generaciones?", ["Dio Brando", "Joestar", "Jotaro Kujo", "Las aventuras de distintas generaciones Joestar"], 1),
+    q("¿Quién es el protagonista de Phantom Blood?", ["Star Platinum", "Joestar", "Jonathan Joestar", "ORA ORA"], 2),
+    q("¿Qué villano se convierte en enemigo de la familia Joestar?", ["Dio Brando", "Las aventuras de distintas generaciones Joestar", "Flecha de Stand", "Giorno Giovanna"], 0),
+    q("¿Qué poder espiritual aparece de forma central desde Stardust Crusaders?", ["Jotaro Kujo", "Stands", "ORA ORA", "Enrico Pucci"], 1),
+    q("¿Qué protagonista de Battle Tendency es nieto de Jonathan?", ["Stands", "Hamon", "Joseph Joestar", "Star Platinum"], 2),
+    q("¿Qué técnica de respiración se usa en las primeras partes?", ["Star Platinum", "Hamon", "Joseph Joestar", "Jotaro Kujo"], 1),
+    q("¿Cómo se llama el Stand de Jotaro Kujo?", ["Star Platinum", "Flecha de Stand", "Las aventuras de distintas generaciones Joestar", "Josuke Higashikata"], 0),
+    q("¿Quién es el protagonista de Stardust Crusaders?", ["Jotaro Kujo", "Star Platinum", "Giorno Giovanna", "Hamon"], 0),
+    q("¿Quién es el protagonista de Diamond Is Unbreakable?", ["Hamon", "Jotaro Kujo", "Josuke Higashikata", "Morioh"], 2),
+    q("¿Quién protagoniza Golden Wind?", ["Enrico Pucci", "Giorno Giovanna", "ORA ORA", "Dio Brando"], 1),
+    q("¿Qué sacerdote busca completar su plan en Stone Ocean?", ["Enrico Pucci", "Hamon", "Giorno Giovanna", "Joestar"], 0),
+    q("¿Qué objeto puede despertar un Stand en ciertas personas?", ["ORA ORA", "Josuke Higashikata", "Las aventuras de distintas generaciones Joestar", "Flecha de Stand"], 3),
+    q("¿Qué grito de batalla se asocia con frecuencia a Jotaro?", ["Dio Brando", "ORA ORA", "Las aventuras de distintas generaciones Joestar", "Enrico Pucci"], 1),
+    q("¿En qué ciudad japonesa ocurre gran parte de Diamond Is Unbreakable?", ["Enrico Pucci", "Joestar", "Hamon", "Morioh"], 3),
+    q("¿Qué característica define la serie a lo largo de sus partes?", ["Flecha de Stand", "Star Platinum", "Las aventuras de distintas generaciones Joestar", "Enrico Pucci"], 2),
+  ],
+  "Mob Psycho 100": [
+    q("¿Cuál es el nombre real de Mob?", ["Shigeo Kageyama", "Reigen Arataka", "Salt Middle School", "Ritsu Kageyama"], 0),
+    q("¿Quién es el mentor de Mob que se presenta como médium?", ["Telequinesis", "Claw", "Tsubomi Takane", "Reigen Arataka"], 3),
+    q("¿Qué tipo de habilidades posee Mob?", ["Mob", "Salt Middle School", "Poderes psíquicos", "Tsubomi Takane"], 2),
+    q("¿Qué ocurre cuando las emociones de Mob llegan al 100 %?", ["Club de Mejora Corporal", "Shigeo Kageyama", "Sus poderes se desatan según la emoción acumulada", "Claw"], 2),
+    q("¿Cómo se llama el hermano menor de Mob?", ["Teruki Hanazawa", "Ritsu Kageyama", "Tsubomi Takane", "Telequinesis"], 1),
+    q("¿Qué espíritu aparece como compañero de Mob durante la historia?", ["Dimple", "Reigen Arataka", "Teruki Hanazawa", "Exorcismos"], 0),
+    q("¿Qué organización de espers antagonistas aparece en la serie?", ["Claw", "Exorcismos", "Poderes psíquicos", "Ritsu Kageyama"], 0),
+    q("¿Qué habilidad permite mover objetos con la mente?", ["Salt Middle School", "Club de Mejora Corporal", "Mob", "Telequinesis"], 3),
+    q("¿A qué club se une Mob para mejorar su condición física?", ["Dimple", "Shigeo Kageyama", "Tsubomi Takane", "Club de Mejora Corporal"], 3),
+    q("¿De quién está enamorado Mob desde la infancia?", ["Exorcismos", "Reigen Arataka", "Mob", "Tsubomi Takane"], 3),
+    q("¿Qué tipo de seres ayuda a exorcizar Reigen?", ["Espíritus", "Ritsu Kageyama", "Reigen Arataka", "Dimple"], 0),
+    q("¿Qué trabajo ofrece Reigen a sus clientes?", ["Sus poderes se desatan según la emoción acumulada", "Exorcismos", "Poderes psíquicos", "Telequinesis"], 1),
+    q("¿Cómo llaman habitualmente al protagonista?", ["Poderes psíquicos", "Reigen Arataka", "Club de Mejora Corporal", "Mob"], 3),
+    q("¿Qué estudiante psíquico se convierte en rival y luego aliado?", ["Shigeo Kageyama", "Teruki Hanazawa", "Telequinesis", "Reigen Arataka"], 1),
+    q("¿Cómo se llama la escuela secundaria de Mob?", ["Salt Middle School", "Exorcismos", "Dimple", "Claw"], 0),
+  ],
+  "Re:Zero": [
+    q("¿Cómo se llama el protagonista transportado a otro mundo?", ["Subaru Natsuki", "Rem", "Lugunica", "Emilia"], 0),
+    q("¿Qué habilidad permite a Subaru regresar tras morir?", ["Return by Death", "Isekai", "Puck", "Afrontar los ciclos y tomar decisiones difíciles"], 0),
+    q("¿Qué medioelfa Subaru intenta proteger?", ["Echidna", "Emilia", "Return by Death", "Beatrice"], 1),
+    q("¿Qué gemela trabaja como sirvienta en la mansión?", ["Puck", "Rem", "Ram", "Echidna"], 1),
+    q("¿Cómo se llama la hermana gemela de Rem?", ["Isekai", "Lugunica", "Ram", "Echidna"], 2),
+    q("¿Quién es el mago que dirige la mansión donde trabajan las gemelas?", ["Emilia", "Isekai", "Puck", "Roswaal L. Mathers"], 3),
+    q("¿Qué espíritu felino acompaña a Emilia?", ["Emilia", "Beatrice", "Isekai", "Puck"], 3),
+    q("¿Qué bibliotecaria protege la biblioteca prohibida?", ["Beatrice", "Roswaal L. Mathers", "Ram", "Afrontar los ciclos y tomar decisiones difíciles"], 0),
+    q("¿En qué reino transcurre gran parte de la historia?", ["Lugunica", "Felt", "Ram", "Return by Death"], 0),
+    q("¿Qué seres sobrenaturales están vinculados a los pecados capitales?", ["Felt", "Brujas", "Emilia", "Afrontar los ciclos y tomar decisiones difíciles"], 1),
+    q("¿Qué bruja está asociada a la avaricia y a un examen en el Santuario?", ["Isekai", "Beatrice", "Brujas", "Echidna"], 3),
+    q("¿Qué chica de pelo corto es elegida como candidata real?", ["Felt", "Rem", "Afrontar los ciclos y tomar decisiones difíciles", "Roswaal L. Mathers"], 0),
+    q("¿Qué título reciben los combatientes que protegen a los candidatos reales?", ["Subaru Natsuki", "Caballeros", "Echidna", "Puck"], 1),
+    q("¿Qué género representa el traslado de Subaru a otro mundo?", ["Subaru Natsuki", "Ram", "Isekai", "Return by Death"], 2),
+    q("¿Qué debe aprender Subaru para proteger a sus amigos?", ["Isekai", "Felt", "Afrontar los ciclos y tomar decisiones difíciles", "Return by Death"], 2),
+  ],
+  "Violet Evergarden": [
+    q("¿Cómo se llama la protagonista que aprende a comprender las emociones?", ["Gilbert Bougainvillea", "Los sentimientos de sus remitentes", "Violet Evergarden", "Drama"], 2),
+    q("¿Qué trabajo realiza Violet al escribir cartas para otras personas?", ["La guerra", "Violet Evergarden", "Muñeca de Memorias Automáticas", "Cattleya Baudelaire"], 2),
+    q("¿Quién dirige la compañía postal donde trabaja Violet?", ["Cattleya Baudelaire", "Claudia Hodgins", "Drama", "El significado de las emociones humanas"], 1),
+    q("¿Qué oficial es especialmente importante para Violet?", ["Violet Evergarden", "Iris Cannary", "Gilbert Bougainvillea", "Muñeca de Memorias Automáticas"], 2),
+    q("¿Qué intenta comprender Violet a través de las cartas?", ["Drama", "Personas que necesitan expresar sus sentimientos por escrito", "Claudia Hodgins", "El significado de las emociones humanas"], 3),
+    q("¿En qué ciudad ficticia trabaja Violet?", ["Gilbert Bougainvillea", "Violet Evergarden", "Leiden", "Drama"], 2),
+    q("¿Qué compañera de trabajo es una escritora experimentada?", ["Cattleya Baudelaire", "La guerra", "Muñeca de Memorias Automáticas", "Escritura de cartas"], 0),
+    q("¿Quién es el repartidor que trabaja en la compañía postal?", ["Iris Cannary", "Benedict Blue", "Violet Evergarden", "Leiden"], 1),
+    q("¿Qué joven empleada aprende junto a Violet?", ["El significado de las emociones humanas", "Cattleya Baudelaire", "Iris Cannary", "La guerra"], 2),
+    q("¿Qué conflicto marcó la vida de Violet antes de trabajar en la oficina postal?", ["Iris Cannary", "La guerra", "Cattleya Baudelaire", "El significado de las emociones humanas"], 1),
+    q("¿Qué habilidad profesional desarrolla Violet?", ["Escritura de cartas", "Benedict Blue", "Claudia Hodgins", "Leiden"], 0),
+    q("¿Qué buscan transmitir las cartas que redacta?", ["Escritura de cartas", "El significado de las emociones humanas", "Claudia Hodgins", "Los sentimientos de sus remitentes"], 3),
+    q("¿Qué nombre recibe la profesión de Violet?", ["Cattleya Baudelaire", "Los sentimientos de sus remitentes", "Muñeca de Memorias Automáticas", "Iris Cannary"], 2),
+    q("¿Qué tipo de clientes contratan a Violet?", ["Muñeca de Memorias Automáticas", "Iris Cannary", "Personas que necesitan expresar sus sentimientos por escrito", "Claudia Hodgins"], 2),
+    q("¿Qué género predomina en la serie?", ["La guerra", "Escritura de cartas", "Drama", "Iris Cannary"], 2),
+  ],
+  "Bocchi the Rock!": [
+    q("¿Cuál es el nombre completo de Bocchi?", ["Yoyoko Otsuki", "Batería", "Hitori Gotoh", "Kessoku Band"], 2),
+    q("¿Qué instrumento toca Hitori en Kessoku Band?", ["Batería", "Seika Ijichi", "Guitarra", "Nijika Ijichi"], 2),
+    q("¿Quién invita a Hitori a unirse a la banda?", ["Hitori Gotoh", "Guitarra", "Nijika Ijichi", "Tocar música en una banda"], 2),
+    q("¿Qué instrumento toca Ryo Yamada?", ["Batería", "Hitori Gotoh", "Bajo", "Yoyoko Otsuki"], 2),
+    q("¿Qué instrumento toca Nijika?", ["Batería", "Hacer amigos y actuar en directo", "Ikuyo Kita", "Hitori Gotoh"], 0),
+    q("¿Cómo se llama la vocalista y segunda guitarrista de la banda?", ["Ikuyo Kita", "Bajo", "Guitarra", "Kessoku Band"], 0),
+    q("¿Cómo se llama la banda de las protagonistas?", ["Nijika Ijichi", "Ikuyo Kita", "Practica guitarra durante años", "Kessoku Band"], 3),
+    q("¿En qué local toca habitualmente la banda?", ["Bajo", "Hitori Gotoh", "Kessoku Band", "Starry"], 3),
+    q("¿Quién es la hermana mayor de Nijika y administra Starry?", ["Ikuyo Kita", "Seika Ijichi", "Practica guitarra durante años", "Guitarra"], 1),
+    q("¿Qué dificultad social afecta a Hitori?", ["Hitori Gotoh", "Tocar música en una banda", "Ansiedad social", "Hacer amigos y actuar en directo"], 2),
+    q("¿Qué hace Hitori para mejorar su habilidad musical antes de conocer la banda?", ["Ikuyo Kita", "Practica guitarra durante años", "Kessoku Band", "Batería"], 1),
+    q("¿Qué personaje lidera una banda rival y admira el talento de Bocchi?", ["Hacer amigos y actuar en directo", "Ikuyo Kita", "Tocar música en una banda", "Yoyoko Otsuki"], 3),
+    q("¿Qué instrumento es el principal de Bocchi?", ["Ikuyo Kita", "Hitori Gotoh", "Guitarra", "Practica guitarra durante años"], 2),
+    q("¿Qué actividad une a las cuatro protagonistas?", ["Batería", "Tocar música en una banda", "Hitori Gotoh", "Hacer amigos y actuar en directo"], 1),
+    q("¿Qué objetivo tiene Hitori al entrar en una banda?", ["Batería", "Bajo", "Hitori Gotoh", "Hacer amigos y actuar en directo"], 3),
+  ],
+  "Kuroko's Basketball": [
+    q("¿Cómo se llama el jugador conocido por su presencia casi imperceptible?", ["Tetsuya Kuroko", "Atsushi Murasakibara", "Riko Aida", "Cancha de baloncesto"], 0),
+    q("¿Quién es el compañero de Kuroko que destaca por su potencia física?", ["Tetsuya Kuroko", "Taiga Kagami", "Shintaro Midorima", "Seijuro Akashi"], 1),
+    q("¿Qué deporte practican los protagonistas?", ["Daiki Aomine", "Seijuro Akashi", "Cancha de baloncesto", "Baloncesto"], 3),
+    q("¿Cómo se conoce al grupo de antiguos jugadores prodigiosos?", ["Generación de los Milagros", "Riko Aida", "Teppei Kiyoshi", "Baloncesto"], 0),
+    q("¿Cuál es el equipo escolar protagonista?", ["Daiki Aomine", "Anotar más puntos que el rival", "Seirin", "Generación de los Milagros"], 2),
+    q("¿Qué jugador destaca por su habilidad de tiro y su orgullo?", ["Seirin", "Daiki Aomine", "Shintaro Midorima", "Atsushi Murasakibara"], 1),
+    q("¿Qué jugador lanza tiros de larga distancia con gran precisión?", ["Shintaro Midorima", "Baloncesto", "Seijuro Akashi", "Riko Aida"], 0),
+    q("¿Qué miembro de la Generación de los Milagros copia técnicas ajenas?", ["Ryota Kise", "Seijuro Akashi", "Daiki Aomine", "Taiga Kagami"], 0),
+    q("¿Qué jugador destaca por su enorme altura y fuerza?", ["Riko Aida", "Daiki Aomine", "Generación de los Milagros", "Atsushi Murasakibara"], 3),
+    q("¿Quién es el capitán de Rakuzan y líder de la Generación de los Milagros?", ["Riko Aida", "Ryota Kise", "Taiga Kagami", "Seijuro Akashi"], 3),
+    q("¿Qué técnica permite a Kuroko pasar el balón sin llamar la atención?", ["Seijuro Akashi", "Pase invisible", "Seirin", "Daiki Aomine"], 1),
+    q("¿Dónde se juegan los partidos oficiales?", ["Anotar más puntos que el rival", "Daiki Aomine", "Cancha de baloncesto", "Ryota Kise"], 2),
+    q("¿Quién entrena al equipo de Seirin?", ["Riko Aida", "Cancha de baloncesto", "Seijuro Akashi", "Baloncesto"], 0),
+    q("¿Qué jugador veterano de Seirin ayuda con su experiencia?", ["Daiki Aomine", "Anotar más puntos que el rival", "Taiga Kagami", "Teppei Kiyoshi"], 3),
+    q("¿Qué deben hacer los equipos para ganar un partido?", ["Anotar más puntos que el rival", "Generación de los Milagros", "Riko Aida", "Atsushi Murasakibara"], 0),
+  ],
+  "The Apothecary Diaries": [
+    q("¿Cómo se llama la joven boticaria protagonista?", ["Medicina", "Maomao", "Jinshi", "Venenos"], 1),
+    q("¿Qué funcionario del palacio suele pedir ayuda a Maomao?", ["Jinshi", "Gyokuyou", "Venenos", "Concubinas"], 0),
+    q("¿Dónde trabaja Maomao tras ser llevada al servicio imperial?", ["Palacio imperial", "Concubinas", "Hierbas medicinales", "Boticaria"], 0),
+    q("¿Qué tema conoce especialmente bien Maomao?", ["Venenos", "Misterios e incidentes médicos", "Hierbas medicinales", "Boticaria"], 0),
+    q("¿Qué oficio ejercía Maomao antes de trabajar en el palacio?", ["Lihaku", "Boticaria", "Palacio imperial", "China imperial ficticia"], 1),
+    q("¿Qué campo utiliza Maomao para resolver misterios médicos?", ["Medicina", "Medicina y vida de palacio", "Observación e investigación", "Remedios y recetas"], 0),
+    q("¿Qué consorte imperial cuenta con la atención de Maomao?", ["Gyokuyou", "Boticaria", "Maomao", "Hierbas medicinales"], 0),
+    q("¿Qué guardia se interesa por ayudar a Maomao?", ["Medicina y vida de palacio", "Medicina", "Lihaku", "Concubinas"], 2),
+    q("¿Qué tipo de casos resuelve Maomao en el palacio?", ["Misterios e incidentes médicos", "China imperial ficticia", "Medicina y vida de palacio", "Observación e investigación"], 0),
+    q("¿Quiénes viven en los pabellones interiores como consortes del emperador?", ["Concubinas", "Palacio imperial", "Jinshi", "Observación e investigación"], 0),
+    q("¿Qué ingredientes busca Maomao para preparar remedios?", ["Gyokuyou", "Maomao", "Hierbas medicinales", "Remedios y recetas"], 2),
+    q("¿Qué prepara Maomao al estudiar sustancias y síntomas?", ["Boticaria", "China imperial ficticia", "Observación e investigación", "Remedios y recetas"], 3),
+    q("¿Qué método usa para resolver los casos?", ["China imperial ficticia", "Hierbas medicinales", "Observación e investigación", "Misterios e incidentes médicos"], 2),
+    q("¿En qué tipo de entorno histórico se inspira la historia?", ["Boticaria", "China imperial ficticia", "Remedios y recetas", "Gyokuyou"], 1),
+    q("¿Qué combina la serie con el misterio?", ["Medicina", "Medicina y vida de palacio", "Misterios e incidentes médicos", "Hierbas medicinales"], 1),
+  ],
+  "Oshi no Ko": [
+    q("¿Cómo se llama la idol que lidera B-Komachi al inicio de la historia?", ["Ai Hoshino", "Kana Arima", "Miyako Saito", "La presión y explotación de la industria del entretenimiento"], 0),
+    q("¿Cómo se llama el hijo de Ai?", ["Aqua Hoshino", "La música y la actuación", "Ruby Hoshino", "Miyako Saito"], 0),
+    q("¿Cómo se llama la hija de Ai?", ["Aqua Hoshino", "Ruby Hoshino", "Industria del entretenimiento", "B-Komachi"], 1),
+    q("¿Cómo se llama el grupo idol de Ai?", ["Idol", "Reencarnación", "Aqua Hoshino", "B-Komachi"], 3),
+    q("¿En qué industria se desarrolla gran parte de la historia?", ["Industria del entretenimiento", "B-Komachi", "Ruby Hoshino", "Akane Kurokawa"], 0),
+    q("¿Qué médico era Aqua antes de reencarnarse?", ["Akane Kurokawa", "Gorou Amamiya", "Kana Arima", "Industria del entretenimiento"], 1),
+    q("¿Qué fenómeno une las vidas de Aqua y Ruby con Ai?", ["Kana Arima", "Conciertos y producciones audiovisuales", "Reencarnación", "Gorou Amamiya"], 2),
+    q("¿Qué actriz joven es conocida por su talento y experiencia temprana?", ["La presión y explotación de la industria del entretenimiento", "B-Komachi", "Kana Arima", "Conciertos y producciones audiovisuales"], 2),
+    q("¿Qué actriz estudia los gestos de otras personas para interpretar papeles?", ["La música y la actuación", "Akane Kurokawa", "Aqua Hoshino", "La presión y explotación de la industria del entretenimiento"], 1),
+    q("¿Qué profesión tenía Ai?", ["B-Komachi", "Kana Arima", "Ai Hoshino", "Idol"], 3),
+    q("¿Qué campo artístico explora Ruby al crecer?", ["Conciertos y producciones audiovisuales", "La música y la actuación", "Reencarnación", "La verdad detrás de la muerte de Ai"], 1),
+    q("¿Quién ayuda a gestionar la carrera de los niños tras la muerte de Ai?", ["Miyako Saito", "Kana Arima", "B-Komachi", "La música y la actuación"], 0),
+    q("¿Qué intenta descubrir Aqua durante la historia?", ["Ai Hoshino", "Ruby Hoshino", "La verdad detrás de la muerte de Ai", "Kana Arima"], 2),
+    q("¿Qué tipo de actuaciones forman parte del mundo de la serie?", ["Conciertos y producciones audiovisuales", "La verdad detrás de la muerte de Ai", "Miyako Saito", "Ai Hoshino"], 0),
+    q("¿Qué tema crítico aborda la serie además del espectáculo?", ["Ai Hoshino", "La presión y explotación de la industria del entretenimiento", "Akane Kurokawa", "Ruby Hoshino"], 1),
+  ],
+  "Solo Leveling": [
+    q("¿Cómo se llama el protagonista de Solo Leveling?", ["Sung Jinwoo", "Yoo Jinho", "Cha Hae-In", "Go Gunhee"], 0),
+    q("¿Qué rango tenía Jinwoo al comienzo?", ["E-rank", "S-rank", "A-rank", "National Level"], 0),
+    q("¿Qué le permite crecer de forma extraordinaria?", ["Un sistema que le permite subir de nivel", "Una Death Note", "Un grimorio de cinco hojas", "La respiración del agua"], 0),
+    q("¿Qué tipo de portales aparecen en el mundo?", ["Gates hacia mazmorras", "Grand Lines", "Muros de titanes", "Puertas de Totsuki"], 0),
+    q("¿Qué profesión tienen quienes entran a las mazmorras?", ["Cazadores", "Alquimistas estatales", "Shinigami", "B-Cubers"], 0),
+    q("¿Quién es un cazador de rango S y líder de gremio conocido como el Tigre Blanco?", ["Baek Yoonho", "Sung Jinwoo", "Jin Chul Woo", "Thomas Andre"], 0),
+    q("¿Qué arma utiliza Jinwoo con frecuencia en combate cercano?", ["Dagas", "Arco de cocina", "Espada Nichirin únicamente", "Lira"], 0),
+    q("¿Qué habilidad obtiene Jinwoo al superar la misión de cambio de trabajo?", ["Convertirse en Monarca de las Sombras", "Convertirse en Rey Mago", "Controlar titanes", "Ser dios de la destrucción"], 0),
+    q("¿Cómo se llama el primer gran compañero cazador de Jinwoo?", ["Yoo Jinho", "Gojo Satoru", "Killua Zoldyck", "Chifuyu Matsuno"], 0),
+    q("¿Qué significa que un cazador sea de rango S?", ["Tiene un poder excepcionalmente alto", "Es el rango más bajo", "Solo puede curar", "Es un título culinario"], 0),
+    q("¿Qué puede hacer Jinwoo con enemigos derrotados usando su poder de sombra?", ["Convertirlos en soldados sombra", "Convertirlos en Pokémon", "Borrar sus nombres de un cuaderno", "Hacerlos homúnculos"], 0),
+    q("¿Qué gremio está asociado con Cha Hae-In en la historia?", ["Hunters Guild", "Phantom Troupe", "Toros Negros", "Gotei 13"], 0),
+    q("¿Quién es el padre de Sung Jinwoo?", ["Sung Il-Hwan", "Go Gunhee", "Thomas Andre", "Baek Yoonho"], 0),
+    q("¿Qué género describe Solo Leveling?", ["Acción y fantasía de mazmorras", "Comedia culinaria", "Romance escolar puro", "Deporte de voleibol"], 0),
+    q("¿Qué peligro afrontan los cazadores al entrar en una puerta?", ["Monstruos y mazmorras", "Exámenes de cocina", "Solo carreras", "Batallas de cocina"], 0),
+  ],
+  "Neon Genesis Evangelion": [
+    q("¿Cómo se llama el piloto del EVA-01?", ["Shinji Ikari", "Proyecto de Complementación Humana", "Campo AT", "Misato Katsuragi"], 0),
+    q("¿Qué piloto es conocida por su cabello azul y su carácter reservado?", ["Pilotos", "Rei Ayanami", "Asuka Langley", "Ángeles"], 1),
+    q("¿Qué piloto pelirroja llega desde Alemania?", ["Pilotos", "Shinji Ikari", "Asuka Langley", "Rei Ayanami"], 2),
+    q("¿Qué organización coordina las operaciones de los Evangelion?", ["NERV", "Shinji Ikari", "SEELE", "LCL"], 0),
+    q("¿Qué unidad pilota Shinji?", ["EVA-01", "NERV", "Shinji Ikari", "Asuka Langley"], 0),
+    q("¿Cómo se llaman los seres que atacan Tokyo-3?", ["Misato Katsuragi", "Proyecto de Complementación Humana", "Ángeles", "Campo AT"], 2),
+    q("¿Quién es la comandante que supervisa a Shinji y Asuka?", ["Rei Ayanami", "Pilotos", "Unidades biomecánicas gigantes", "Misato Katsuragi"], 3),
+    q("¿Quién dirige NERV y es el padre de Shinji?", ["Gendo Ikari", "Rei Ayanami", "NERV", "Proyecto de Complementación Humana"], 0),
+    q("¿Cómo se llama la ciudad donde se desarrollan muchas batallas?", ["Ángeles", "Unidades biomecánicas gigantes", "Tokyo-3", "Campo AT"], 2),
+    q("¿Qué líquido llena el interior de la cabina del piloto?", ["Rei Ayanami", "LCL", "Asuka Langley", "Campo AT"], 1),
+    q("¿Qué barrera defensiva usan los Evangelion y algunos Ángeles?", ["LCL", "NERV", "Pilotos", "Campo AT"], 3),
+    q("¿Qué organización secreta influye en el Proyecto de Complementación Humana?", ["Campo AT", "Pilotos", "SEELE", "Rei Ayanami"], 2),
+    q("¿Qué tipo de máquinas son los Evangelion?", ["Shinji Ikari", "Unidades biomecánicas gigantes", "Pilotos", "Gendo Ikari"], 1),
+    q("¿Qué jóvenes son seleccionados para pilotar los EVA?", ["NERV", "Gendo Ikari", "Tokyo-3", "Pilotos"], 3),
+    q("¿Qué proyecto busca unir la conciencia humana en un solo estado?", ["Tokyo-3", "Proyecto de Complementación Humana", "Misato Katsuragi", "SEELE"], 1),
+  ],
+  "Assassination Classroom": [
+    q("¿Cómo se llama el profesor con aspecto de pulpo amarillo?", ["Karma Akabane", "Varias materias escolares", "Koro-sensei", "Los estudiantes de la Clase 3-E"], 2),
+    q("¿Qué clase recibe la misión de asesinar a su profesor?", ["Karma Akabane", "Clase 3-E", "Varias materias escolares", "Los estudiantes de la Clase 3-E"], 1),
+    q("¿Quién es el estudiante narrador que destaca por su observación?", ["Clase 3-E", "Varias materias escolares", "Tentáculos", "Nagisa Shiota"], 3),
+    q("¿Qué alumno es conocido por su talento y actitud desafiante?", ["Un ataque de Koro-sensei", "Asesinar a Koro-sensei antes del plazo", "Karma Akabane", "Koro-sensei"], 2),
+    q("¿Cómo se llama la escuela donde estudia la Clase 3-E?", ["Irina Jelavic", "Los estudiantes de la Clase 3-E", "Kunugigaoka", "Nagisa Shiota"], 2),
+    q("¿Qué rasgo físico distingue al profesor?", ["Tentáculos", "Mach 20", "Bitch-sensei", "Nagisa Shiota"], 0),
+    q("¿Qué papel desempeña Koro-sensei en la historia?", ["Profesor", "Karma Akabane", "Tentáculos", "Asesinar a Koro-sensei antes del plazo"], 0),
+    q("¿Cuál es la misión especial de los estudiantes?", ["Varias materias escolares", "Irina Jelavic", "Tentáculos", "Asesinar a Koro-sensei antes del plazo"], 3),
+    q("¿Qué asesina profesional enseña idiomas a la clase?", ["Irina Jelavic", "Koro-sensei", "Varias materias escolares", "Un ataque de Koro-sensei"], 0),
+    q("¿Qué agente militar supervisa a los estudiantes?", ["Bitch-sensei", "Tadaomi Karasuma", "Asesinar a Koro-sensei antes del plazo", "Clase 3-E"], 1),
+    q("¿A qué velocidad máxima puede moverse Koro-sensei?", ["Kunugigaoka", "Bitch-sensei", "Mach 20", "Un ataque de Koro-sensei"], 2),
+    q("¿Quiénes intentan cumplir la misión durante el curso?", ["Un ataque de Koro-sensei", "Los estudiantes de la Clase 3-E", "Kunugigaoka", "Asesinar a Koro-sensei antes del plazo"], 1),
+    q("¿Qué asignatura enseña Koro-sensei a sus alumnos?", ["Varias materias escolares", "Tentáculos", "Asesinar a Koro-sensei antes del plazo", "Koro-sensei"], 0),
+    q("¿Qué apodo usa la clase para Irina?", ["Bitch-sensei", "Nagisa Shiota", "Mach 20", "Irina Jelavic"], 0),
+    q("¿Qué acontecimiento amenaza con destruir la Luna según la premisa?", ["Kunugigaoka", "Asesinar a Koro-sensei antes del plazo", "Irina Jelavic", "Un ataque de Koro-sensei"], 3),
+  ],
+  "The Promised Neverland": [
+    q("¿Cómo se llama la niña protagonista que planea escapar del orfanato?", ["Emma", "Plantación para demonios", "Demonios", "Un número de identificación"], 0),
+    q("¿Qué niño es conocido por su inteligencia estratégica?", ["Norman", "Un número de identificación", "Phil", "Emma"], 0),
+    q("¿Quién es el amigo de Emma que descubre la verdad y ayuda a planear la fuga?", ["Mamá", "A los demás niños", "Emma", "Ray"], 3),
+    q("¿Cómo se llama el orfanato donde viven los niños?", ["A los demás niños", "Que los niños son entregados a los demonios", "Isabella", "Grace Field House"], 3),
+    q("¿Quién es la cuidadora que los niños llaman Mamá?", ["Grace Field House", "Escapar de Grace Field House", "Isabella", "Mujika"], 2),
+    q("¿Qué seres reciben a los niños fuera del orfanato?", ["Demonios", "Emma", "Plantación para demonios", "Que los niños son entregados a los demonios"], 0),
+    q("¿Qué creen los niños que es el lugar donde viven al principio?", ["Plantación para demonios", "Norman", "Un orfanato seguro", "Mujika"], 2),
+    q("¿Qué deben hacer Emma y sus amigos para sobrevivir?", ["Escapar de Grace Field House", "Ray", "Mamá", "Plantación para demonios"], 0),
+    q("¿Qué niño pequeño es especialmente importante para Emma?", ["Escapar de Grace Field House", "Ray", "Phil", "Un número de identificación"], 2),
+    q("¿Qué identifica a cada niño del orfanato?", ["Un número de identificación", "Plantación para demonios", "Phil", "Que los niños son entregados a los demonios"], 0),
+    q("¿Qué título dan los niños a Isabella?", ["Ray", "Mamá", "Phil", "Plantación para demonios"], 1),
+    q("¿Cómo se describe el sistema donde crían a los niños?", ["Un número de identificación", "Demonios", "A los demás niños", "Plantación para demonios"], 3),
+    q("¿Qué intentan proteger Emma y sus amigos?", ["Emma", "A los demás niños", "Isabella", "Un orfanato seguro"], 1),
+    q("¿Qué secreto descubren los niños sobre las entregas?", ["Emma", "Un número de identificación", "Que los niños son entregados a los demonios", "Ray"], 2),
+    q("¿Qué personaje demoníaco ayuda a Emma y a los niños?", ["Phil", "A los demás niños", "Mujika", "Norman"], 2),
+  ],
+  "Kaguya-sama: Love Is War": [
+    q("¿Quién es la vicepresidenta del consejo estudiantil?", ["Consejo estudiantil", "Kaguya Shinomiya", "Vicepresidenta", "Miko Iino"], 1),
+    q("¿Quién preside el consejo estudiantil de Shuchiin?", ["Miyuki Shirogane", "Kaguya Shinomiya", "Juegos psicológicos", "Confesar primero que están enamorados"], 0),
+    q("¿Quién es la secretaria del consejo estudiantil y propone juegos absurdos?", ["Chika Fujiwara", "Confesar primero que están enamorados", "Consejo estudiantil", "Miyuki Shirogane"], 0),
+    q("¿Quién es el tesorero del consejo estudiantil?", ["Chika Fujiwara", "Maki Shijo", "Yu Ishigami", "Confesar primero que están enamorados"], 2),
+    q("¿Qué estudiante se convierte en auditora del consejo?", ["Tesorero", "Kei Shirogane", "Miko Iino", "Chika Fujiwara"], 2),
+    q("¿Quién trabaja como asistente personal de Kaguya?", ["Confesar primero que están enamorados", "Juegos psicológicos", "Kei Shirogane", "Ai Hayasaka"], 3),
+    q("¿En qué academia estudian los protagonistas?", ["Academia Shuchiin", "Confesar primero que están enamorados", "Chika Fujiwara", "Kei Shirogane"], 0),
+    q("¿Qué cargo ocupa Kaguya en el consejo estudiantil?", ["Vicepresidenta", "Ai Hayasaka", "Comedia romántica", "Maki Shijo"], 0),
+    q("¿Qué cargo ocupa Yu Ishigami?", ["Tesorero", "Miko Iino", "Academia Shuchiin", "Kaguya Shinomiya"], 0),
+    q("¿Cómo se llama la hermana menor de Miyuki?", ["Maki Shijo", "Chika Fujiwara", "Kei Shirogane", "Kaguya Shinomiya"], 2),
+    q("¿Qué personaje es prima de Kaguya y suele sufrir por amor?", ["Tesorero", "Miyuki Shirogane", "Maki Shijo", "Juegos psicológicos"], 2),
+    q("¿Qué intentan evitar Kaguya y Miyuki al principio?", ["Tesorero", "Consejo estudiantil", "Miyuki Shirogane", "Confesar primero que están enamorados"], 3),
+    q("¿Qué género domina la serie?", ["Miyuki Shirogane", "Comedia romántica", "Miko Iino", "Kaguya Shinomiya"], 1),
+    q("¿Qué recurso convierte pequeñas conversaciones en batallas mentales?", ["Kaguya Shinomiya", "Academia Shuchiin", "Juegos psicológicos", "Yu Ishigami"], 2),
+    q("¿Qué club o institución comparten los personajes principales?", ["Chika Fujiwara", "Miko Iino", "Consejo estudiantil", "Maki Shijo"], 2),
+  ],
+  "Your Name": [
+    q("¿Cómo se llama la chica que vive en Itomori?", ["A través de sueños", "Mitsuha Miyamizu", "La diferencia temporal", "Encontrarse"], 1),
+    q("¿Cómo se llama el estudiante que vive en Tokio?", ["Itomori", "Santuario familiar", "Los recuerdos", "Taki Tachibana"], 3),
+    q("¿Qué fenómeno extraño viven Mitsuha y Taki?", ["Itomori", "Intercambio de cuerpos", "Tokio", "Santuario familiar"], 1),
+    q("¿Qué objeto celeste está relacionado con la tragedia de Itomori?", ["Un cometa", "Itomori", "Intercambio de cuerpos", "Mitsuha Miyamizu"], 0),
+    q("¿Cómo se llama el pueblo de Mitsuha?", ["Un cometa", "La diferencia temporal", "A través de sueños", "Itomori"], 3),
+    q("¿En qué gran ciudad vive Taki?", ["Tokio", "A través de sueños", "Makoto Shinkai", "Un hilo trenzado"], 0),
+    q("¿Qué bebida ritual prepara Mitsuha con arroz masticado?", ["Los recuerdos", "Santuario familiar", "Un cometa", "Kuchikamizake"], 3),
+    q("¿Qué intentan conservar los protagonistas a pesar de sus cambios de cuerpo?", ["Kuchikamizake", "Mitsuha Miyamizu", "Un hilo trenzado", "Los recuerdos"], 3),
+    q("¿Qué símbolo visual representa la conexión entre los protagonistas?", ["Kuchikamizake", "La diferencia temporal", "Un hilo trenzado", "Taki Tachibana"], 2),
+    q("¿Quién dirigió la película?", ["Itomori", "Mitsuha Miyamizu", "Makoto Shinkai", "Intercambio de cuerpos"], 2),
+    q("¿Qué lugar sagrado está relacionado con la familia de Mitsuha?", ["Los recuerdos", "Mitsuha Miyamizu", "Santuario familiar", "Itomori"], 2),
+    q("¿Qué elemento temporal complica la relación entre ambos?", ["La diferencia temporal", "Kuchikamizake", "Intercambio de cuerpos", "Tokio"], 0),
+    q("¿Cómo se manifiestan inicialmente sus encuentros?", ["A través de sueños", "Makoto Shinkai", "Mitsuha Miyamizu", "Los recuerdos"], 0),
+    q("¿Qué buscan hacer Taki y Mitsuha cuando comprenden la situación?", ["Itomori", "La diferencia temporal", "Tokio", "Encontrarse"], 3),
+    q("¿Qué tema central atraviesa la película?", ["Tokio", "Los recuerdos", "A través de sueños", "El destino y la conexión entre personas"], 3),
+  ],
+  "Steins;Gate": [
+    q("¿Cuál es el nombre real del protagonista conocido como Hououin Kyouma?", ["Divergencia", "Rintaro Okabe", "Una línea temporal en la que sus amigos sobrevivan", "Mayuri Shiina"], 1),
+    q("¿Cómo se llama la científica que trabaja con Okabe?", ["John Titor", "Daru", "Mayuri Shiina", "Kurisu Makise"], 3),
+    q("¿Quién es la amiga de infancia de Okabe?", ["Gelatina de plátano", "SERN", "Líneas temporales", "Mayuri Shiina"], 3),
+    q("¿Qué nombre recibe un mensaje enviado al pasado?", ["Kurisu Makise", "D-mail", "Líneas temporales", "SERN"], 1),
+    q("¿Cómo se llama el grupo de investigación de Okabe?", ["Future Gadget Laboratory", "John Titor", "Líneas temporales", "Una línea temporal en la que sus amigos sobrevivan"], 0),
+    q("¿Qué fenómeno estudia el grupo al modificar mensajes temporales?", ["SERN", "Viaje temporal", "Kurisu Makise", "Gelatina de plátano"], 1),
+    q("¿Cuál es el apodo de Itaru Hashida?", ["Rintaro Okabe", "Viaje temporal", "Una línea temporal en la que sus amigos sobrevivan", "Daru"], 3),
+    q("¿Qué organización está relacionada con experimentos temporales?", ["Gelatina de plátano", "SERN", "Daru", "Rintaro Okabe"], 1),
+    q("¿Qué concepto mide la diferencia entre realidades temporales?", ["Divergencia", "Mayuri Shiina", "Suzuha Amane", "Viaje temporal"], 0),
+    q("¿Qué aparato se modifica para enviar mensajes al pasado?", ["PhoneWave", "Rintaro Okabe", "Daru", "Líneas temporales"], 0),
+    q("¿Quién llega del futuro y trabaja como empleada de café?", ["Mayuri Shiina", "Divergencia", "Suzuha Amane", "PhoneWave"], 2),
+    q("¿Qué alimento aparece en los experimentos que salen mal?", ["Gelatina de plátano", "Kurisu Makise", "D-mail", "Daru"], 0),
+    q("¿Qué viajero temporal usa el nombre John Titor en internet?", ["Rintaro Okabe", "Líneas temporales", "John Titor", "D-mail"], 2),
+    q("¿Qué estructuras cambian cuando se altera el pasado?", ["Líneas temporales", "Divergencia", "PhoneWave", "SERN"], 0),
+    q("¿Qué intenta conseguir Okabe durante la historia?", ["Rintaro Okabe", "Una línea temporal en la que sus amigos sobrevivan", "D-mail", "Kurisu Makise"], 1),
+  ],
+  "Fruits Basket": [
+    q("¿Cómo se llama la protagonista que vive con miembros de la familia Sohma?", ["Momiji Sohma", "Gato", "Tohru Honda", "Shigure Sohma"], 2),
+    q("¿Qué miembro de la familia Sohma es conocido como el príncipe de la escuela?", ["Un abrazo de alguien del sexo opuesto", "Momiji Sohma", "Yuki Sohma", "Gato"], 2),
+    q("¿Qué personaje está asociado al gato del zodiaco?", ["La maldición del zodiaco chino", "Kyo Sohma", "Saki Hanajima", "Yuki Sohma"], 1),
+    q("¿Qué maldición afecta a varios miembros de los Sohma?", ["Saki Hanajima", "Shigure Sohma", "La maldición del zodiaco chino", "Familia Sohma"], 2),
+    q("¿Qué primo de Yuki y Kyo aloja a Tohru en su casa?", ["Tohru Honda", "Saki Hanajima", "Gato", "Shigure Sohma"], 3),
+    q("¿Quién dirige la familia Sohma y ejerce control sobre sus miembros?", ["Tohru Honda", "Familia Sohma", "Shigure Sohma", "Akito Sohma"], 3),
+    q("¿Qué contacto físico puede activar la transformación de los Sohma malditos?", ["Drama romántico", "Gato", "Un abrazo de alguien del sexo opuesto", "Yuki Sohma"], 2),
+    q("¿Qué familia está afectada por la maldición?", ["La maldición del zodiaco chino", "Familia Sohma", "Saki Hanajima", "Arisa Uotani"], 1),
+    q("¿Qué animal representa a Kyo dentro del zodiaco?", ["Gato", "Un abrazo de alguien del sexo opuesto", "Shigure Sohma", "Saki Hanajima"], 0),
+    q("¿Cuántos animales forman el zodiaco chino tradicional representado?", ["Gato", "Yuki Sohma", "Hatori Sohma", "Doce"], 3),
+    q("¿Qué médico de la familia Sohma es amigo de Shigure?", ["Hatori Sohma", "Arisa Uotani", "Yuki Sohma", "Tohru Honda"], 0),
+    q("¿Qué chico alegre está asociado al conejo?", ["Akito Sohma", "Momiji Sohma", "Un abrazo de alguien del sexo opuesto", "Doce"], 1),
+    q("¿Quién es una de las amigas cercanas de Tohru?", ["Arisa Uotani", "Gato", "Kyo Sohma", "Doce"], 0),
+    q("¿Cómo se llama la amiga de Tohru conocida por sus poderes espirituales?", ["Yuki Sohma", "Momiji Sohma", "Saki Hanajima", "Arisa Uotani"], 2),
+    q("¿Qué género mezcla la serie con elementos sobrenaturales?", ["Doce", "Akito Sohma", "Arisa Uotani", "Drama romántico"], 3),
+  ],
+  "Toradora!": [
+    q("¿Cómo se llama el protagonista que es hábil con las tareas domésticas?", ["Comedia romántica escolar", "Ryuuji Takasu", "Yasuko Takasu", "Un periquito llamado Inko"], 1),
+    q("¿Qué apodo recibe Taiga Aisaka por su temperamento?", ["Escuela secundaria", "Tigre de Bolsillo", "Una relación romántica", "Yasuko Takasu"], 1),
+    q("¿Quién es la mejor amiga de Taiga y una atleta entusiasta?", ["Yusaku Kitamura", "Ami Kawashima", "Minori Kushieda", "Ryuuji Takasu"], 2),
+    q("¿De quién está enamorada Taiga al comienzo de la serie?", ["Temperamento explosivo", "Yusaku Kitamura", "Tigre de Bolsillo", "Comedia romántica escolar"], 1),
+    q("¿Qué estudiante modelo también es amigo de Ryuuji?", ["Sus verdaderos sentimientos amorosos", "Yasuko Takasu", "Yusaku Kitamura", "Un periquito llamado Inko"], 2),
+    q("¿Qué modelo se incorpora al grupo de amigos?", ["Ami Kawashima", "Sus verdaderos sentimientos amorosos", "Un periquito llamado Inko", "Temperamento explosivo"], 0),
+    q("¿Qué animal es la mascota de Ryuuji?", ["Ryuuji Takasu", "Tigre de Bolsillo", "Cocinar y limpiar", "Un periquito llamado Inko"], 3),
+    q("¿Cómo se llama la madre de Ryuuji?", ["Comedia romántica escolar", "Ami Kawashima", "Sus verdaderos sentimientos amorosos", "Yasuko Takasu"], 3),
+    q("¿Qué acuerdan hacer Ryuuji y Taiga al principio?", ["Minori Kushieda", "Temperamento explosivo", "Ayudarse a conquistar a sus respectivos amores", "Un periquito llamado Inko"], 2),
+    q("¿En qué entorno estudian los protagonistas?", ["Cocinar y limpiar", "Escuela secundaria", "Temperamento explosivo", "Yasuko Takasu"], 1),
+    q("¿Qué rasgo caracteriza a Taiga al inicio?", ["Ryuuji Takasu", "Temperamento explosivo", "Comedia romántica escolar", "Yusaku Kitamura"], 1),
+    q("¿Qué habilidad doméstica destaca en Ryuuji?", ["Cocinar y limpiar", "Una relación romántica", "Yusaku Kitamura", "Sus verdaderos sentimientos amorosos"], 0),
+    q("¿Qué relación va desarrollándose entre Ryuuji y Taiga?", ["Una relación romántica", "Yasuko Takasu", "Ayudarse a conquistar a sus respectivos amores", "Tigre de Bolsillo"], 0),
+    q("¿Qué tipo de historia es Toradora!?", ["Ami Kawashima", "Temperamento explosivo", "Yasuko Takasu", "Comedia romántica escolar"], 3),
+    q("¿Qué sentimiento deben aprender a reconocer los protagonistas?", ["Cocinar y limpiar", "Temperamento explosivo", "Tigre de Bolsillo", "Sus verdaderos sentimientos amorosos"], 3),
+  ],
+  "Vinland Saga": [
+    q("¿Cómo se llama el joven guerrero protagonista al inicio de la historia?", ["Leif Erikson", "Einar", "Askeladd", "Thorfinn"], 3),
+    q("¿Quién es el líder mercenario al que Thorfinn sigue para vengarse?", ["Askeladd", "Esclavitud", "La venganza por la muerte de su padre", "La guerra"], 0),
+    q("¿Qué príncipe danés adquiere gran importancia política?", ["La venganza por la muerte de su padre", "Canute", "Islandia", "Askeladd"], 1),
+    q("¿Qué pueblo histórico protagoniza la serie?", ["Canute", "Islandia", "Thors", "Vikingos"], 3),
+    q("¿Qué tierra quiere encontrar Thorfinn para vivir en paz?", ["Vinland", "Jomsvikings", "Vivir sin violencia", "Einar"], 0),
+    q("¿Quién es el padre de Thorfinn, conocido por su fuerza y pacifismo?", ["Esclavitud", "Leif Erikson", "Thors", "Thorfinn"], 2),
+    q("¿Qué explorador es amigo de la familia de Thorfinn y habla de Vinland?", ["Askeladd", "Islandia", "Leif Erikson", "Jomsvikings"], 2),
+    q("¿Qué fenómeno domina gran parte de la primera temporada?", ["Askeladd", "Vinland", "Thors", "La guerra"], 3),
+    q("¿Qué compañero conoce Thorfinn durante su etapa como esclavo?", ["Einar", "La guerra", "Canute", "Vikingos"], 0),
+    q("¿Qué condición vive Thorfinn en la granja de Ketil?", ["Einar", "Askeladd", "Canute", "Esclavitud"], 3),
+    q("¿Qué armas usan habitualmente los guerreros de la serie?", ["Espadas y hachas", "La guerra", "Askeladd", "Thorfinn"], 0),
+    q("¿En qué isla nace Thorfinn?", ["Jomsvikings", "Thors", "Leif Erikson", "Islandia"], 3),
+    q("¿Qué grupo guerrero aparece vinculado a la historia danesa?", ["Leif Erikson", "Askeladd", "Jomsvikings", "La guerra"], 2),
+    q("¿Qué impulsa a Thorfinn durante su juventud?", ["Esclavitud", "Vivir sin violencia", "Jomsvikings", "La venganza por la muerte de su padre"], 3),
+    q("¿Qué idea aprende Thorfinn a valorar con el tiempo?", ["Vivir sin violencia", "La guerra", "Canute", "Thors"], 0),
+  ],
+  "Mushoku Tensei": [
+    q("¿Cómo se llama el protagonista reencarnado en un mundo de fantasía?", ["Paul Greyrat", "Zenith Greyrat", "Isekai", "Rudeus Greyrat"], 3),
+    q("¿Quién es la maga que enseña a Rudeus cuando es niño?", ["Incidente de teletransporte", "Familia Greyrat", "Magia", "Roxy Migurdia"], 3),
+    q("¿Cómo se llama la amiga de infancia de Rudeus, de cabello verde?", ["Incidente de teletransporte", "Eris Boreas", "Sylphiette", "Ruijerd Superdia"], 2),
+    q("¿Qué joven noble recibe clases de Rudeus?", ["Magia", "Eris Boreas", "Paul Greyrat", "Familia Greyrat"], 1),
+    q("¿Qué fenómeno permite a Rudeus empezar una nueva vida?", ["Isekai", "Misiones de aventureros", "Reencarnación", "Roxy Migurdia"], 2),
+    q("¿Qué habilidad desarrolla Rudeus desde pequeño?", ["Magia", "Roxy Migurdia", "Paul Greyrat", "Isekai"], 0),
+    q("¿Quién es el padre de Rudeus?", ["Misiones de aventureros", "Reencarnación", "Paul Greyrat", "Familia Greyrat"], 2),
+    q("¿A qué región llega Rudeus tras el incidente de teletransporte?", ["Rudeus Greyrat", "Continente Demoníaco", "Eris Boreas", "Roxy Migurdia"], 1),
+    q("¿Qué trabajo suelen aceptar los viajeros para ganar dinero?", ["Incidente de teletransporte", "Misiones de aventureros", "Rudeus Greyrat", "Eris Boreas"], 1),
+    q("¿Qué desastre separa a muchos habitantes por distintas regiones?", ["Roxy Migurdia", "Incidente de teletransporte", "Reencarnación", "Magia"], 1),
+    q("¿Cómo se llama la madre de Rudeus?", ["Zenith Greyrat", "Reencarnación", "Familia Greyrat", "Incidente de teletransporte"], 0),
+    q("¿Quién acompaña a Rudeus y protege al grupo durante el viaje?", ["Ruijerd Superdia", "Zenith Greyrat", "Magia", "Sylphiette"], 0),
+    q("¿Qué estilo de combate aprende Eris además de la magia?", ["Eris Boreas", "Rudeus Greyrat", "Paul Greyrat", "Esgrima"], 3),
+    q("¿Qué familia forma el núcleo de la historia de Rudeus?", ["Roxy Migurdia", "Paul Greyrat", "Familia Greyrat", "Ruijerd Superdia"], 2),
+    q("¿A qué subgénero pertenece la historia?", ["Isekai", "Familia Greyrat", "Ruijerd Superdia", "Esgrima"], 0),
+  ],
+  "Hellsing Ultimate": [
+    q("¿Cómo se llama el vampiro que sirve a la organización Hellsing?", ["Alucard", "Walter C. Dornez", "Pip Bernadotte", "Integra Hellsing"], 0),
+    q("¿Quién dirige la organización Hellsing?", ["Integra Hellsing", "Ghouls", "Iscariot", "Freak chips"], 0),
+    q("¿Qué policía se convierte en vampira y sirve a Alucard?", ["Alexander Anderson", "Alucard", "Armas de fuego", "Seras Victoria"], 3),
+    q("¿Qué organización secreta combate amenazas sobrenaturales?", ["Pip Bernadotte", "Ghouls", "Millennium", "Organización Hellsing"], 3),
+    q("¿Cómo se llama el antiguo mayordomo y combatiente de Integra?", ["Freak chips", "Millennium", "Vampiro", "Walter C. Dornez"], 3),
+    q("¿Qué grupo militar intenta crear un ejército de vampiros?", ["Millennium", "Walter C. Dornez", "Seras Victoria", "Integra Hellsing"], 0),
+    q("¿Qué sacerdote guerrero se enfrenta repetidamente a Alucard?", ["Alexander Anderson", "Iscariot", "Pip Bernadotte", "Seras Victoria"], 0),
+    q("¿Qué criaturas aparecen como enemigos sobrenaturales comunes?", ["Ghouls", "Inglaterra", "Armas de fuego", "Pip Bernadotte"], 0),
+    q("¿Qué tipo de equipo usa Alucard para combatir?", ["Armas de fuego", "Seras Victoria", "Alucard", "Ghouls"], 0),
+    q("¿En qué país se desarrolla principalmente la historia?", ["Millennium", "Inglaterra", "Armas de fuego", "Freak chips"], 1),
+    q("¿Qué organización reúne a cazadores de vampiros católicos?", ["Seras Victoria", "Vampiro", "Millennium", "Iscariot"], 3),
+    q("¿Qué naturaleza tiene Alucard?", ["Integra Hellsing", "Pip Bernadotte", "Millennium", "Vampiro"], 3),
+    q("¿Qué implantes se usan para crear vampiros artificiales en Millennium?", ["Walter C. Dornez", "Inglaterra", "Freak chips", "Vampiro"], 2),
+    q("¿Quién es el mercenario que trabaja con Seras?", ["Vampiro", "Walter C. Dornez", "Millennium", "Pip Bernadotte"], 3),
+    q("¿Qué género define el tono de Hellsing Ultimate?", ["Millennium", "Terror y acción sobrenatural", "Seras Victoria", "Freak chips"], 1),
+  ],
+  "Inuyasha": [
+    q("¿Cómo se llama la estudiante que viaja al Japón feudal?", ["Pozo devorador de huesos", "Tessaiga", "Kagome Higurashi", "Naraku"], 2),
+    q("¿Qué es Inuyasha por su ascendencia?", ["Kagome Higurashi", "Un hanyō, mitad humano y mitad demonio", "Hiraikotsu", "Medio demonio"], 1),
+    q("¿Qué joya mágica se rompe en fragmentos al inicio de la aventura?", ["Naraku", "Perla de Shikon", "Shippo", "Miroku"], 1),
+    q("¿Cómo se llama el medio hermano de Inuyasha?", ["Shippo", "Kikyo", "Sesshomaru", "Tessaiga"], 2),
+    q("¿Qué monje viaja con el grupo y tiene un agujero maldito en la mano?", ["Miroku", "Kagome Higurashi", "Pozo devorador de huesos", "Kikyo"], 0),
+    q("¿Qué exterminadora de demonios usa un enorme bumerán?", ["Perla de Shikon", "Medio demonio", "Shippo", "Sango"], 3),
+    q("¿Cómo se llama el pequeño demonio zorro que acompaña al grupo?", ["Perla de Shikon", "Miroku", "Hiraikotsu", "Shippo"], 3),
+    q("¿Quién era la sacerdotisa vinculada al pasado de Inuyasha?", ["Kagome Higurashi", "Perla de Shikon", "Un hanyō, mitad humano y mitad demonio", "Kikyo"], 3),
+    q("¿Quién es el principal antagonista que busca los fragmentos de la joya?", ["Shippo", "Naraku", "Tessaiga", "Hiraikotsu"], 1),
+    q("¿Cómo se describe a Inuyasha por ser descendiente de humano y demonio?", ["Kikyo", "Pozo devorador de huesos", "Fragmentos de la Perla de Shikon", "Medio demonio"], 3),
+    q("¿Qué deben reunir para completar la joya?", ["Fragmentos de la Perla de Shikon", "Kikyo", "Kagome Higurashi", "Medio demonio"], 0),
+    q("¿En qué época histórica transcurre la mayor parte de la aventura?", ["Época Sengoku", "Medio demonio", "Sango", "Shippo"], 0),
+    q("¿Cómo se llama la espada heredada por Inuyasha?", ["Tessaiga", "Época Sengoku", "Shippo", "Naraku"], 0),
+    q("¿Qué arma gigante usa Sango en combate?", ["Hiraikotsu", "Kikyo", "Sango", "Tessaiga"], 0),
+    q("¿Qué elemento permite a Kagome cruzar entre épocas?", ["Fragmentos de la Perla de Shikon", "Tessaiga", "Época Sengoku", "Pozo devorador de huesos"], 3),
+  ],
+  "Detective Conan": [
+    q("¿Cuál es el nombre del detective adolescente antes de encogerse?", ["Su identidad como Shinichi Kudo", "Heiji Hattori", "Shinichi Kudo", "Conan Edogawa"], 2),
+    q("¿Qué identidad adopta Shinichi tras convertirse en niño?", ["Conan Edogawa", "Ai Haibara", "Kaito Kid", "Su identidad como Shinichi Kudo"], 0),
+    q("¿Cómo se llama la amiga de infancia de Shinichi?", ["Conan Edogawa", "Su identidad como Shinichi Kudo", "Organización Negra", "Ran Mouri"], 3),
+    q("¿Quién es el padre de Ran y detective privado?", ["Ai Haibara", "Kogoro Mouri", "APTX 4869", "Ran Mouri"], 1),
+    q("¿Qué organización obliga a Shinichi a tomar el APTX 4869?", ["Organización Negra", "Kogoro Mouri", "Investigar la Organización Negra", "Heiji Hattori"], 0),
+    q("¿Qué inventor crea los aparatos que ayudan a Conan?", ["Investigar la Organización Negra", "Organización Negra", "Deducción", "Profesor Agasa"], 3),
+    q("¿Quién es el detective de Osaka y amigo de Shinichi?", ["Heiji Hattori", "Su identidad como Shinichi Kudo", "Conan Edogawa", "Profesor Agasa"], 0),
+    q("¿Qué fármaco transforma a Shinichi en un niño?", ["Profesor Agasa", "APTX 4869", "Investigar la Organización Negra", "Deducción"], 1),
+    q("¿Qué actividad resuelve Conan en casi todos los episodios?", ["APTX 4869", "Conan Edogawa", "Casos criminales", "Investigar la Organización Negra"], 2),
+    q("¿Qué reloj permite a Conan dormir a Kogoro?", ["APTX 4869", "Casos criminales", "Reloj tranquilizante", "Heiji Hattori"], 2),
+    q("¿Qué busca Conan mientras oculta su identidad?", ["Profesor Agasa", "Investigar la Organización Negra", "Kaito Kid", "Casos criminales"], 1),
+    q("¿Qué joven científica también recupera apariencia infantil?", ["Organización Negra", "Heiji Hattori", "Reloj tranquilizante", "Ai Haibara"], 3),
+    q("¿Qué habilidad hace famoso a Shinichi?", ["Ai Haibara", "Conan Edogawa", "Deducción", "Casos criminales"], 2),
+    q("¿Qué secreto debe ocultar Conan a sus conocidos?", ["Reloj tranquilizante", "Su identidad como Shinichi Kudo", "Profesor Agasa", "Deducción"], 1),
+    q("¿Qué nombre usa el ladrón ilusionista rival de Conan?", ["Organización Negra", "Shinichi Kudo", "Heiji Hattori", "Kaito Kid"], 3),
+  ],
+  "Code Geass": [
+    q("¿Cómo se llama el protagonista que adopta la identidad de Zero?", ["El dominio de Britannia", "Lelouch Lamperouge", "Kallen Stadtfeld", "Zero"], 1),
+    q("¿Qué poder sobrenatural recibe Lelouch de C.C.?", ["Geass", "Knightmare Frames", "Caballeros Negros", "Área 11"], 0),
+    q("¿Cómo se llama la hermana menor de Lelouch?", ["Knightmare Frames", "Geass", "Suzaku Kururugi", "Nunnally Lamperouge"], 3),
+    q("¿Qué identidad enmascarada usa Lelouch para liderar la rebelión?", ["Zero", "Charles zi Britannia", "El dominio de Britannia", "Área 11"], 0),
+    q("¿Qué imperio conquista Japón en la historia?", ["Obedecer una orden absoluta", "Charles zi Britannia", "Kallen Stadtfeld", "Sagrado Imperio de Britannia"], 3),
+    q("¿Qué número recibe Japón tras ser conquistado?", ["Knightmare Frames", "Geass", "El dominio de Britannia", "Área 11"], 3),
+    q("¿Quién es el amigo de Lelouch que sirve al ejército británico?", ["Kallen Stadtfeld", "Lelouch Lamperouge", "Suzaku Kururugi", "El dominio de Britannia"], 2),
+    q("¿Qué piloto de los Caballeros Negros es conocida por su fuerza y determinación?", ["Obedecer una orden absoluta", "Knightmare Frames", "Kallen Stadtfeld", "Nunnally Lamperouge"], 2),
+    q("¿Qué permite hacer el Geass de Lelouch a una persona?", ["Sagrado Imperio de Britannia", "C.C.", "Obedecer una orden absoluta", "Caballeros Negros"], 2),
+    q("¿Cómo se llama el grupo rebelde que sigue a Zero?", ["Caballeros Negros", "Kallen Stadtfeld", "Nunnally Lamperouge", "Lelouch Lamperouge"], 0),
+    q("¿Quién es la misteriosa mujer que concede el Geass a Lelouch?", ["C.C.", "El dominio de Britannia", "Zero", "Kallen Stadtfeld"], 0),
+    q("¿Cómo se llaman los robots de combate de la serie?", ["Kallen Stadtfeld", "Sagrado Imperio de Britannia", "Obedecer una orden absoluta", "Knightmare Frames"], 3),
+    q("¿Qué quiere destruir Lelouch para cambiar el mundo?", ["Sagrado Imperio de Britannia", "Área 11", "Knightmare Frames", "El dominio de Britannia"], 3),
+    q("¿Quién es el emperador de Britannia y padre de Lelouch?", ["Geass", "Suzaku Kururugi", "Charles zi Britannia", "Knightmare Frames"], 2),
+    q("¿Qué temas dominan la serie?", ["Rebelión, poder y consecuencias de las decisiones", "Charles zi Britannia", "Zero", "C.C."], 0),
+  ],
+  "Fire Force": [
+    q("¿Cómo se llama el bombero protagonista que puede propulsarse con los pies?", ["White-Clad", "Viktor Licht", "Compañía Especial de Bomberos 8", "Shinra Kusakabe"], 3),
+    q("¿Quién es el compañero de Shinra que se imagina como un caballero?", ["Maki Oze", "Benimaru Shinmon", "Arthur Boyle", "Sho Kusakabe"], 2),
+    q("¿Qué capitán dirige la Compañía Especial de Bomberos 8?", ["Compañía Especial de Bomberos 8", "Shinra Kusakabe", "Akitaru Obi", "Viktor Licht"], 2),
+    q("¿En qué unidad de bomberos especiales trabaja Shinra?", ["Infer­nales", "Compañía Especial de Bomberos 8", "Viktor Licht", "Evangelista"], 1),
+    q("¿Cómo se llaman los humanos transformados en criaturas de fuego?", ["Maki Oze", "Sho Kusakabe", "Infer­nales", "Viktor Licht"], 2),
+    q("¿Qué integrante de la Compañía 8 controla el fuego y destaca en combate cuerpo a cuerpo?", ["Takehisa Hinawa", "Maki Oze", "Infer­nales", "Evangelista"], 1),
+    q("¿Quién es el experto en armas de fuego de la Compañía 8?", ["Takehisa Hinawa", "Vulcan Joseph", "Arthur Boyle", "Evangelista"], 0),
+    q("¿Qué inventor ayuda a crear equipo para los bomberos?", ["Compañía Especial de Bomberos 8", "White-Clad", "Combustión humana espontánea", "Vulcan Joseph"], 3),
+    q("¿Quién es el científico que investiga los fenómenos de combustión?", ["Viktor Licht", "Akitaru Obi", "Benimaru Shinmon", "Compañía Especial de Bomberos 8"], 0),
+    q("¿Cómo se llama el hermano menor de Shinra?", ["Sho Kusakabe", "Combustión humana espontánea", "Arthur Boyle", "Viktor Licht"], 0),
+    q("¿Qué capitán es famoso por su fuerza en Asakusa?", ["Combustión humana espontánea", "Vulcan Joseph", "Viktor Licht", "Benimaru Shinmon"], 3),
+    q("¿Cómo se llama el grupo antagonista vestido de blanco?", ["White-Clad", "Evangelista", "Shinra Kusakabe", "Llamas en los pies"], 0),
+    q("¿Quién es la figura religiosa que el grupo White-Clad sigue?", ["Combustión humana espontánea", "Evangelista", "Sho Kusakabe", "Benimaru Shinmon"], 1),
+    q("¿Qué poder usa Shinra para desplazarse a gran velocidad?", ["Shinra Kusakabe", "Combustión humana espontánea", "Llamas en los pies", "Takehisa Hinawa"], 2),
+    q("¿Qué fenómeno investiga la Compañía 8?", ["Shinra Kusakabe", "Infer­nales", "Combustión humana espontánea", "Maki Oze"], 2),
+  ],
+  "Fairy Tail": [
+    q("¿Cómo se llama el mago que utiliza magia Dragon Slayer de fuego?", ["Wendy Marvell", "Natsu Dragneel", "Sabertooth", "Gray Fullbuster"], 1),
+    q("¿Qué maga celestial se une al grupo de Natsu?", ["Zeref Dragneel", "Lucy Heartfilia", "Sabertooth", "Guilda de magos"], 1),
+    q("¿Cómo se llama el gato azul que acompaña a Natsu?", ["Zeref Dragneel", "Happy", "Sabertooth", "Makarov Dreyar"], 1),
+    q("¿Qué maga destaca por sus armaduras y su magia de reequipamiento?", ["Sabertooth", "Llaves celestiales", "Guilda de magos", "Erza Scarlet"], 3),
+    q("¿Qué mago utiliza magia de creación de hielo?", ["Gray Fullbuster", "Dragon Slayer de Fuego", "Natsu Dragneel", "Sabertooth"], 0),
+    q("¿Cómo se llama la guild principal de los protagonistas?", ["Fairy Tail", "Wendy Marvell", "Lucy Heartfilia", "Gray Fullbuster"], 0),
+    q("¿Qué tipo de magia usa Natsu?", ["Guilda de magos", "Makarov Dreyar", "Gray Fullbuster", "Dragon Slayer de Fuego"], 3),
+    q("¿Qué Dragon Slayer utiliza magia del cielo?", ["La amistad", "Wendy Marvell", "Happy", "Guilda de magos"], 1),
+    q("¿Quién es el Dragon Slayer de hierro?", ["Wendy Marvell", "Erza Scarlet", "Gajeel Redfox", "Lucy Heartfilia"], 2),
+    q("¿Quién es el maestro de Fairy Tail durante gran parte de la serie?", ["Makarov Dreyar", "La amistad", "Fairy Tail", "Lucy Heartfilia"], 0),
+    q("¿Qué mago oscuro está ligado al pasado de Natsu?", ["Dragon Slayer de Fuego", "Zeref Dragneel", "Sabertooth", "Natsu Dragneel"], 1),
+    q("¿Qué organización reúne a los magos y acepta misiones?", ["Dragon Slayer de Fuego", "Happy", "Lucy Heartfilia", "Guilda de magos"], 3),
+    q("¿Qué utiliza Lucy para invocar espíritus celestiales?", ["Llaves celestiales", "Natsu Dragneel", "La amistad", "Happy"], 0),
+    q("¿Qué guild rival participa en los Grandes Juegos Mágicos?", ["Makarov Dreyar", "Erza Scarlet", "Gajeel Redfox", "Sabertooth"], 3),
+    q("¿Qué valor mantiene unido al equipo de Fairy Tail?", ["Zeref Dragneel", "La amistad", "Llaves celestiales", "Makarov Dreyar"], 1),
+  ],
+  "Bungo Stray Dogs": [
+    q("¿Cómo se llama el joven que puede transformarse en un tigre blanco?", ["Habilidades sobrenaturales", "Atsushi Nakajima", "Yukichi Fukuzawa", "Escritores literarios"], 1),
+    q("¿En qué organización trabaja Atsushi?", ["Escritores literarios", "Ryunosuke Akutagawa", "Kyouka Izumi", "Agencia de Detectives Armados"], 3),
+    q("¿Qué detective se caracteriza por su humor oscuro y sus intentos de suicidio?", ["Agencia de Detectives Armados", "Osamu Dazai", "Escritores literarios", "Yukichi Fukuzawa"], 1),
+    q("¿Cómo se llama la organización criminal dirigida desde Yokohama?", ["Yokohama", "Agencia de Detectives Armados", "Mafia del Puerto", "Rashomon"], 2),
+    q("¿Quién es el rival de Atsushi que utiliza Rashomon?", ["Atsushi Nakajima", "Ryunosuke Akutagawa", "Habilidades sobrenaturales", "Mafia del Puerto"], 1),
+    q("¿Qué detective es famoso por sus deducciones extraordinarias?", ["Agencia de Detectives Armados", "Rashomon", "Ranpo Edogawa", "Habilidades sobrenaturales"], 2),
+    q("¿Qué médica de la Agencia puede curar heridas graves?", ["Akiko Yosano", "Ryunosuke Akutagawa", "Yukichi Fukuzawa", "Mafia del Puerto"], 0),
+    q("¿Qué usuario de habilidades controla la gravedad?", ["Akiko Yosano", "Yokohama", "Habilidades sobrenaturales", "Chuuya Nakahara"], 3),
+    q("¿Qué joven exmiembro de la Mafia del Puerto se une a la Agencia?", ["Kyouka Izumi", "Ryunosuke Akutagawa", "Chuuya Nakahara", "Ranpo Edogawa"], 0),
+    q("¿Quién es el presidente de la Agencia de Detectives Armados?", ["Escritores literarios", "Rashomon", "Habilidades sobrenaturales", "Yukichi Fukuzawa"], 3),
+    q("¿Cómo se llama la habilidad de Dazai que anula otras habilidades al tocar?", ["Yukichi Fukuzawa", "No Longer Human", "Rashomon", "Ranpo Edogawa"], 1),
+    q("¿Cómo se llama la habilidad de Akutagawa?", ["Kyouka Izumi", "Agencia de Detectives Armados", "Rashomon", "Ranpo Edogawa"], 2),
+    q("¿Qué poseen muchos personajes que les da poderes especiales?", ["Yokohama", "Ranpo Edogawa", "Habilidades sobrenaturales", "Chuuya Nakahara"], 2),
+    q("¿En qué están inspirados muchos nombres de personajes?", ["Akiko Yosano", "Ranpo Edogawa", "No Longer Human", "Escritores literarios"], 3),
+    q("¿En qué ciudad japonesa se desarrolla gran parte de la historia?", ["Yokohama", "No Longer Human", "Escritores literarios", "Chuuya Nakahara"], 0),
+  ],
 };
 
 function q(text, options, answer) {
@@ -309,93 +988,16 @@ function q(text, options, answer) {
 
 
 const state = { currentAnime: null, questions: [], index: 0, score: 0, answered: false };
-const extraAnimeFacts = {
-  "Nanatsu no Taizai": ["Meliodas", "Elizabeth Liones", "Boar Hat", "Ira", "Dragon Sin", "Ban", "King", "Diane", "Gowther", "Merlin", "Escanor", "Britannia", "Dez Mandamientos", "Hawk", "Siete Pecados Capitales"],
-  "Attack on Titan": ["Eren Yeager", "Mikasa Ackerman", "Armin Arlert", "Cuerpo de Exploración", "Titán de Ataque", "Murallas", "Levi Ackerman", "Historia Reiss", "Reiner Braun", "Marley", "Jean Kirstein", "Sasha Blouse", "Titán Colosal", "ODM", "Ymir"],
-  "Shangri-La Frontier": ["Rakuro Hizutome", "Sunraku", "Emul", "Pencilgon", "Oikatzo", "juego de realidad virtual", "juegos defectuosos", "Rabituza", "Monstruos únicos", "mundo virtual", "equipo de aventura", "combate", "misiones", "habilidad de jugador", "Shangri-La Frontier"],
-  "Edens Zero": ["Shiki Granbell", "Rebecca Bluegarden", "Happy", "Ether Gear", "gravedad", "Four Shining Stars", "Edens Zero", "Homura Kogetsu", "Weisz Steiner", "Mother", "cosmos", "aventura espacial", "Demon King", "Sister Ivry", "Witch Regret"],
-  "Jujutsu Kaisen": ["Yuji Itadori", "Ryomen Sukuna", "Satoru Gojo", "Megumi Fushiguro", "Nobara Kugisaki", "energía maldita", "hechiceros jujutsu", "Mahito", "Yuta Okkotsu", "Dominio", "Escuela de Tokio", "Kento Nanami", "Maki Zenin", "Panda", "Toge Inumaki"],
-  "Pokémon": ["Pikachu", "Ash Ketchum", "Poké Ball", "Team Rocket", "Charmander", "Squirtle", "Bulbasaur", "Profesor Oak", "Eevee", "tipo Eléctrico", "entrenador Pokémon", "Gimnasios", "Liga Pokémon", "Pokédex", "Misty"],
-  "Dragon Ball Z": ["Son Goku", "Vegeta", "Gohan", "Freezer", "Super Saiyajin", "Esferas del Dragón", "Shenlong", "Piccolo", "Kamehameha", "Saiyajin", "Capsule Corp", "Trunks", "Cell", "Majin Buu", "Tierra"],
-  "Food Wars! (Shokugeki no Soma)": ["Soma Yukihira", "Erina Nakiri", "duelos culinarios", "Academia Totsuki", "Megumi Tadokoro", "Joichiro Yukihira", "cocina", "Consejo de Diez", "Takumi Aldini", "ingredientes", "recetas", "platos", "competición", "Hisako Arato", "gastronomía"],
-  "KonoSuba": ["Kazuma Satou", "Aqua", "Megumin", "Darkness", "explosión", "fantasía cómica", "gremio de aventureros", "魔王", "party", "Lalatina", "Yunyun", "Rusalka", "reencarnación", "misiones", "Axel"],
-  "Naruto": ["Naruto Uzumaki", "Hokage", "Sasuke Uchiha", "Sakura Haruno", "Kakashi Hatake", "chakra", "Rasengan", "Konoha", "Kurama", "Jiraiya", "Itachi Uchiha", "Sharingan", "Equipo 7", "ninja", "Hinata Hyuga"],
-  "Black Clover": ["Asta", "Yuno", "grimorio de cinco hojas", "Reino de Clover", "Touros Negros", "anti-magia", "Yami Sukehiro", "Noelle Silva", "Rei Mago", "grimórios", "Magna Swing", "Luck Voltia", "elfos", "Liebe", "magia"],
-  "Plunderer": ["Hina", "Licht Bach", "contadores", "Alcia", "Ace", "número", "barão", "contagem pessoal", "uniforme militar", "Jail Murdoch", "Lynn May", "Schmelman", "fantasia", "batalha", "Plunderer"],
-  "Tokyo Revengers": ["Takemichi Hanagaki", "Manjiro Sano", "Ken Ryuguji", "Toman", "viaje en el tiempo", "Hinata Tachibana", "Chifuyu Matsuno", "Baji Keisuke", "Mikey", "Draken", "pandilla", "Naoto Tachibana", "Valhalla", "Black Dragons", "futuro"],
-  "Fullmetal Alchemist: Brotherhood": ["Edward Elric", "Alphonse Elric", "piedra filosofal", "alquimia", "Roy Mustang", "Winry Rockbell", "Amestris", "Homúnculos", "equivalencia", "Scar", "Riza Hawkeye", "Hohenheim", "automail", "transmutación humana", "Puerta de la Verdad"],
-  "One Piece": ["Monkey D. Luffy", "One Piece", "Sombrero de Paja", "Roronoa Zoro", "Nami", "Sanji", "Devil Fruits", "Grand Line", "Gol D. Roger", "Usopp", "Tony Tony Chopper", "Robin", "Franky", "Brook", "Jinbe"],
-  "Demon Slayer: Kimetsu no Yaiba": ["Tanjiro Kamado", "Nezuko Kamado", "Respiración del Agua", "Cuerpo de Exterminio de Demonios", "Zenitsu Agatsuma", "Inosuke Hashibira", "Muzan Kibutsuji", "Nichirin", "Hashira", "Kanao Tsuyuri", "Giyu Tomioka", "Respiración del Sol", "demonios", "Ubuyashiki", "mariposa"],
-  "Death Note": ["Light Yagami", "L", "Ryuk", "cuaderno de muerte", "Misa Amane", "Shinigami", "nombre y rostro", "Near", "Mello", "Soichiro Yagami", "reglas del cuaderno", "investigación", "Kira", "Rem", "justicia"],
-  "My Hero Academia": ["Izuku Midoriya", "All Might", "One For All", "UA", "Katsuki Bakugo", "Ochaco Uraraka", "Shoto Todoroki", "quirks", "Endeavor", "Tomura Shigaraki", "Eraser Head", "héroes profesionales", "Clase 1-A", "Deku", "Liga de Villanos"],
-  "Hunter x Hunter": ["Gon Freecss", "Killua Zoldyck", "Nen", "Kurapika", "Leorio", "Hisoka", "Cazadores", "Examen Hunter", "Netero", "Greed Island", "Chimera Ants", "Bisky", "Yorknew", "familia Zoldyck", "Kite"],
-  "Bleach": ["Ichigo Kurosaki", "Rukia Kuchiki", "Soul Society", "Zanpakuto", "Hollow", "Orihime Inoue", "Uryu Ishida", "Renji Abarai", "Byakuya Kuchiki", "Bankai", "Shinigami", "Aizen", "Kisuke Urahara", "Yoruichi", "Karakura"],
-  "Spy x Family": ["Loid Forger", "Anya Forger", "Yor Forger", "Bond", "Operación Strix", "telépata", "espía", "asesina", "Eden Academy", "Damián Desmond", "WISE", "familia falsa", "Westalis", "Thorn Princess", "misión secreta"],
-  "Haikyuu!!": ["Shoyo Hinata", "Tobio Kageyama", "Karasuno", "voleibol", "Nekoma", "Daichi Sawamura", "Kei Tsukishima", "Yu Nishinoya", "Asahi Azumane", "Kozume Kenma", "Toru Oikawa", "bloqueo", "saque", "Libero", "Pequeño Gigante"],
-  "Sword Art Online": ["Kirito", "Asuna", "Aincrad", "juego de realidad virtual", "NerveGear", "Klein", "Yui", "Sinon", "alfheim", "Kayaba Akihiko", "espadas", "guild", "mundo virtual", "Death Gun", "Rath"],
-  "Frieren": ["Frieren", "Fern", "Stark", "Himmel", "Heiter", "Eisen", "elfa maga", "viaje después del Rey Demonio", "magia", "tiempo", "Hechiceros de primera clase", "Serie", "Aura", "Grimoire", "memorias"],
-  "Sailor Moon": ["Usagi Tsukino", "Sailor Moon", "Luna", "Tuxedo Mask", "Mamoru Chiba", "Sailor Mercury", "Sailor Mars", "Sailor Jupiter", "Sailor Venus", "Silver Crystal", "Reino de la Luna", "Reina Beryl", "transformación", "guardianas", "Chibiusa"],
-  "Cardcaptor Sakura": ["Sakura Kinomoto", "Cartas Clow", "Keroberos", "Tomoyo Daidouji", "Syaoran Li", "Yukito Tsukishiro", "Clow Reed", "báculo", "magia", "cartas mágicas", "Eriol Hiiragizawa", "guardiana", "captura", "uniformes", "Kero"],
-  "Chainsaw Man": ["Denji", "Pochita", "Makima", "Power", "Aki Hayakawa", "demonios", "cazadores de demonios", "motosierra", "contrato", "Public Safety", "Kobeni", "Himeno", "Reze", "sangre", "Tokyo"],
-  "Tokyo Ghoul": ["Ken Kaneki", "Touka Kirishima", "ghouls", "Anteiku", "Rize Kamishiro", "CCG", "máscara", "Hide", "Yoshimura", "Kagune", "Amon", "Juuzou Suzuya", "café", "un ojo", "Tokyo"],
-  "Steins;Gate": ["Rintaro Okabe", "Kurisu Makise", "Mayuri Shiina", "D-mail", "laboratorio del futuro", "viaje temporal", "Daru", "SERN", "divergencia", "PhoneWave", "Suzuha Amane", "gel banana", "John Titor", "líneas temporales", "Okabe"],
-  "Your Name": ["Taki Tachibana", "Mitsuha Miyamizu", "intercambio de cuerpos", "cometa", "Itomori", "Tokio", "Kuchikamizake", "memoria", "hilo rojo", "Makoto Shinkai", "santuario", "tiempo", "sueños", "encuentro", "campana"],
-  "Dr. Stone": ["Senku Ishigami", "ciencia", "Taiju Oki", "petrificación", "Reino de la Ciencia", "Chrome", "Kohaku", "Tsukasa", "Ishigami Village", "revivir humanidad", "fórmulas", "ácido nítrico", "Gen Asagiri", "Ryusui", "laboratorio"],
-  "JoJo's Bizarre Adventure": ["Jonathan Joestar", "Jotaro Kujo", "Dio Brando", "Stands", "Joseph Joestar", "Hamon", "Star Platinum", "Joestar", "Josuke Higashikata", "Giorno Giovanna", "Pucci", "flecha", "Bizarre Adventure", "ORA ORA", "Morioh"],
-  "Mob Psycho 100": ["Shigeo Kageyama", "Reigen Arataka", "poderes psíquicos", "porcentaje emocional", "Ritsu", "Dimple", "Claw", "telequinesis", "Body Improvement Club", "Tsubomi", "espíritus", "exorcismo", "Mob", "Teru", "Salt Middle School"],
-  "Re:Zero": ["Subaru Natsuki", "Emilia", "Rem", "Ram", "Return by Death", "Roswaal", "Puck", "Beatrice", "Mansión", "Lugunica", "brujas", "Echidna", "Felt", "Caballero", "isekai"],
-  "Violet Evergarden": ["Violet Evergarden", "Auto Memory Dolls", "Cartas", "Claudia Hodgins", "Gilbert Bougainvillea", " emociones humanas", "Leiden", "Cattleya", "Benedict", "Iris", "guerra", "escritura", "cliente", "muñeca de memoria", "correspondencia"],
-  "Bocchi the Rock!": ["Hitori Gotoh", "Kita Ikuyo", "Nijika Ijichi", "Ryo Yamada", "Kessoku Band", "guitarra", "ansiedad social", "Starry", "Seika Ijichi", "banda musical", "concierto", "Bocchi", "Yoyoko Otsuki", "bajo", "batería"],
-  "Kuroko's Basketball": ["Tetsuya Kuroko", "Taiga Kagami", "baloncesto", "Generación de los Milagros", "Seirin", "Daiki Aomine", "Shintaro Midorima", "Ryota Kise", "Atsushi Murasakibara", "Seijuro Akashi", "pase invisible", "cancha", "entrenador Riko", "Teppei Kiyoshi", "partido"],
-  "The Apothecary Diaries": ["Maomao", "Jinshi", "palacio imperial", "venenos", "farmacia", "medicina", "Gyokuyou", "Lihaku", "misterios", "concubinas", "hierbas", "recetas", "investigación", "China imperial ficticia", "medicina"],
-  "Oshi no Ko": ["Ai Hoshino", "Aqua Hoshino", "Ruby Hoshino", "B-Komachi", "industria del entretenimiento", "Gorou Amamiya", "reencarnación", "Kana Arima", "Akane Kurokawa", "ídolos", "teatro", "Miyako Saito", "memoria", "misterio", "escenario"],
-  "Solo Leveling": ["Sung Jinwoo", "sistema", "cazadores", "mazmorras", "Monarca de las Sombras", "Cha Hae-In", "Jin-Ho Yoo", "portal", "rangos", "gremios", "Igris", "Beru", "nivel", "dungeons", "despertar"],
-  "Neon Genesis Evangelion": ["Shinji Ikari", "Rei Ayanami", "Asuka Langley", "NERV", "EVA-01", "Ángeles", "Misato Katsuragi", "Gendo Ikari", "Tokyo-3", "LCL", "AT Field", "SEELE", "mecha", "Pilotos", "Instrumentalización humana"],
-  "Assassination Classroom": ["Koro-sensei", "Clase 3-E", "Nagisa Shiota", "Karma Akabane", "Kunugigaoka", "tentáculos", "profesor", "misión de asesinato", "Irina Jelavic", "Karasuma", "velocidad Mach 20", "estudiantes", "clase", "Bitch-sensei", "luna"],
-  "The Promised Neverland": ["Emma", "Norman", "Ray", "Grace Field House", "Isabella", "demonios", "orfanato", "fuga", "Phil", "número de identificación", "Mama", "plantación", "niños", "secreto", "Mujika"],
-  "Code Geass": ["Lelouch Lamperouge", "Geass", "C.C.", "Suzaku Kururugi", "Britannia", "Zero", "Knightmare Frames", "Nunnally", "Black Knights", "Kallen Stadtfeld", "Rebelión", "Emperador Charles", "Japan", "estrategia", "máscara"],
-  "Fruits Basket": ["Tohru Honda", "Yuki Sohma", "Kyo Sohma", "maldición del zodiaco chino", "Shigure Sohma", "Akito", "abrazo", "familia Sohma", "gato", "doce animales", "Hatori", "Momiji", "Arisa Uotani", "Hana", "romance"],
-  "Toradora!": ["Ryuuji Takasu", "Taiga Aisaka", "Minori Kushieda", "Yusaku Kitamura", "Palmtop Tiger", "escuela secundaria", "romance", "Ami Kawashima", "cocina", "amistad", "confesión", "navidad", "familia", "festival escolar", "comedia romántica"],
-  "Vinland Saga": ["Thorfinn", "Askeladd", "Canute", "vikingos", "Vinland", "Thors", "Leif Erikson", "guerra", "Danelaw", "Einar", "esclavitud", "espadas", "Islandia", "Jomsvikings", "venganza"],
-  "Mushoku Tensei": ["Rudeus Greyrat", "Roxy Migurdia", "Sylphiette", "Eris Boreas", "reencarnación", "magia", "Paul Greyrat", "continente Demoníaco", "aventureros", "teletransporte", "Zenith", "Ruijerd", "espadas", "familia Greyrat", "isekai"],
-  "Hellsing Ultimate": ["Alucard", "Integra Hellsing", "Seras Victoria", "vampiros", "organización Hellsing", "Walter C. Dornez", "Millennium", "Anderson", "ghouls", "armas", "Londres", "cazadores", "sobrenatural", "Freak chips", "Pip Bernadotte"],
-  "Inuyasha": ["Inuyasha", "Kagome Higurashi", "Perla de Shikon", "Sesshomaru", "Miroku", "Sango", "Shippo", "Kikyo", "Naraku", "medio demonio", "fragmentos", "época Sengoku", "Tessaiga", "Hiraikotsu", "viaje temporal"],
-  "Detective Conan": ["Shinichi Kudo", "Conan Edogawa", "Ran Mouri", "Kogoro Mouri", "Organización Negra", "Agasa", "Heiji Hattori", "detective", "APTX 4869", "crímenes", "lupa", "investigación", "Ai Haibara", "deducción", "identidad secreta"],
-  "Blue Lock": ["Yoichi Isagi", "Meguru Bachira", "Rin Itoshi", "Seishiro Nagi", "fútbol", "Jinpachi Ego", "delantero", "ego", "Bastard München", "Barou", "Chigiri", "Kunigami", "goles", "selección japonesa", "competencia"],
-  "Dandadan": ["Momo Ayase", "Ken Takakura (Okarun)", "Turbo Granny", "extraterrestres", "espíritus", "Seiko Ayase", "poderes psíquicos", "ovnis", "Aira Shiratori", "Jiji", "Momo", "paranormal", "mal de ojo", "serpoianos", "aventura sobrenatural"]
-};
-
 const animeImages = {
   "Noragami": "⛩️", "Naruto": "🍥", "One Piece": "🏴‍☠️", "Dragon Ball Z": "🐉",
   "Jujutsu Kaisen": "👊", "Fullmetal Alchemist: Brotherhood": "⚗️", "Demon Slayer: Kimetsu no Yaiba": "🌊"
 };
 
 function normalizeQuestionBank() {
-  // Garante exatamente 15 itens para cada anime. As questões já escritas ficam primeiro;
-  // o restante usa pistas e fatos próprios associados a cada obra para completar a rodada.
-  animeSeed.forEach(([name, emoji, genre]) => {
-    if (!questionBank[name]) questionBank[name] = [];
-    const bank = questionBank[name];
-    const facts = extraAnimeFacts[name] || [name, genre, emoji, "personajes principales", "historia", "aventura", "mundo", "protagonista", "rival", "objetivo", "equipo", "poder", "escenario", "amistad", "desafío"];
-    let i = 0;
-    while (bank.length < 15) {
-      const fact = facts[i % facts.length];
-      const otherFacts = facts.filter((x) => x !== fact);
-      const distractors = shuffle(otherFacts).slice(0, 3);
-      while (distractors.length < 3) distractors.push(name);
-      const prompts = [
-        `En ${name}, ¿cuál de estas opciones está relacionada con la obra?`,
-        `Pregunta de conocimiento sobre ${name}: elige el elemento correcto.`,
-        `¿Qué nombre o concepto pertenece al universo de ${name}?`,
-        `En el mundo de ${name}, ¿cuál opción es una referencia válida?`,
-        `¿Cuál de estas pistas corresponde a ${name}?`
-      ];
-      const prompt = prompts[i % prompts.length];
-      const options = shuffle([fact, ...distractors]);
-      bank.push(q(prompt, options, options.indexOf(fact)));
-      i++;
-    }
-    questionBank[name] = bank.slice(0, 15);
+  // No inventar preguntas de relleno: una ronda solo se habilita si tiene 15 preguntas reales.
+  animeSeed.forEach(([name]) => {
+    if (!Array.isArray(questionBank[name])) questionBank[name] = [];
+    questionBank[name] = questionBank[name].slice(0, 15);
   });
 }
 
@@ -403,28 +1005,47 @@ function init() {
   normalizeQuestionBank();
   renderAnimeList();
   bindEvents();
-  // La pantalla de entrada permanece hasta que la persona pulse COMEÇAR.
+  // La pantalla de entrada permanece hasta que la persona pulse COMENZAR.
 }
 function showScreen(id) {
   ["welcomeScreen", "animeScreen", "questionScreen", "resultScreen"].forEach((screen) => $(screen).classList.toggle("hidden", screen !== id));
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function renderAnimeList() {
-  const query = ($("animeSearch").value || "").trim().toLocaleLowerCase("pt-BR");
-  const list = $("animeList"); list.replaceChildren();
-  const filtered = animeSeed.filter(([name, icon, genre]) => `${name} ${genre}`.toLocaleLowerCase("pt-BR").includes(query));
-  if (!filtered.length) { const p = document.createElement("p"); p.className = "empty-state"; p.textContent = "Nenhum anime encontrado."; list.append(p); return; }
+  const query = ($("animeSearch").value || "").trim().toLocaleLowerCase("es");
+  const list = $("animeList");
+  list.replaceChildren();
+  const filtered = animeSeed.filter(([name, icon, genre]) => `${name} ${genre}`.toLocaleLowerCase("es").includes(query));
+  if (!filtered.length) {
+    const p = document.createElement("p");
+    p.className = "empty-state";
+    p.textContent = "No se encontraron animes.";
+    list.append(p);
+    return;
+  }
   filtered.forEach(([name, icon, genre]) => {
-    const row = document.createElement("button"); row.type = "button"; row.className = "anime-row";
-    const circle = document.createElement("span"); circle.className = "anime-photo"; circle.textContent = animeImages[name] || icon || "🎌"; circle.setAttribute("aria-hidden", "true");
-    const info = document.createElement("span"); info.className = "anime-row-info";
-    const title = document.createElement("strong"); title.textContent = name;
-    const sub = document.createElement("small"); sub.textContent = `${genre} • 15 perguntas`;
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "anime-row";
+    const circle = document.createElement("span");
+    circle.className = "anime-photo";
+    circle.textContent = animeImages[name] || icon || "🎌";
+    circle.setAttribute("aria-hidden", "true");
+    const info = document.createElement("span");
+    info.className = "anime-row-info";
+    const title = document.createElement("strong");
+    title.textContent = name;
+    const sub = document.createElement("small");
+    sub.textContent = `${genre} • 15 preguntas`;
     info.append(title, sub);
-    const arrow = document.createElement("span"); arrow.className = "row-arrow"; arrow.textContent = "›";
-    row.append(circle, info, arrow); row.addEventListener("click", () => startAnime(name)); list.append(row);
+    const arrow = document.createElement("span");
+    arrow.className = "row-arrow";
+    arrow.textContent = "›";
+    row.append(circle, info, arrow);
+    row.addEventListener("click", () => startAnime(name));
+    list.append(row);
   });
-  $("animeTotal").textContent = `${animeSeed.length} animes • 15 perguntas cada`;
+  $("animeTotal").textContent = `${animeSeed.length} animes • 15 preguntas por anime`;
 }
 function bindEvents() {
   $("startButton").addEventListener("click", () => { showScreen("animeScreen"); $("animeSearch").focus({preventScroll:true}); });
@@ -469,10 +1090,10 @@ function chooseAnswer(choice) {
     else if (i === choice) button.classList.add("incorrect");
   });
   const feedback = $("answerFeedback");
-  if (choice === item.correctIndex) { state.score++; feedback.textContent = "ACERTOU! +1 ponto"; feedback.classList.add("good"); }
-  else { feedback.textContent = `Resposta correta: ${item.options[item.correctIndex]}`; feedback.classList.add("bad"); }
+  if (choice === item.correctIndex) { state.score++; feedback.textContent = "¡CORRECTO! +1 punto"; feedback.classList.add("good"); }
+  else { feedback.textContent = `Respuesta correcta: ${item.options[item.correctIndex]}`; feedback.classList.add("bad"); }
   $("questionProgress").style.width = `${((state.index + 1) / 15) * 100}%`;
-  $("nextQuestion").textContent = state.index === 14 ? "VER RESULTADO" : "PRÓXIMA PERGUNTA →";
+  $("nextQuestion").textContent = state.index === 14 ? "VER RESULTADO" : "PRÓXIMA PREGUNTA →";
   $("nextQuestion").classList.remove("hidden");
 }
 function nextQuestion() {
@@ -485,7 +1106,7 @@ function showResult() {
   $("resultAnimeName").textContent = state.currentAnime;
   $("resultScore").textContent = `${state.score} / 15`;
   $("resultPercent").textContent = `${percent}% DE ACERTOS`;
-  $("resultMessage").textContent = percent === 100 ? "LENDÁRIO! Tu acertaste tudo!" : percent >= 70 ? "Mandou bem, otaku!" : percent >= 40 ? "Bom começo! Treina mais um pouco." : "Hora de rever esse anime e tentar de novo!";
+  $("resultMessage").textContent = percent === 100 ? "LENDÁRIO! ¡Acertaste todo!" : percent >= 70 ? "¡Muy bien, otaku!" : percent >= 40 ? "¡Buen comienzo! Practica un poco más." : "¡Repasa este anime e inténtalo otra vez!";
   showScreen("resultScreen");
 }
 function shuffle(items) { const copy = [...items]; for (let i = copy.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; }
